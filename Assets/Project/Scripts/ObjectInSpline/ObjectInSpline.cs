@@ -1,5 +1,5 @@
-using System;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -7,11 +7,19 @@ using UnityEngine.Splines;
 public class ObjectInSpline : MonoBehaviour
 {
     [SerializeField] SplineContainer splineContainer;
+    [SerializeField] SplineVisualizer visualizer;
+
+    MeshRenderer meshRenderer;
 
     bool isSelected = false;
 
     float currentPosition = 0f;
     float targetPosition = 0f;
+
+    private void Awake()
+    {
+        meshRenderer = GetComponent<MeshRenderer>();
+    }
 
     private void Update()
     {
@@ -22,9 +30,7 @@ public class ObjectInSpline : MonoBehaviour
 
     private void MoveObject()
     {
-        //if (!isSelected) return;
-
-        currentPosition = Mathf.Lerp(currentPosition, targetPosition, Time.deltaTime * 5f);
+        currentPosition = Mathf.Lerp(currentPosition, targetPosition, Time.deltaTime * ObjectMotionManager.Instance.MovementSpeed);
 
         transform.position = SplineUtility.EvaluatePosition(splineContainer[0], currentPosition);
     }
@@ -51,13 +57,35 @@ public class ObjectInSpline : MonoBehaviour
             {
                 if (hit.transform == transform)
                 {
-                    isSelected = !isSelected;
+                    isSelected = true;
+                    visualizer.ShowSpline();
+                    Material material = ObjectMotionManager.Instance.SelectedMaterial;
+                    SetMaterial(ref material);
                 }
             }
         }
         else if (Input.GetMouseButtonUp(0))
         {
             isSelected = false;
+            visualizer.ShowSpline();
+            Material material = ObjectMotionManager.Instance.SelectedMaterial;
+            SetMaterial(ref material);
         }
+    }
+
+    private void SetMaterial(ref Material material)
+    {
+        List<Material> newMaterials = meshRenderer.sharedMaterials.ToList();
+
+        if (newMaterials.Contains(material))
+        {
+            newMaterials.Remove(material);
+        }
+        else
+        {
+            newMaterials.Add(material);
+        }
+
+        meshRenderer.sharedMaterials = newMaterials.ToArray();
     }
 }
