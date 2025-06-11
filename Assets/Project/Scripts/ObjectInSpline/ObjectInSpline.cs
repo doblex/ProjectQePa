@@ -34,10 +34,6 @@ public class ObjectInSpline : MonoBehaviour
 
         splineContainer.Evaluate( 0, currentPosition, out float3 position, out float3 tangent, out float3 upVector);
 
-        Debug.Log($"transform Position: {transform.position}, Evaluated Position: {position}");
-
-        Debug.DrawLine(Vector3.zero, position, Color.red);
-
         transform.position = transform.localToWorldMatrix * (Vector3)position;
     }
 
@@ -50,12 +46,9 @@ public class ObjectInSpline : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Transform splineTransform = splineContainer.transform;
 
-
             Vector3 localOrigin = splineTransform.InverseTransformPoint(ray.origin);
             Vector3 localDirection = splineTransform.InverseTransformDirection(ray.direction);
             Ray localRay = new Ray(localOrigin, localDirection);
-
-            Debug.DrawRay(localOrigin, localDirection * 10f, Color.green);
 
             SplineUtility.GetNearestPoint(splineContainer[0], localRay, out float3 distance,out targetPosition);
 
@@ -64,25 +57,34 @@ public class ObjectInSpline : MonoBehaviour
 
     private void SetSelected()
     {
-        if (Input.GetMouseButtonDown(0))
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (hit.transform == transform)
             {
-                if (hit.transform == transform)
+                visualizer.ShowSpline();
+                if (Input.GetMouseButtonDown(0))
                 {
                     isSelected = true;
-                    visualizer.ShowSpline();
                     Material material = ObjectMotionManager.Instance.SelectedMaterial;
                     SetMaterial(ref material);
                 }
             }
+            else if (!isSelected)
+            {
+                visualizer.ShowSpline(false);
+            }
         }
-        else if (Input.GetMouseButtonUp(0) && isSelected)
+        else if(!isSelected)
+        {
+            visualizer.ShowSpline(false);
+        }
+
+        if (Input.GetMouseButtonUp(0) && isSelected)
         {
             isSelected = false;
-            visualizer.ShowSpline();
             Material material = ObjectMotionManager.Instance.SelectedMaterial;
             SetMaterial(ref material);
         }

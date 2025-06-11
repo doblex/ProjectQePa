@@ -18,14 +18,12 @@ public class SplineVisualizer : MonoBehaviour
     private void Start()
     {
         DrawSpline();
-        ShowSpline();
+        ShowSpline(false);
     }
 
-    public void ShowSpline() 
+    public void ShowSpline(bool show = true) 
     {
-        isShown = !isShown;
-        lineRenderer.enabled = isShown;
-        
+        lineRenderer.enabled = show;
     }
 
     public void DrawSpline()
