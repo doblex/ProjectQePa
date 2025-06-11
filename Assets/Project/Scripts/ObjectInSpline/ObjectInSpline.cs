@@ -32,7 +32,13 @@ public class ObjectInSpline : MonoBehaviour
     {
         currentPosition = Mathf.Lerp(currentPosition, targetPosition, Time.deltaTime * ObjectMotionManager.Instance.MovementSpeed);
 
-        transform.position = SplineUtility.EvaluatePosition(splineContainer[0], currentPosition);
+        splineContainer.Evaluate( 0, currentPosition, out float3 position, out float3 tangent, out float3 upVector);
+
+        Debug.Log($"transform Position: {transform.position}, Evaluated Position: {position}");
+
+        Debug.DrawLine(Vector3.zero, position, Color.red);
+
+        transform.position = transform.localToWorldMatrix * (Vector3)position;
     }
 
     private void SetTargetPosition()
@@ -42,8 +48,17 @@ public class ObjectInSpline : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Transform splineTransform = splineContainer.transform;
 
-            SplineUtility.GetNearestPoint(splineContainer[0], ray, out float3 distance,out targetPosition);
+
+            Vector3 localOrigin = splineTransform.InverseTransformPoint(ray.origin);
+            Vector3 localDirection = splineTransform.InverseTransformDirection(ray.direction);
+            Ray localRay = new Ray(localOrigin, localDirection);
+
+            Debug.DrawRay(localOrigin, localDirection * 10f, Color.green);
+
+            SplineUtility.GetNearestPoint(splineContainer[0], localRay, out float3 distance,out targetPosition);
+
         }
     }
 
@@ -64,7 +79,7 @@ public class ObjectInSpline : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && isSelected)
         {
             isSelected = false;
             visualizer.ShowSpline();
