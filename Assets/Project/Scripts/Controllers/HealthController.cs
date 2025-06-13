@@ -23,7 +23,7 @@ namespace utilities.Controllers
         /// </summary>
         public void SetInvicible(bool invincible) { this.invincible = invincible; }
         public int CurrentHp { get => currentHp; }
-        public int MaxHitPoints { get => currentHp; }
+        public int MaxHitPoints { get => maxHitPoints; }
 
 
         private void Start()
