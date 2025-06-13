@@ -48,23 +48,28 @@ public class GravityPullToggle : MonoBehaviour
     /// <summary>
     /// Disables movement once the subscribed GravitySubject reaches the center of the body.
     /// </summary>
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (other.GetComponent<GravitySubject>() != null)
-    //    {
-    //        GravitySubject gs = other.GetComponent<GravitySubject>();
-    //        Rigidbody rb = other.GetComponent<Rigidbody>();
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.GetComponent<GravitySubject>() != null)
+        {
+            GravitySubject gs = other.GetComponent<GravitySubject>();
+            Rigidbody rb = other.GetComponent<Rigidbody>();
 
-    //        // Stop acting if attracted body is already in the center (ignore Y component)
-    //        if (other.transform.position.x - transform.position.x < 0.01f &&
-    //            other.transform.position.z - transform.position.z < 0.01f)
-    //        {
-    //            gs.onGravityPulls.Remove(ComputeAttractionForce);
-    //            rb.linearVelocity = Vector3.zero;
-    //            rb.angularVelocity = Vector3.zero;
-    //        }
-    //    }
-    //}
+            // Stop acting if attracted body is already in the center (ignore Y component) and there is no other influence
+            if (gs.onGravityPulls.GetInvocationList().Length == 1)
+            {
+                Debug.Log("Single Planet pull");
+                if (Mathf.Abs(other.transform.position.x - transform.position.x) < 0.1f && 
+                    Mathf.Abs(other.transform.position.z - transform.position.z) < 0.1f )
+                {
+                    rb.linearVelocity = Vector3.zero;
+                    rb.angularVelocity = Vector3.zero;
+                    SetPullActive(false);
+                }
+            }
+            
+        }
+    }
 
     /// <summary>
     /// unsubscribes a GravitySubject from the gravitational pull of the body.
@@ -80,6 +85,9 @@ public class GravityPullToggle : MonoBehaviour
         Debug.Log("Trigger exited!");
     }
 
+    /// <summary>
+    /// Manually unsubscribes all GravitySubjects from the gravitational pull of the body when turned off.
+    /// </summary>
     private void UnsubscribeAll()
     {
         foreach(Collider other in affectedColliders)
@@ -94,6 +102,9 @@ public class GravityPullToggle : MonoBehaviour
     /// <summary>
     /// Computes the attraction force between the body and an object of given position and mass using Newton's Law
     /// </summary>
+    /// <param name="position">The position of the body being attracted.</param>
+    /// <param name="mass">The mass of the body being attracted.</param>
+    /// <returns>A vector3 representing the attraction force.</returns>
     public Vector3 ComputeAttractionForce(Vector3 position, float mass)
     {
         float distance = Vector3.Distance(position, transform.position);

@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -25,12 +23,16 @@ public class GravitySubject : MonoBehaviour
         rb.AddForce(ComputeTotalForce());
     }
 
+    /// <summary>
+    /// Computes the total force on the affected body.
+    /// </summary>
     private Vector3 ComputeTotalForce()
     {
         Vector3 totalForce = Vector3.zero;
         if (onGravityPulls != null)
         {
             Delegate[] pulls = onGravityPulls.GetInvocationList();
+            Debug.Log("Gravity pulls number: " + pulls.Length.ToString());
 
             foreach (OnGravityPull pull in pulls)
             {
