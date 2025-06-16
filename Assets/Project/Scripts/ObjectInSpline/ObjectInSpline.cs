@@ -5,8 +5,15 @@ using UnityEngine.Splines;
 [RequireComponent(typeof(SelectionComponent))]
 public class ObjectInSpline : MonoBehaviour
 {
+    [Header("Spline Ref")]
     [SerializeField] SplineContainer splineContainer;
+
+    [Header("Visualizer options")]
     [SerializeField] Visualizer visualizer;
+    [SerializeField] Material visualizerMaterial;
+
+    [Header("Options")]
+    [SerializeField] float movementSpeed = 5f;
 
     SelectionComponent selectionComponent;
 
@@ -31,7 +38,7 @@ public class ObjectInSpline : MonoBehaviour
 
     private void MoveObject()
     {
-        currentPosition = Mathf.Lerp(currentPosition, targetPosition, Time.deltaTime * ObjectMotionManager.Instance.MovementSpeed);
+        currentPosition = Mathf.Lerp(currentPosition, targetPosition, Time.deltaTime * movementSpeed);
 
         splineContainer.Evaluate( 0, currentPosition, out float3 position, out float3 tangent, out float3 upVector);
 
@@ -52,6 +59,6 @@ public class ObjectInSpline : MonoBehaviour
 
     private void OnShowVisualizer(bool isShown) 
     { 
-        visualizer.ShowSpline(isShown);
+        visualizer.ShowSpline(isShown, visualizerMaterial);
     }
 }

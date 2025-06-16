@@ -17,10 +17,6 @@ public class SplineVisualizer : Visualizer
         if (splineContainer == null || lineRenderer == null || splineContainer.Spline.Count < 2)
             return;
 
-        // Sample points along the spline
-        int resolution = ObjectMotionManager.Instance.Resolution;
-        float width = ObjectMotionManager.Instance.Width;
-
         lineRenderer.positionCount = resolution + 1;
 
         for (int i = 0; i <= resolution; i++)
