@@ -15,6 +15,8 @@ public class GravityPullToggle : MonoBehaviour
     private CapsuleCollider pullCollider;
     private HashSet<Collider> affectedColliders = new HashSet<Collider>();
 
+    public float PullRadius { get => pullRadius;}
+
     public void SetPullActive(bool _pullActive) { this.pullActive = _pullActive; }
 
     private void Start()

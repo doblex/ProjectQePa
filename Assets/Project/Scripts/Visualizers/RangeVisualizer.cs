@@ -2,7 +2,14 @@
 
 public class RangeVisualizer : Visualizer
 {
-    [SerializeField] float range = 1f;
+    float range;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        range = GetComponentInParent<GravityPullToggle>().PullRadius;
+    }
 
     protected override void Draw()
     {
