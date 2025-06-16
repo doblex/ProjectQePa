@@ -273,6 +273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9380026f5831cd4f9253e55327a4057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resolution: 32
+  width: 0.1
 --- !u!1 &2994391730219589950
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,8 +287,8 @@ GameObject:
   - component: {fileID: 5759056861663960481}
   - component: {fileID: 6432164494208136397}
   - component: {fileID: 7736043300939585082}
-  - component: {fileID: 6021471955598215156}
   - component: {fileID: 6289642723862885020}
+  - component: {fileID: 3319307678054521512}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -383,20 +385,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6021471955598215156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2994391730219589950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2a7ae5d208ffb1488117617e87ec32e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  splineContainer: {fileID: 4106374033326114859}
-  visualizer: {fileID: 2944867782388521797}
 --- !u!114 &6289642723862885020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,11 +397,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf2822dd3bdf9f409646a75ee992cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 4337708839525748549}
+  meshRenderer: {fileID: 0}
+  selectionMode: 0
   usesSelectionShader: 1
   selectionShader: {fileID: 2100000, guid: cea094b51c64d494db4bbb67b41a697f, type: 2}
-  usesSelectionKey: 1
   selectionKey: 323
   isSelected: 0
+--- !u!114 &3319307678054521512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994391730219589950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c1d2f8b3e4dab40b05b672b1d32304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualizer: {fileID: 2944867782388521797}
+  visualizerMaterial: {fileID: 0}
+  splineContainer: {fileID: 4106374033326114859}
+  movementSpeed: 5
 --- !u!1 &3779553595901479841
 GameObject:
   m_ObjectHideFlags: 0
