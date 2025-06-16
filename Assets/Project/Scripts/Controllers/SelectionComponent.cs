@@ -12,6 +12,7 @@ public class SelectionComponent : MonoBehaviour
     public event ShowVisualizer OnShowVisualizer;
 
     [Header("Selection Settings")]
+    [SerializeField] LayerMask layer; // Layer mask to filter raycast hits
     [SerializeField] Transform parent;
     [SerializeField] MeshRenderer meshRenderer;
     [SerializeField] SelectionMode selectionMode; // Enum for selection modes
@@ -20,8 +21,6 @@ public class SelectionComponent : MonoBehaviour
 
     [Header("KeyBinds Settings")]
     [SerializeField] KeyCode selectionKey = KeyCode.Mouse0;
-
-    
 
     [SerializeField,ReadOnly] bool isSelected = false;
 
@@ -55,7 +54,7 @@ public class SelectionComponent : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 100, layer))
         {
             if (hit.transform == parent)
             {

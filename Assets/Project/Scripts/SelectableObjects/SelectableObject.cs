@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Splines;
 
 [RequireComponent(typeof(SelectionComponent))]
 public class SelectableObject : MonoBehaviour

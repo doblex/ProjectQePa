@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 7736043300939585082}
   - component: {fileID: 6289642723862885020}
   - component: {fileID: 3319307678054521512}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,6 +397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf2822dd3bdf9f409646a75ee992cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 64
   parent: {fileID: 4337708839525748549}
   meshRenderer: {fileID: 0}
   selectionMode: 0

@@ -87,7 +87,8 @@ GameObject:
   - component: {fileID: 3597011897638295573}
   - component: {fileID: 1738408165018041453}
   - component: {fileID: 1245892734599199565}
-  m_Layer: 0
+  - component: {fileID: 6578847131641969329}
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf2822dd3bdf9f409646a75ee992cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 4368376240524581418}
+  layer:
+    serializedVersion: 2
+    m_Bits: 64
+  parent: {fileID: 4246236059097800134}
   meshRenderer: {fileID: 3597011897638295573}
   selectionMode: 1
   usesSelectionShader: 1
@@ -195,6 +199,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualizer: {fileID: 1737700413366836370}
   visualizerMaterial: {fileID: 0}
+--- !u!135 &6578847131641969329
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5039492350953666985}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5347690338111535032
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,4 +374,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolution: 32
   width: 0.1
-  range: 5
