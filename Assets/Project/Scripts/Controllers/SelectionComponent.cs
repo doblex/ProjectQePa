@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 
@@ -14,26 +12,41 @@ public class SelectionComponent : MonoBehaviour
     public event ShowVisualizer OnShowVisualizer;
 
     [Header("Selection Settings")]
+    [SerializeField] Transform parent;
+    [SerializeField] MeshRenderer meshRenderer;
     [SerializeField] bool usesSelectionShader = true;
     [SerializeField, ShowIf("usesSelectionShader", true)] Material selectionShader;
 
     [Header("KeyBinds Settings")]
     [SerializeField] KeyCode selectionKey = KeyCode.Mouse0;
 
-    MeshRenderer meshRenderer;
+    
 
     [SerializeField,ReadOnly] bool isSelected = false;
 
     private void Awake()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
+        if (parent == null)
+        {
+            Debug.LogError("parent transform is not set");
+            return;
+        }
+        if (meshRenderer != null) return;
+
+        if (!TryGetComponent(out meshRenderer))
+        {
+            Debug.LogError("MeshRenderer is not assigned and could not be found on the GameObject. Please assign a MeshRenderer component.");
+            return;
+        }
     }
 
     private void Update()
     {
         CheckForSelection();
-        if(isSelected)
+        if (isSelected)
+        { 
             OnUpdateSelection?.Invoke();
+        }
     }
 
     private void CheckForSelection()
@@ -43,7 +56,7 @@ public class SelectionComponent : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.transform == transform)
+            if (hit.transform == parent)
             {
                 OnShowVisualizer?.Invoke(true);
                 if (Input.GetKeyDown(selectionKey))

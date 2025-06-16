@@ -14,16 +14,22 @@ public abstract class Visualizer : MonoBehaviour
     protected virtual void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.startWidth = width;
+        lineRenderer.endWidth = width;
     }
 
-    public void ShowSpline(bool show, Material material = null)
+    public virtual void ShowRenderer(bool show, Material material = null)
     {
         if(material != null)
         {
            GameObjectExtension.SetMaterial(lineRenderer, material);
         }
 
-        if (!isDrawn) Draw();
+        if (!isDrawn) 
+        {
+            Draw();
+            isDrawn = true;
+        }
 
         lineRenderer.enabled = show;
     }
