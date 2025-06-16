@@ -105,4 +105,14 @@ public class SelectionComponent : MonoBehaviour
             }
         }
     }
+
+    public void CallSelectionDisable()
+    {
+        isSelected = false;
+        OnSelectionChanged?.Invoke(isSelected);
+
+        if (usesSelectionShader)
+            GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
+
+    }
 }

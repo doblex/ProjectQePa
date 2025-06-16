@@ -13,11 +13,19 @@ public class GravityPullToggle : MonoBehaviour
     [SerializeField] private float G = 6.674e-11f;
 
     private CapsuleCollider pullCollider;
+    private SelectionComponent selectionComponent;
     private HashSet<Collider> affectedColliders = new HashSet<Collider>();
 
     public float PullRadius { get => pullRadius;}
 
     public void SetPullActive(bool _pullActive) { this.pullActive = _pullActive; }
+
+    private void Awake()
+    {
+        // Add selection event
+        selectionComponent = GetComponentInChildren<SelectionComponent>();
+        selectionComponent.OnSelectionChanged += SetPullActive;
+    }
 
     private void Start()
     {
@@ -66,10 +74,9 @@ public class GravityPullToggle : MonoBehaviour
                 {
                     rb.linearVelocity = Vector3.zero;
                     rb.angularVelocity = Vector3.zero;
-                    SetPullActive(false);
+                    selectionComponent.CallSelectionDisable();
                 }
             }
-            
         }
     }
 

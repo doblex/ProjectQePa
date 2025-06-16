@@ -706,6 +706,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6942235819979270881, guid: 747695c98ed2b41459036b5d41e05574, type: 3}
+      propertyPath: pullActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942235819979270881, guid: 747695c98ed2b41459036b5d41e05574, type: 3}
       propertyPath: pullRadius
       value: 5
       objectReference: {fileID: 0}
