@@ -610,7 +610,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 47dff661e0b82e04882ca97130e1a337, type: 2}
+  - {fileID: 2100000, guid: e2b3b8da187182149bb43f085570588c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -785,8 +785,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 1167380904}
   meshRenderer: {fileID: 1533922408}
+  selectionMode: 1
   usesSelectionShader: 1
-  selectionShader: {fileID: 2100000, guid: cea094b51c64d494db4bbb67b41a697f, type: 2}
+  selectionShader: {fileID: 2100000, guid: 5028b0f6f40d93a4cb0f26042a2c6790, type: 2}
   selectionKey: 323
   isSelected: 0
 --- !u!1 &1758373886 stripped

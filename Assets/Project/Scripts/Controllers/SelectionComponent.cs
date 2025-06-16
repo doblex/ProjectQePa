@@ -14,6 +14,7 @@ public class SelectionComponent : MonoBehaviour
     [Header("Selection Settings")]
     [SerializeField] Transform parent;
     [SerializeField] MeshRenderer meshRenderer;
+    [SerializeField] SelectionMode selectionMode; // Enum for selection modes
     [SerializeField] bool usesSelectionShader = true;
     [SerializeField, ShowIf("usesSelectionShader", true)] Material selectionShader;
 
@@ -61,11 +62,26 @@ public class SelectionComponent : MonoBehaviour
                 OnShowVisualizer?.Invoke(true);
                 if (Input.GetKeyDown(selectionKey))
                 {
+                    if (selectionMode == SelectionMode.selection)
+                    {
+                        if (isSelected)
+                        {
+                            isSelected = false;
+                            OnSelectionChanged?.Invoke(isSelected);
+
+                            if (usesSelectionShader)
+                                GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
+
+                            return;
+                        }
+                    }
+
                     isSelected = true;
                     OnSelectionChanged?.Invoke(isSelected);
 
-                    if(usesSelectionShader)
+                    if (usesSelectionShader)
                         GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
+
                 }
             }
             else if (!isSelected)
@@ -78,13 +94,16 @@ public class SelectionComponent : MonoBehaviour
             OnShowVisualizer?.Invoke(false);
         }
 
-        if (Input.GetKeyUp(selectionKey) && isSelected)
+        if (selectionMode == SelectionMode.click)
         {
-            isSelected = false;
-            OnSelectionChanged?.Invoke(isSelected);
+            if (Input.GetKeyUp(selectionKey) && isSelected)
+            {
+                isSelected = false;
+                OnSelectionChanged?.Invoke(isSelected);
 
-            if (usesSelectionShader)
-                GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
+                if (usesSelectionShader)
+                    GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
+            }
         }
     }
 }
