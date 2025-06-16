@@ -1,30 +1,31 @@
-using System.Collections.Generic;
-using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
 
+[RequireComponent(typeof(SelectionComponent))]
 public class ObjectInSpline : MonoBehaviour
 {
     [SerializeField] SplineContainer splineContainer;
-    [SerializeField] SplineVisualizer visualizer;
+    [SerializeField] Visualizer visualizer;
 
-    MeshRenderer meshRenderer;
-
-    bool isSelected = false;
+    SelectionComponent selectionComponent;
 
     float currentPosition = 0f;
     float targetPosition = 0f;
 
     private void Awake()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
+        selectionComponent = GetComponent<SelectionComponent>();
+    }
+
+    private void Start()
+    {
+        selectionComponent.OnUpdateSelection += OnUpdateSelection;
+        selectionComponent.OnShowVisualizer += OnShowVisualizer;
     }
 
     private void Update()
     {
-        SetSelected();
-        SetTargetPosition();
         MoveObject();
     }
 
@@ -37,72 +38,20 @@ public class ObjectInSpline : MonoBehaviour
         transform.position = transform.localToWorldMatrix * (Vector3)position;
     }
 
-    private void SetTargetPosition()
-    {
-        if(!isSelected) return;
-
-        if (Input.GetMouseButton(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Transform splineTransform = splineContainer.transform;
-
-            Vector3 localOrigin = splineTransform.InverseTransformPoint(ray.origin);
-            Vector3 localDirection = splineTransform.InverseTransformDirection(ray.direction);
-            Ray localRay = new Ray(localOrigin, localDirection);
-
-            SplineUtility.GetNearestPoint(splineContainer[0], localRay, out float3 distance,out targetPosition);
-
-        }
-    }
-
-    private void SetSelected()
+    private void OnUpdateSelection()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Transform splineTransform = splineContainer.transform;
 
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (hit.transform == transform)
-            {
-                visualizer.ShowSpline();
-                if (Input.GetMouseButtonDown(0))
-                {
-                    isSelected = true;
-                    Material material = ObjectMotionManager.Instance.SelectedMaterial;
-                    SetMaterial(ref material);
-                }
-            }
-            else if (!isSelected)
-            {
-                visualizer.ShowSpline(false);
-            }
-        }
-        else if(!isSelected)
-        {
-            visualizer.ShowSpline(false);
-        }
+        Vector3 localOrigin = splineTransform.InverseTransformPoint(ray.origin);
+        Vector3 localDirection = splineTransform.InverseTransformDirection(ray.direction);
+        Ray localRay = new Ray(localOrigin, localDirection);
 
-        if (Input.GetMouseButtonUp(0) && isSelected)
-        {
-            isSelected = false;
-            Material material = ObjectMotionManager.Instance.SelectedMaterial;
-            SetMaterial(ref material);
-        }
+        SplineUtility.GetNearestPoint(splineContainer[0], localRay, out float3 distance, out targetPosition);
     }
 
-    private void SetMaterial(ref Material material)
-    {
-        List<Material> newMaterials = meshRenderer.sharedMaterials.ToList();
-
-        if (newMaterials.Contains(material))
-        {
-            newMaterials.Remove(material);
-        }
-        else
-        {
-            newMaterials.Add(material);
-        }
-
-        meshRenderer.sharedMaterials = newMaterials.ToArray();
+    private void OnShowVisualizer(bool isShown) 
+    { 
+        visualizer.ShowSpline(isShown);
     }
 }

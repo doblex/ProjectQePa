@@ -1,32 +1,18 @@
 using UnityEngine;
 using UnityEngine.Splines;
 
-[RequireComponent(typeof(SplineContainer), typeof(LineRenderer))]
-public class SplineVisualizer : MonoBehaviour
+[RequireComponent(typeof(SplineContainer))]
+public class SplineVisualizer : Visualizer
 {
     SplineContainer splineContainer;
-    LineRenderer lineRenderer;
-
-    bool isShown = true;
-
-    void Awake()
+    
+    protected override void Awake()
     {
+        base.Awake();
         splineContainer = GetComponent<SplineContainer>();
-        lineRenderer = GetComponent<LineRenderer>();
     }
 
-    private void Start()
-    {
-        DrawSpline();
-        ShowSpline(false);
-    }
-
-    public void ShowSpline(bool show = true) 
-    {
-        lineRenderer.enabled = show;
-    }
-
-    public void DrawSpline()
+    protected override void Draw()
     {
         if (splineContainer == null || lineRenderer == null || splineContainer.Spline.Count < 2)
             return;

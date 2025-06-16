@@ -12,9 +12,6 @@ public class ObjectMotionManager : MonoBehaviour
     [Range(2, 100), SerializeField] int resolution = 32;
     [Range(0, 1), SerializeField] float width = 0.1f;
 
-
-
-    public Material SelectedMaterial { get => selectedMaterial;}
     public int Resolution { get => resolution;}
     public float Width { get => width;}
     public float MovementSpeed { get => movementSpeed;}
