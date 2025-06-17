@@ -7,7 +7,7 @@ public class GravitySubject : MonoBehaviour
 {
     public delegate Vector3 OnGravityPull(Vector3 position, float mass);
 
-    public OnGravityPull onGravityPulls;
+    public OnGravityPull onGravityPulls = null;
 
     private Rigidbody rb;
     private float mass;
