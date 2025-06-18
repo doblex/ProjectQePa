@@ -26,7 +26,7 @@ public class CheckPoint : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(spawnpoint.position, 0.1f);
