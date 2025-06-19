@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    public delegate void CheckPointReachedEventHandler(int id, Transform newCameraPosition);
+    public delegate void CheckPointReachedEventHandler(int id, Transform newCameraPosition,bool changeCameraSize, float cameraSize = 0);
 
     public event CheckPointReachedEventHandler CheckPointReached;
 
     [ReadOnly][SerializeField] CheckPointType type;
     [ReadOnly][SerializeField] private int id;
+
+    [SerializeField] bool changeCameraSize = false;
+    [ShowIf("changeCameraSize", true)][SerializeField] float cameraSize = 5f;
 
     [SerializeField] Transform spawnpoint;
     [SerializeField] Transform CamPosition;
@@ -22,7 +25,7 @@ public class CheckPoint : MonoBehaviour
         {
             other.transform.position = spawnpoint.position;
             GetComponent<Collider>().enabled = false;
-            CheckPointReached?.Invoke(id, CamPosition);
+            CheckPointReached?.Invoke(id, CamPosition, changeCameraSize, cameraSize);
         }
     }
 

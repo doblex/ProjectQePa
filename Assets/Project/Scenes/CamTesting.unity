@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maincamera: {fileID: 185181951}
+  defaultCameraSize: 5
   checkPoints: []
   currentCheckPointIndex: 0
 --- !u!1 &185181946
@@ -765,6 +766,14 @@ PrefabInstance:
     - target: {fileID: 1605406283074639873, guid: 696fb0ff0a3d8d44fa8e20ed0cab4668, type: 3}
       propertyPath: m_LocalPosition.z
       value: -9.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768482361321900320, guid: 696fb0ff0a3d8d44fa8e20ed0cab4668, type: 3}
+      propertyPath: cameraSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768482361321900320, guid: 696fb0ff0a3d8d44fa8e20ed0cab4668, type: 3}
+      propertyPath: changeCameraSize
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8844427785937496356, guid: 696fb0ff0a3d8d44fa8e20ed0cab4668, type: 3}
       propertyPath: m_Name

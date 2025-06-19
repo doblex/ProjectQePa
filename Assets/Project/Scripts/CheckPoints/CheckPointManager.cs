@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class CheckPointManager : MonoBehaviour
     public static CheckPointManager Instance { get; private set; }
 
     [SerializeField] CameraController maincamera;
+    [SerializeField] float defaultCameraSize = 10f;
 
     [ReadOnly][SerializeField] List<CheckPoint> checkPoints;
 
@@ -54,6 +56,30 @@ public class CheckPointManager : MonoBehaviour
         currentCheckPointIndex = 0;
     }
 
+    private void OnCheckPointReached(int id, Transform newCameraPosition, bool changeCameraSize, float cameraSize)
+    {
+        currentCheckPointIndex = id;
+
+        if (changeCameraSize)
+        { 
+            maincamera.GetComponent<Camera>().orthographicSize = cameraSize;
+        }
+        else
+        {
+            maincamera.GetComponent<Camera>().orthographicSize = defaultCameraSize;
+        }
+
+
+        if (checkPoints[currentCheckPointIndex].Type != CheckPointType.end)
+        {
+            maincamera.PanCamera(newCameraPosition);
+        }
+        else
+        {
+            Debug.Log("End of the game reached. No more checkpoints to pan to.");
+        }
+    }
+
     private void SetInstance()
     {
         if (Instance != null && Instance != this)
@@ -80,20 +106,5 @@ public class CheckPointManager : MonoBehaviour
         }
 
         checkPoints.Add(checkPoint);
-    }
-
-    private void OnCheckPointReached(int id, Transform newCameraPosition)
-    {
-        currentCheckPointIndex = id;
-
-        if (checkPoints[currentCheckPointIndex].Type != CheckPointType.end)
-        {
-            maincamera.PanCamera(newCameraPosition);
-        }
-        else
-        { 
-            Debug.Log("End of the game reached. No more checkpoints to pan to.");
-        }
-
     }
 }
