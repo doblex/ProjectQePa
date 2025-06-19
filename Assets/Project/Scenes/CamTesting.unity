@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maincamera: {fileID: 185181951}
-  defaultCameraSize: 5
+  defaultCameraSize: 10
   checkPoints: []
   currentCheckPointIndex: 0
 --- !u!1 &185181946
