@@ -69,7 +69,7 @@ public class SelectionComponent : MonoBehaviour
                             OnSelectionChanged?.Invoke(isSelected);
 
                             if (usesSelectionShader)
-                                GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
+                                GameObjectExtension.UnsetMaterial(meshRenderer, selectionShader);
 
                             return;
                         }
@@ -101,8 +101,11 @@ public class SelectionComponent : MonoBehaviour
                 OnSelectionChanged?.Invoke(isSelected);
 
                 if (usesSelectionShader)
-                    GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
+                {
+                    GameObjectExtension.UnsetMaterial(meshRenderer, selectionShader);
+                }
             }
+                   
         }
     }
 
@@ -112,7 +115,8 @@ public class SelectionComponent : MonoBehaviour
         OnSelectionChanged?.Invoke(isSelected);
 
         if (usesSelectionShader)
-            GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
-
+        {
+            GameObjectExtension.UnsetMaterial(meshRenderer, selectionShader);
+        }
     }
 }
