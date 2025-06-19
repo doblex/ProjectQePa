@@ -1,0 +1,17 @@
+.menuButton {
+    background-color: rgb(255, 218, 0);
+}
+
+.menuButton:hover {
+    scale: 1.1 1.1;
+    transition-property: scale, background-color;
+    transition-duration: 0.2s, 0.8s;
+    transition-timing-function: ease, ease;
+    background-color: rgb(20, 255, 0);
+    rotate: 1turn;
+}
+
+.title {
+    font-size: 60px;
+    -unity-text-align: middle-center;
+}
