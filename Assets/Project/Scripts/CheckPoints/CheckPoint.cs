@@ -21,7 +21,7 @@ public class CheckPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Snail"))
         {
             other.transform.position = spawnpoint.position;
             GetComponent<Collider>().enabled = false;
