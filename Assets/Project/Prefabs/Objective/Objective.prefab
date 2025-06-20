@@ -126,7 +126,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e2b3b8da187182149bb43f085570588c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,6 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   id: 0
+  changeCameraSize: 0
+  cameraSize: 5
   spawnpoint: {fileID: 3034340735412540409}
   CamPosition: {fileID: 1605406283074639873}
 --- !u!65 &3999102705271072813
