@@ -16,3 +16,9 @@ public enum CheckPointType
     start,
     end
 }
+
+public enum AudioMode
+{
+    Once,
+    Loop
+}
