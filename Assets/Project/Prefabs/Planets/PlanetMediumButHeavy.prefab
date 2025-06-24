@@ -82,7 +82,7 @@ MonoBehaviour:
   pullIntensity: 3
   pullRadius: 3
   pullActive: 0
-  G: 1
+  G: 2.5
 --- !u!136 &2070681378287249417
 CapsuleCollider:
   m_ObjectHideFlags: 0
