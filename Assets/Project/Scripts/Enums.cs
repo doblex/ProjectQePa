@@ -20,5 +20,6 @@ public enum CheckPointType
 public enum AudioMode
 {
     Once,
-    Loop
+    Loop,
+    Unselect
 }
