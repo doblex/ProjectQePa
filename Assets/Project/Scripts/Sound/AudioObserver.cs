@@ -6,6 +6,7 @@ public class AudioObserver : MonoBehaviour
     [SerializeField] string audioFile;
     [SerializeField] AudioMode audioMode;
     [SerializeField] int audioChannelIndex = 0;
+    [SerializeField, Range(0, 1)] float soundVolume = 1;
 
     private AudioClip clip;
 
@@ -32,12 +33,14 @@ public class AudioObserver : MonoBehaviour
     // Update is called once per frame
     public void PlayOnce(AudioSource[] channels)
     {
+        channels[audioChannelIndex].volume = soundVolume;
         channels[audioChannelIndex].loop = false;
         channels[audioChannelIndex].PlayOneShot(clip);
     }
 
     public void PlayLoop(AudioSource[] channels)
     {
+        channels[audioChannelIndex].volume = soundVolume;
         channels[audioChannelIndex].loop = true;
         channels[audioChannelIndex].clip = clip;
         channels[audioChannelIndex].Play();
@@ -50,6 +53,7 @@ public class AudioObserver : MonoBehaviour
 
     public void PlayOnceOnUnselect(AudioSource[] channels)
     {
+        channels[audioChannelIndex].volume = soundVolume;
         channels[audioChannelIndex].loop = false;
         channels[audioChannelIndex].PlayOneShot(clip);
     }

@@ -63,85 +63,45 @@ MonoBehaviour:
   - m_EditModeType: 1
     m_Knots:
     - Position:
-        x: -0.22999954
-        y: -0.15
+        x: -0.17798996
+        y: -0.0011310577
         z: 0
       TangentIn:
-        x: 0
-        y: 0
-        z: -0.8868135
+        x: -0
+        y: -0
+        z: -0.5749032
       TangentOut:
         x: 0
         y: 0
-        z: 0.8868135
+        z: 0.5749032
       Rotation:
         value:
-          x: -0.20561908
-          y: 0.6765507
-          z: 0.20561908
-          w: 0.6765507
+          x: 0.0009488932
+          y: 0.7071061
+          z: -0.0013722016
+          w: 0.7071054
     - Position:
-        x: 7.138385
-        y: 4.784646
+        x: 5.5710106
+        y: -0.020002365
         z: 0
       TangentIn:
-        x: 0
-        y: 0
-        z: -2.1329658
+        x: -0
+        y: -0
+        z: -0.5749032
       TangentOut:
         x: 0
         y: 0
-        z: 1.941573
+        z: 0.5749032
       Rotation:
         value:
-          x: 0.04303343
-          y: 0.70579606
-          z: -0.04303343
-          w: 0.70579606
-    - Position:
-        x: 12.077375
-        y: -0.6559601
-        z: 0
-      TangentIn:
-        x: 0
-        y: 0
-        z: -2.01833
-      TangentOut:
-        x: 0
-        y: 0
-        z: 2.3498173
-      Rotation:
-        value:
-          x: 0.047812764
-          y: 0.7054885
-          z: -0.047812764
-          w: 0.7054885
-    - Position:
-        x: 20.5
-        y: 4.66
-        z: 0
-      TangentIn:
-        x: 0
-        y: 0
-        z: 0
-      TangentOut:
-        x: 0
-        y: 0
-        z: 0
-      Rotation:
-        value:
-          x: -0.19643593
-          y: 0.67927384
-          z: 0.19643593
-          w: 0.67927384
+          x: 0.0009488932
+          y: 0.7071061
+          z: -0.0013722016
+          w: 0.7071054
     m_MetaData:
-    - Mode: 1
+    - Mode: 0
       Tension: 0.5
-    - Mode: 1
-      Tension: 0.5
-    - Mode: 1
-      Tension: 0.5
-    - Mode: 1
+    - Mode: 0
       Tension: 0.5
     m_Closed: 0
     m_IntData:
@@ -307,13 +267,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2994391730219589950}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7927133941476494890}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
 --- !u!33 &5759056861663960481
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -442,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  reflectStrenght: 1
+  reflectStrenght: 3
 --- !u!82 &9140127326777403726
 AudioSource:
   m_ObjectHideFlags: 0
@@ -863,6 +823,7 @@ MonoBehaviour:
   audioFile: sbattere asteroidi e satelliti1
   audioMode: 0
   audioChannelIndex: 0
+  soundVolume: 1
 --- !u!114 &3389430124710616905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,3 +840,4 @@ MonoBehaviour:
   audioFile: asteroide movimento 3
   audioMode: 1
   audioChannelIndex: 1
+  soundVolume: 1
