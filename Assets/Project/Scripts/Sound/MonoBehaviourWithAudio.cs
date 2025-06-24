@@ -3,13 +3,13 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public abstract class MonoBehaviourWithAudio : MonoBehaviour
 {
-    protected AudioSource aS;
-    public delegate void AudioSourceDelegate(AudioSource source);
+    protected AudioSource[] audioChannels;
+    public delegate void AudioSourceDelegate(AudioSource[] channels);
     public AudioSourceDelegate onPlayAudio;
     public AudioSourceDelegate onStopAudio;
 
     protected void Start()
     {
-        aS = GetComponent<AudioSource>();
+        audioChannels = GetComponents<AudioSource>();
     }
 }

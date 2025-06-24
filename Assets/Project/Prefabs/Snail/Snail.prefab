@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86465f702ba237a4faee338a057c7e4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 10
-  currentHp: 0
+  maxHitPoints: 5
+  currentHp: 3
   invincible: 0
   deathEffect: {fileID: 0}
 --- !u!114 &131095619620110453
