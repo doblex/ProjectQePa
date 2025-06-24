@@ -1,0 +1,13 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Project/UI/Styles/MainStyle.uss?fileID=7433441132597879392&amp;guid=49d6e2cd4bd2ed346b124bf1b2b94597&amp;type=3#MainStyle" />
+    <Style src="project://database/Assets/Project/UI/Styles/HUDStyle.uss?fileID=7433441132597879392&amp;guid=21cccd5669147254fa612245d1f6e5cb&amp;type=3#HUDStyle" />
+    <engine:VisualElement style="flex-grow: 1; align-items: flex-start; align-self: auto; flex-direction: row; justify-content: space-around;">
+        <engine:VisualElement style="flex-grow: 1; height: 100px; background-color: rgba(0, 0, 0, 0.24);" />
+        <engine:VisualElement name="VisualElement" style="flex-grow: 1; width: 40%;" />
+        <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
+            <engine:Button text="Pause" class="PauseButton" />
+            <engine:VisualElement style="flex-grow: 1;" />
+            <engine:Button text="Reset" class="Reset" style="width: 70%;" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

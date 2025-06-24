@@ -1,7 +1,13 @@
 .unity-text-element {
+    -unity-font-definition: url("project://database/Assets/Project/UI/Fonts/Naluka.otf?fileID=12800000&guid=6846e1e157ffc6a4a9064b7ee25a7d5b&type=3#Naluka");
+    -unity-text-align: middle-center;
 }
 
 .unity-button {
     height: 100px;
     font-size: 40px;
+}
+
+.text {
+    font-size: 30px;
 }
