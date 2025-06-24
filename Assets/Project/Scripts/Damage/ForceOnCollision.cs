@@ -12,7 +12,7 @@ public class ForceOnCollision : MonoBehaviourWithAudio
             Rigidbody rb = collision.collider.GetComponent<Rigidbody>();
             Vector3 normal = collision.GetContact(0).normal;
 
-            rb.linearVelocity = normal * strenght;
+            rb.AddForce(-normal * strenght, ForceMode.Impulse);
 
             OnPlayAudio?.Invoke(audioChannels);
         }
