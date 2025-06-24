@@ -83,7 +83,7 @@ MonoBehaviour:
   pullIntensity: 1
   pullRadius: 4
   pullActive: 0
-  G: 1
+  G: 2.5
 --- !u!136 &2070681378287249417
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualizer: {fileID: 1737700413366836370}
-  visualizerMaterial: {fileID: 2100000, guid: 5028b0f6f40d93a4cb0f26042a2c6790, type: 2}
+  visualizerMaterial: {fileID: 2100000, guid: 47dff661e0b82e04882ca97130e1a337, type: 2}
 --- !u!135 &6578847131641969329
 SphereCollider:
   m_ObjectHideFlags: 0
