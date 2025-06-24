@@ -779,7 +779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   observed: {fileID: 7073813015238091231}
-  audioFile: testSound
+  audioFile: sbattere asteroidi e satelliti1
   audioMode: 0
   audioChannelIndex: 0
 --- !u!114 &8976614682254839256
@@ -795,6 +795,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   observed: {fileID: 4363843151561368108}
-  audioFile: testSound
+  audioFile: asteroide movimento 3
   audioMode: 1
   audioChannelIndex: 1

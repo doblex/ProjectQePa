@@ -6,6 +6,15 @@ public class Collectible : MonoBehaviourWithAudio
     [SerializeField] bool isHealing;
     [SerializeField, ShowIf("isHealing", true)] private int healingAmount;
 
+    private MeshRenderer mesh;
+    private Collider collider;
+
+    private void Awake()
+    {
+        mesh = GetComponent<MeshRenderer>();
+        collider = GetComponent<Collider>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Snail"))
@@ -15,8 +24,10 @@ public class Collectible : MonoBehaviourWithAudio
                 HealthController hc = other.GetComponent<HealthController>();
                 hc.RestoreHealth(healingAmount);
             }
+            OnPlayAudio?.Invoke(audioChannels);
             ScoreManager.Instance.RegisterCollected();
-            gameObject.SetActive(false);
+            mesh.enabled = false;
+            collider.enabled = false;
         }
     }
 }
