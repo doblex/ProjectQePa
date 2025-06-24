@@ -7,12 +7,12 @@ public class Collectible : MonoBehaviourWithAudio
     [SerializeField, ShowIf("isHealing", true)] private int healingAmount;
 
     private MeshRenderer mesh;
-    private Collider collider;
+    private Collider colliderRef;
 
     private void Awake()
     {
         mesh = GetComponent<MeshRenderer>();
-        collider = GetComponent<Collider>();
+        colliderRef = GetComponent<Collider>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,7 +27,7 @@ public class Collectible : MonoBehaviourWithAudio
             OnPlayAudio?.Invoke(audioChannels);
             ScoreManager.Instance.RegisterCollected();
             mesh.enabled = false;
-            collider.enabled = false;
+            GetComponent<Collider>().enabled = false;
         }
     }
 }

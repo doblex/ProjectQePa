@@ -67,81 +67,41 @@ MonoBehaviour:
         y: -0.15
         z: 0
       TangentIn:
-        x: 0
-        y: 0
-        z: -0.8868135
+        x: -0
+        y: -0
+        z: -0.7370976
       TangentOut:
         x: 0
         y: 0
-        z: 0.8868135
+        z: 0.7370976
       Rotation:
         value:
-          x: -0.20561908
-          y: 0.6765507
-          z: 0.20561908
-          w: 0.6765507
+          x: -0.00000001843144
+          y: 0.7128394
+          z: 0.000000018733989
+          w: 0.70132726
     - Position:
-        x: 7.138385
-        y: 4.784646
-        z: 0
+        x: 7.1399994
+        y: -0.14999962
+        z: -0.119999886
       TangentIn:
-        x: 0
-        y: 0
-        z: -2.1329658
+        x: -0
+        y: -0
+        z: -0.7370976
       TangentOut:
         x: 0
         y: 0
-        z: 1.941573
+        z: 0.7370976
       Rotation:
         value:
-          x: 0.04303343
-          y: 0.70579606
-          z: -0.04303343
-          w: 0.70579606
-    - Position:
-        x: 12.077375
-        y: -0.6559601
-        z: 0
-      TangentIn:
-        x: 0
-        y: 0
-        z: -2.01833
-      TangentOut:
-        x: 0
-        y: 0
-        z: 2.3498173
-      Rotation:
-        value:
-          x: 0.047812764
-          y: 0.7054885
-          z: -0.047812764
-          w: 0.7054885
-    - Position:
-        x: 20.5
-        y: 4.66
-        z: 0
-      TangentIn:
-        x: 0
-        y: 0
-        z: 0
-      TangentOut:
-        x: 0
-        y: 0
-        z: 0
-      Rotation:
-        value:
-          x: -0.19643593
-          y: 0.67927384
-          z: 0.19643593
-          w: 0.67927384
+          x: -0.000000018431441
+          y: 0.7128394
+          z: 0.000000018733987
+          w: 0.70132726
     m_MetaData:
-    - Mode: 1
+    - Mode: 0
       Tension: 0.5
-    - Mode: 1
-      Tension: 0.5
-    - Mode: 1
-      Tension: 0.5
-    - Mode: 1
+    - Mode: 0
       Tension: 0.5
     m_Closed: 0
     m_IntData:
@@ -275,6 +235,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolution: 32
   width: 0.1
+--- !u!1 &921890603444663570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7202598021253357885}
+  m_Layer: 0
+  m_Name: parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7202598021253357885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921890603444663570}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4337708839525748549}
+  m_Father: {fileID: 8454895866707978703}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2994391730219589950
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,14 +297,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2994391730219589950}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3955600662490553898}
-  m_Father: {fileID: 8454895866707978703}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 7202598021253357885}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &4363843151561368108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +343,7 @@ MonoBehaviour:
   visualizerMaterial: {fileID: 0}
   splineContainer: {fileID: 4106374033326114859}
   movementSpeed: 5
+  parent: {fileID: 921890603444663570}
 --- !u!114 &7073813015238091231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,7 +603,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4281387283567190015}
-  - {fileID: 4337708839525748549}
+  - {fileID: 7202598021253357885}
   - {fileID: 2237545270258269192}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -749,6 +742,7 @@ MonoBehaviour:
   audioFile: sbattere asteroidi e satelliti1
   audioMode: 0
   audioChannelIndex: 0
+  soundVolume: 1
 --- !u!114 &8976614682254839256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,3 +759,4 @@ MonoBehaviour:
   audioFile: asteroide movimento 3
   audioMode: 1
   audioChannelIndex: 1
+  soundVolume: 1

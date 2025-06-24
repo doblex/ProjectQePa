@@ -675,6 +675,7 @@ MonoBehaviour:
   audioFile: attiv pianeta 1
   audioMode: 0
   audioChannelIndex: 0
+  soundVolume: 1
 --- !u!114 &8294173247945860295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,3 +692,4 @@ MonoBehaviour:
   audioFile: attiv pianeta 1 reverse
   audioMode: 2
   audioChannelIndex: 1
+  soundVolume: 1

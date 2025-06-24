@@ -57,7 +57,7 @@ namespace utilities.Controllers
                 OnUnselectAudio?.Invoke(audioChannels);
                 return;
             }
-            OnPlayAudio?.Invoke(audioChannels);
+            if(damage !=0) OnPlayAudio?.Invoke(audioChannels);
         }
 
         /// <summary>
