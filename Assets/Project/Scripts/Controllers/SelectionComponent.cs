@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class SelectionComponent : MonoBehaviour
+public class SelectionComponent : MonoBehaviourWithAudio
 {
     public delegate void SelectionChangedHandler(bool isSelected); // Delegate for selection change events
     public delegate void UpdateSelectionHandler(); // Delegate for selection update events
@@ -67,9 +67,10 @@ public class SelectionComponent : MonoBehaviour
                         {
                             isSelected = false;
                             OnSelectionChanged?.Invoke(isSelected);
+                            onStopAudio?.Invoke(aS);
 
                             if (usesSelectionShader)
-                                GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
+                                GameObjectExtension.UnsetMaterial(meshRenderer, selectionShader);
 
                             return;
                         }
@@ -77,6 +78,7 @@ public class SelectionComponent : MonoBehaviour
 
                     isSelected = true;
                     OnSelectionChanged?.Invoke(isSelected);
+                    onPlayAudio?.Invoke(aS);
 
                     if (usesSelectionShader)
                         GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
@@ -99,10 +101,14 @@ public class SelectionComponent : MonoBehaviour
             {
                 isSelected = false;
                 OnSelectionChanged?.Invoke(isSelected);
+                onStopAudio?.Invoke(aS);
 
                 if (usesSelectionShader)
-                    GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
+                {
+                    GameObjectExtension.UnsetMaterial(meshRenderer, selectionShader);
+                }
             }
+                   
         }
     }
 
@@ -110,9 +116,11 @@ public class SelectionComponent : MonoBehaviour
     {
         isSelected = false;
         OnSelectionChanged?.Invoke(isSelected);
+        onStopAudio(aS);
 
         if (usesSelectionShader)
-            GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
-
+        {
+            GameObjectExtension.UnsetMaterial(meshRenderer, selectionShader);
+        }
     }
 }

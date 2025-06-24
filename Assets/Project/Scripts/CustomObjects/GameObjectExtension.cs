@@ -14,13 +14,21 @@ public static class GameObjectExtension
     {
         List<Material> newMaterials = renderer.sharedMaterials.ToList();
 
+        if (!newMaterials.Contains(material))
+        {
+            newMaterials.Add(material);
+        }
+
+        renderer.sharedMaterials = newMaterials.ToArray();
+    }
+
+    public static void UnsetMaterial(Renderer renderer, Material material)
+    {
+        List<Material> newMaterials = renderer.sharedMaterials.ToList();
+
         if (newMaterials.Contains(material))
         {
             newMaterials.Remove(material);
-        }
-        else
-        {
-            newMaterials.Add(material);
         }
 
         renderer.sharedMaterials = newMaterials.ToArray();

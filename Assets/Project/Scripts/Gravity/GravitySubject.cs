@@ -9,16 +9,16 @@ public class GravitySubject : MonoBehaviour
 
     public OnGravityPull onGravityPulls = null;
 
-    private Rigidbody rb;
-    private float mass;
+    protected Rigidbody rb;
+    protected float mass;
 
-    private void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         mass = rb.mass;
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         rb.AddForce(ComputeTotalForce());
     }
@@ -26,7 +26,7 @@ public class GravitySubject : MonoBehaviour
     /// <summary>
     /// Computes the total force on the affected body.
     /// </summary>
-    private Vector3 ComputeTotalForce()
+    protected Vector3 ComputeTotalForce()
     {
         Vector3 totalForce = Vector3.zero;
         if (onGravityPulls != null)

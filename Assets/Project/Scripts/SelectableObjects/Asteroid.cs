@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour
+public class Asteroid : MonoBehaviourWithAudio
 {
     private GravitySubject capturedGs;
     private Rigidbody capturedRb;
@@ -10,6 +10,7 @@ public class Asteroid : MonoBehaviour
         if (collision.collider.CompareTag("Snail"))
         {
             // If no gravitational pull is active, capture the snail and move it with the asteroid
+            onPlayAudio?.Invoke(aS);
             capturedGs = collision.collider.GetComponent<GravitySubject>();
             if(capturedGs.onGravityPulls == null || capturedGs.onGravityPulls.GetInvocationList().Length <= 0)
             {

@@ -74,7 +74,7 @@ public class GravityPullToggle : MonoBehaviour
                 {
                     rb.linearVelocity = Vector3.zero;
                     rb.angularVelocity = Vector3.zero;
-                    selectionComponent.CallSelectionDisable();
+                    //selectionComponent.CallSelectionDisable();
                 }
             }
         }
