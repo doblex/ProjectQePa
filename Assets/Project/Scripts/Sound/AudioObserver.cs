@@ -5,6 +5,7 @@ public class AudioObserver : MonoBehaviour
     [SerializeField] MonoBehaviourWithAudio observed;
     [SerializeField] string audioFile;
     [SerializeField] AudioMode audioMode;
+    [SerializeField] int audioChannelIndex = 0;
 
     private AudioClip clip;
 
@@ -26,21 +27,21 @@ public class AudioObserver : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void PlayOnce(AudioSource aS)
+    public void PlayOnce(AudioSource[] channels)
     {
-        aS.loop = false;
-        aS.PlayOneShot(clip);
+        channels[audioChannelIndex].loop = false;
+        channels[audioChannelIndex].PlayOneShot(clip);
     }
 
-    public void PlayLoop(AudioSource aS)
+    public void PlayLoop(AudioSource[] channels)
     {
-        aS.loop = true;
-        aS.clip = clip;
-        aS.Play();
+        channels[audioChannelIndex].loop = true;
+        channels[audioChannelIndex].clip = clip;
+        channels[audioChannelIndex].Play();
     }
 
-    public void StopLoop(AudioSource aS)
+    public void StopLoop(AudioSource[] channels)
     {
-        aS.Stop();
+        channels[audioChannelIndex].Stop();
     }
 }

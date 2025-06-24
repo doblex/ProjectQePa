@@ -10,7 +10,7 @@ public class Asteroid : MonoBehaviourWithAudio
         if (collision.collider.CompareTag("Snail"))
         {
             // If no gravitational pull is active, capture the snail and move it with the asteroid
-            onPlayAudio?.Invoke(aS);
+            onPlayAudio?.Invoke(audioChannels);
             capturedGs = collision.collider.GetComponent<GravitySubject>();
             if(capturedGs.onGravityPulls == null || capturedGs.onGravityPulls.GetInvocationList().Length <= 0)
             {
