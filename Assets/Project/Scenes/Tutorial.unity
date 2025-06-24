@@ -936,6 +936,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectInMotion (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4337708839525748549, guid: 62a7396e9024b2c4cbff9116558de122, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337708839525748549, guid: 62a7396e9024b2c4cbff9116558de122, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337708839525748549, guid: 62a7396e9024b2c4cbff9116558de122, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 8454895866707978703, guid: 62a7396e9024b2c4cbff9116558de122, type: 3}
       propertyPath: m_LocalPosition.x
       value: 53.09
