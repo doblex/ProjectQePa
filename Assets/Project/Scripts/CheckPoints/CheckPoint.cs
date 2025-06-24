@@ -15,9 +15,12 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] Transform spawnpoint;
     [SerializeField] Transform CamPosition;
 
+    [SerializeField] GameObject flag;
+
     public int Id { get => id; set => id = value; }
     public CheckPointType Type { get => type ; set => type = value; }
     public Transform Spawnpoint { get => spawnpoint; }
+    public GameObject Flag { get => flag; }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,6 +28,8 @@ public class CheckPoint : MonoBehaviour
         {
             other.transform.position = spawnpoint.position;
             GetComponent<Collider>().enabled = false;
+
+            flag.SetActive(true);
 
             //Reset the velocity of the snail
             other.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;

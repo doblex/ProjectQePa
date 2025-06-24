@@ -43,14 +43,16 @@ public class CheckPointManager : MonoBehaviour
             checkPoints[i].Id = i;
 
             if (i == 0)
-            { 
+            {
                 checkPoints[i].Type = CheckPointType.start;
             }
 
             if (i == checkPoints.Count - 1)
-            { 
+            {
                 checkPoints[i].Type = CheckPointType.end;
             }
+
+            checkPoints[i].Flag.SetActive(false);
         }
 
         currentCheckPointIndex = 0;
