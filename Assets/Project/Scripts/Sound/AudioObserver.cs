@@ -15,11 +15,14 @@ public class AudioObserver : MonoBehaviour
         switch (audioMode)
         {
             case AudioMode.Once:
-                observed.onPlayAudio += PlayOnce;
+                observed.OnPlayAudio += PlayOnce;
                 break;
             case AudioMode.Loop:
-                observed.onPlayAudio += PlayLoop;
-                observed.onStopAudio += StopLoop;
+                observed.OnPlayAudio += PlayLoop;
+                observed.OnStopAudio += StopLoop;
+                break;
+            case AudioMode.Unselect:
+                observed.OnUnselectAudio += PlayOnceOnUnselect;
                 break;
             default:
                 break;
@@ -43,5 +46,11 @@ public class AudioObserver : MonoBehaviour
     public void StopLoop(AudioSource[] channels)
     {
         channels[audioChannelIndex].Stop();
+    }
+
+    public void PlayOnceOnUnselect(AudioSource[] channels)
+    {
+        channels[audioChannelIndex].loop = false;
+        channels[audioChannelIndex].PlayOneShot(clip);
     }
 }

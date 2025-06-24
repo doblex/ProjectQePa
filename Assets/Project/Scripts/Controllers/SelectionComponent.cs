@@ -67,7 +67,7 @@ public class SelectionComponent : MonoBehaviourWithAudio
                         {
                             isSelected = false;
                             OnSelectionChanged?.Invoke(isSelected);
-                            onStopAudio?.Invoke(audioChannels);
+                            OnUnselectAudio?.Invoke(audioChannels);
 
                             if (usesSelectionShader)
                                 GameObjectExtension.UnsetMaterial(meshRenderer, selectionShader);
@@ -78,7 +78,7 @@ public class SelectionComponent : MonoBehaviourWithAudio
 
                     isSelected = true;
                     OnSelectionChanged?.Invoke(isSelected);
-                    onPlayAudio?.Invoke(audioChannels);
+                    OnPlayAudio?.Invoke(audioChannels);
 
                     if (usesSelectionShader)
                         GameObjectExtension.SetMaterial(meshRenderer, selectionShader);
@@ -101,7 +101,7 @@ public class SelectionComponent : MonoBehaviourWithAudio
             {
                 isSelected = false;
                 OnSelectionChanged?.Invoke(isSelected);
-                onStopAudio?.Invoke(audioChannels);
+                OnStopAudio?.Invoke(audioChannels);
 
                 if (usesSelectionShader)
                 {
@@ -116,7 +116,7 @@ public class SelectionComponent : MonoBehaviourWithAudio
     {
         isSelected = false;
         OnSelectionChanged?.Invoke(isSelected);
-        onStopAudio(audioChannels);
+        OnStopAudio(audioChannels);
 
         if (usesSelectionShader)
         {
