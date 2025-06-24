@@ -25,6 +25,10 @@ public class CheckPoint : MonoBehaviour
         {
             other.transform.position = spawnpoint.position;
             GetComponent<Collider>().enabled = false;
+
+            //Reset the velocity of the snail
+            other.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+
             CheckPointReached?.Invoke(id, CamPosition, changeCameraSize, cameraSize);
         }
     }
