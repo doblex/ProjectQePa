@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SatelliteVisualizer))]
+[RequireComponent(typeof(SatelliteVisualizer), typeof(SatellitePlaceholder))]
 public class Satellite : MonoBehaviour
 {
     [SerializeField] SatelliteDirection direction = SatelliteDirection.clockwise; // Direction of rotation
@@ -39,5 +39,5 @@ public class Satellite : MonoBehaviour
 
         // Rotate around the target on the Y axis
         target.RotateAround(transform.position, Vector3.up, DirectionMultiplier * speed * Time.deltaTime);
-    }
+    }    
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4368376240524581418}
   - component: {fileID: 6942235819979270881}
   - component: {fileID: 2070681378287249417}
+  - component: {fileID: -3402293744256629211}
   m_Layer: 2
   m_Name: PlanetSmall
   m_TagString: Untagged
@@ -75,6 +76,18 @@ CapsuleCollider:
   m_Height: 20
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3402293744256629211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292147171984820441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f5566fc3d15e249b5649193376f0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4497650086002517810
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +688,7 @@ MonoBehaviour:
   audioFile: attiv pianeta 1
   audioMode: 0
   audioChannelIndex: 0
+  soundVolume: 1
 --- !u!114 &2700296343743233356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,3 +705,4 @@ MonoBehaviour:
   audioFile: attiv pianeta 1 reverse
   audioMode: 2
   audioChannelIndex: 1
+  soundVolume: 1

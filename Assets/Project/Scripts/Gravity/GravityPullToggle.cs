@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CapsuleCollider))]
+[RequireComponent(typeof(CapsuleCollider), typeof(PlanetPlaceHolder))]
 public class GravityPullToggle : MonoBehaviour
 {
     [Header("Gravity settings")]
