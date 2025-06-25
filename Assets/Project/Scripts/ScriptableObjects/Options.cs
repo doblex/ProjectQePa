@@ -14,7 +14,7 @@ public class Options : ScriptableObject
 
     public List<CommandData> commands;
 
-    public bool Fullscreen = true;
+    public FullScreenMode Fullscreen;
 
     public float MasterVolume = 1.0f;
     public float SFXVolume = 1.0f;
@@ -30,8 +30,11 @@ public class Options : ScriptableObject
             "1920x1080"
         };
 
+        SelectedResolutionIndex = 4; // Default to 1920x1080
+
         FPS = new List<string>
         {
+            "noCap",
             "30",
             "60",
             "120",
@@ -39,7 +42,9 @@ public class Options : ScriptableObject
             "240"
         };
 
-        Fullscreen = true;
+        SelectedFPSIndex = 2; // Default to 60 FPS
+
+        Fullscreen = FullScreenMode.FullScreenWindow;
         MasterVolume = 1.0f;
         SFXVolume = 1.0f;
     }

@@ -37,6 +37,7 @@ public class MainMenuController : DocController
     private void OnCreditsButton_Clicked()
     {
         ShowDoc(false);
+        UIController.Instance.ShowCredits();
     }
     private void OnExitButton_Clicked()
     {

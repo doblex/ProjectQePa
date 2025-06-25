@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UIElements;
 using static OptionsController;
 
 public class UIController : MonoBehaviour
@@ -11,16 +12,34 @@ public class UIController : MonoBehaviour
 
     public static UIController Instance { get; private set; }
     public Options Options { get => options; }
+    public LevelGroupData LevelGroupData { get => levelGroupData; }
+
+    public string ButtonSelectedStyleClass { get => buttonSelectedStyleClass; }
+    public string ComingSoonStyleClass { get => comingSoonStyleClass; }
+
+    public VisualTreeAsset CommandTemplate { get => commandTemplate; }
+    public VisualTreeAsset LevelTemplate { get => levelTemplate; }
+    public string GrayedOutButtonStyleClass { get => grayedOutButtonStyleClass; }
 
     [Header("Docs")]
     [SerializeField] MainMenuController mainMenu;
     [SerializeField] OptionsController option;
+    [SerializeField] CreditsController credits;
 
-    [Header("Refs")]
+    [Header("DataSources")]
     [SerializeField] Options options;
+    [SerializeField] LevelGroupData levelGroupData;
+
+    [Header("Styles")]
+    [SerializeField] string buttonSelectedStyleClass = "OptionButton-Selected";
+    [SerializeField] string comingSoonStyleClass = "ComingSoon";
+    [SerializeField] string grayedOutButtonStyleClass = "GrayedOut";
+
+    [Header("Templates")]
+    [SerializeField] VisualTreeAsset commandTemplate;
+    [SerializeField] VisualTreeAsset levelTemplate;
 
     private FromDoc docToOptions;
-
 
     private void Awake()
     {
@@ -39,19 +58,30 @@ public class UIController : MonoBehaviour
 
     public void Start()
     {
-        ShowMainMenu();
+        GoToMainMenu();
     }
 
     public void ShowMainMenu()
     {
         mainMenu.ShowDoc(true);
+    }
+
+    public void GoToMainMenu()
+    {
+        mainMenu.ShowDoc(true);
         option.ShowDoc(false);
+        credits.ShowDoc(false);
     }
 
     public void ShowOptions(FromDoc fromDoc)
     {
         option.ShowDoc(true);
         docToOptions = fromDoc;
+    }
+
+    public void ShowCredits()
+    {
+        credits.ShowDoc(true);
     }
 
     public void HideOptions() 

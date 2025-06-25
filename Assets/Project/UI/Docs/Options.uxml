@@ -3,6 +3,8 @@
     <Style src="project://database/Assets/Project/UI/Styles/OptionStyle.uss?fileID=7433441132597879392&amp;guid=adfa1b4da7a0c9e4597e2938fb0f4c51&amp;type=3#OptionStyle" />
     <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
         <engine:VisualElement style="flex-grow: 1; width: auto; max-width: 35%;">
+            <engine:VisualElement style="flex-grow: 1;" />
+            <engine:Label text="Opzioni" name="DocTitle" class="OptionTitle" />
             <engine:VisualElement style="flex-grow: 1; flex-direction: row; align-self: center;">
                 <engine:VisualElement style="flex-grow: 1; align-self: center;">
                     <engine:Button text="Video" name="Video" class="OptionButton" />
@@ -13,8 +15,9 @@
             </engine:VisualElement>
         </engine:VisualElement>
         <engine:VisualElement style="flex-grow: 1;">
-            <engine:VisualElement data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" style="flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; background-color: rgba(0, 0, 0, 0.19); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
-                <engine:VisualElement name="VideoPanel" class="Panel" style="flex-grow: 1; display: none; align-self: stretch; justify-content: flex-start;">
+            <engine:VisualElement style="flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; background-color: rgba(0, 0, 0, 0.19); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+                <engine:VisualElement name="VideoPanel" class="Panel" style="flex-grow: 1; display: flex; align-self: stretch; justify-content: flex-start;">
+                    <engine:Label text="Video" class="PanelTitle" />
                     <engine:VisualElement name="Resolution" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
                         <engine:VisualElement name="Label" class="EntryLabelVE" style="flex-grow: 1; align-self: center;">
                             <engine:Label text="Resolution" class="EntryLabel" />
@@ -35,11 +38,11 @@
                         </engine:VisualElement>
                         <engine:VisualElement class="EntrySpacing" style="flex-grow: 1; align-self: center;" />
                         <engine:VisualElement name="Value" class="EntryValueVE">
-                            <engine:Toggle>
+                            <engine:EnumField value="ExclusiveFullScreen" type="UnityEngine.FullScreenMode, UnityEngine.CoreModule">
                                 <Bindings>
                                     <engine:DataBinding property="value" data-source-path="Fullscreen" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" binding-mode="TwoWay" />
                                 </Bindings>
-                            </engine:Toggle>
+                            </engine:EnumField>
                         </engine:VisualElement>
                     </engine:VisualElement>
                     <engine:VisualElement name="FPS" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
@@ -50,7 +53,7 @@
                         <engine:VisualElement name="Value" class="EntryValueVE">
                             <engine:DropdownField>
                                 <Bindings>
-                                    <engine:DataBinding property="index" data-source-path="SelectedFPSIndex" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" binding-mode="ToTarget" />
+                                    <engine:DataBinding property="index" data-source-path="SelectedFPSIndex" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" binding-mode="TwoWay" />
                                     <engine:DataBinding property="choices" data-source-path="FPS" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" binding-mode="ToTarget" />
                                 </Bindings>
                             </engine:DropdownField>
@@ -58,6 +61,7 @@
                     </engine:VisualElement>
                 </engine:VisualElement>
                 <engine:VisualElement name="AudioPanel" class="Panel" style="flex-grow: 1; display: none; align-items: stretch; flex-direction: column;">
+                    <engine:Label text="Audio" class="PanelTitle" />
                     <engine:VisualElement name="MusicVolume" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
                         <engine:VisualElement name="Label" class="EntryLabelVE" style="flex-grow: 1; align-self: center;">
                             <engine:Label text="Music Volume" class="EntryLabel" />
@@ -85,7 +89,9 @@
                         </engine:VisualElement>
                     </engine:VisualElement>
                 </engine:VisualElement>
-                <engine:VisualElement name="ControlsPanel" class="Panel" style="flex-grow: 1; display: flex;" />
+                <engine:VisualElement name="ControlsPanel" class="Panel" style="flex-grow: 1; display: none;">
+                    <engine:Label text="Controls" class="PanelTitle" />
+                </engine:VisualElement>
             </engine:VisualElement>
         </engine:VisualElement>
     </engine:VisualElement>

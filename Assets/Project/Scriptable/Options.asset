@@ -18,17 +18,17 @@ MonoBehaviour:
   - 1024x768
   - 1280x720
   - 1920x1080
-  SelectedResolutionIndex: 3
+  SelectedResolutionIndex: 4
   FPS:
+  - no cap
   - 30
   - 60
   - 120
   - 144
   - 240
-  SelectedFPSIndex: 1
+  SelectedFPSIndex: 2
   commands:
   - {fileID: 11400000, guid: ad8d0d7f51a5b4c43bbdebf418cda6ce, type: 2}
-  - {fileID: 11400000, guid: c7f67e25997cc0647abba057f11e7076, type: 2}
   Fullscreen: 1
   MasterVolume: 1
   SFXVolume: 1

@@ -7,7 +7,7 @@
         </engine:VisualElement>
         <engine:VisualElement style="flex-grow: 1; width: 600px; flex-direction: row;">
             <engine:VisualElement style="flex-grow: 1; height: 600px; align-self: center; justify-content: center; display: flex; border-left-width: 0; margin-left: 0; align-items: center;">
-                <engine:Button text="Play" name="Play" class="menuButtonBase play-menuButton" />
+                <engine:Button text="Play" name="Play" class="menuButtonBase play-menuButton" style="width: 500px; height: 150px;" />
                 <engine:Button text="Options" name="Options" class="menuButtonBase" />
                 <engine:Button text="Credits" name="Credits" class="menuButtonBase" />
                 <engine:Button text="Exit" name="Exit" enable-rich-text="true" class="menuButtonBase" />

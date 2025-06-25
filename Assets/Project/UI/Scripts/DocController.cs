@@ -16,6 +16,8 @@ public abstract class DocController : MonoBehaviour
         root = doc.rootVisualElement;
 
         SetComponents();
+
+        DontDestroyOnLoad(gameObject);
     }
 
     protected abstract void SetComponents();

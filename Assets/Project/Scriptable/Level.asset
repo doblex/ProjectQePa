@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc7f8eaa5cb1c3a42899643c4a7d087d, type: 3}
-  m_Name: Interact Command Data
-  m_EditorClassIdentifier: 
-  CommandName: Interact
-  Value: 323
-  Icon: {fileID: 2800000, guid: 987b20931f0843c42a54ca53f897eed3, type: 3}
+  m_Script: {fileID: 0}
+  m_Name: Level
+  m_EditorClassIdentifier: Assembly-CSharp::LevelGroupData
+  Levels:
+  - {fileID: 11400000, guid: 041259bbac036be4c85514e933d852b0, type: 2}
+  - {fileID: 11400000, guid: 79450951d7b051e44a29d35ffa66b88b, type: 2}

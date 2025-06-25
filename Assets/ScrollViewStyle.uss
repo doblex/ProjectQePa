@@ -1,10 +1,4 @@
 .unity-scroll-view__content-container {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-self: center;
-    flex-wrap: nowrap;
-    overflow: visible;
 }
 
 .scroll-view-element {
@@ -13,7 +7,7 @@
     width: auto;
     max-width: none;
     min-width: 400px;
-    background-image: url("project://database/Assets/Project/UI/Docs/Pianeta_zoe.png?fileID=-1466531428&guid=ead50818341f53f4fbc3b868be551d0c&type=3#Pianeta_zoe_0");
+    background-image: url("project://database/Assets/Project/UI/Pianeta_zoe.png?fileID=-1466531428&guid=ead50818341f53f4fbc3b868be551d0c&type=3#Pianeta_zoe_0");
     -unity-background-scale-mode: scale-to-fit;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -24,14 +18,13 @@
 
 .scroll-view-element:hover {
     background-color: rgba(0, 0, 0, 0.53);
-    background-image: url("project://database/Assets/Project/UI/Docs/prova.png?fileID=2800000&guid=fc510065ea8be484d9f76acf16648ff5&type=3#prova");
+    background-image: url("project://database/Assets/Project/UI/prova.png?fileID=2800000&guid=fc510065ea8be484d9f76acf16648ff5&type=3#prova");
     -unity-background-scale-mode: scale-to-fit;
     scale: 1.2 1.3;
-    transition-property: all, scale, rotate;
-    transition-duration: 0s, 0.2s, 1s;
-    transition-timing-function: ease, ease-in, linear;
-    transition-delay: 0s, 0s, 0s;
-    rotate: 360deg;
+    transition-property: all, scale;
+    transition-duration: 0s, 0.2s;
+    transition-timing-function: ease, ease-in;
+    transition-delay: 0s, 0s;
     border-left-color: rgb(255, 255, 255);
     border-right-color: rgb(255, 255, 255);
     border-top-color: rgb(255, 255, 255);

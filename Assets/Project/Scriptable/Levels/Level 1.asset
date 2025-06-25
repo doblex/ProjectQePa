@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc7f8eaa5cb1c3a42899643c4a7d087d, type: 3}
-  m_Name: Pippo
-  m_EditorClassIdentifier: 
-  Name: Options (Options)
-  Value: 0
-  Icon: {fileID: 0}
+  m_Script: {fileID: 0}
+  m_Name: Level 1
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  LevelName: 
+  SceneName: 
+  Planet: {fileID: 0}
+  LevelScreen: {fileID: 0}
+  Description: 
+  IsEnded: 0
+  comingSoon: 0
