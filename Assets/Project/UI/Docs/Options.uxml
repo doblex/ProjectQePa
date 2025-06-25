@@ -13,7 +13,80 @@
             </engine:VisualElement>
         </engine:VisualElement>
         <engine:VisualElement style="flex-grow: 1;">
-            <engine:VisualElement name="OptionPanel" style="flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; background-color: rgba(0, 0, 0, 0.19); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" />
+            <engine:VisualElement data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" style="flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; background-color: rgba(0, 0, 0, 0.19); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+                <engine:VisualElement name="VideoPanel" class="Panel" style="flex-grow: 1; display: none; align-self: stretch; justify-content: flex-start;">
+                    <engine:VisualElement name="Resolution" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
+                        <engine:VisualElement name="Label" class="EntryLabelVE" style="flex-grow: 1; align-self: center;">
+                            <engine:Label text="Resolution" class="EntryLabel" />
+                        </engine:VisualElement>
+                        <engine:VisualElement class="EntrySpacing" style="flex-grow: 1; align-self: center;" />
+                        <engine:VisualElement name="Value" class="EntryValueVE">
+                            <engine:DropdownField data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options">
+                                <Bindings>
+                                    <engine:DataBinding property="index" data-source-path="SelectedResolutionIndex" binding-mode="TwoWay" />
+                                    <engine:DataBinding property="choices" data-source-path="Resolution" binding-mode="ToTarget" />
+                                </Bindings>
+                            </engine:DropdownField>
+                        </engine:VisualElement>
+                    </engine:VisualElement>
+                    <engine:VisualElement name="FullScreen" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
+                        <engine:VisualElement name="Label" class="EntryLabelVE" style="flex-grow: 1; align-self: center;">
+                            <engine:Label text="FullScreen" name="Label" class="EntryLabel" />
+                        </engine:VisualElement>
+                        <engine:VisualElement class="EntrySpacing" style="flex-grow: 1; align-self: center;" />
+                        <engine:VisualElement name="Value" class="EntryValueVE">
+                            <engine:Toggle>
+                                <Bindings>
+                                    <engine:DataBinding property="value" data-source-path="Fullscreen" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" binding-mode="TwoWay" />
+                                </Bindings>
+                            </engine:Toggle>
+                        </engine:VisualElement>
+                    </engine:VisualElement>
+                    <engine:VisualElement name="FPS" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
+                        <engine:VisualElement name="Label" class="EntryLabelVE" style="flex-grow: 1; align-self: center;">
+                            <engine:Label text="FPS CAP" name="Label" class="EntryLabel" />
+                        </engine:VisualElement>
+                        <engine:VisualElement class="EntrySpacing" style="flex-grow: 1; align-self: center;" />
+                        <engine:VisualElement name="Value" class="EntryValueVE">
+                            <engine:DropdownField>
+                                <Bindings>
+                                    <engine:DataBinding property="index" data-source-path="SelectedFPSIndex" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" binding-mode="ToTarget" />
+                                    <engine:DataBinding property="choices" data-source-path="FPS" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" binding-mode="ToTarget" />
+                                </Bindings>
+                            </engine:DropdownField>
+                        </engine:VisualElement>
+                    </engine:VisualElement>
+                </engine:VisualElement>
+                <engine:VisualElement name="AudioPanel" class="Panel" style="flex-grow: 1; display: none; align-items: stretch; flex-direction: column;">
+                    <engine:VisualElement name="MusicVolume" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
+                        <engine:VisualElement name="Label" class="EntryLabelVE" style="flex-grow: 1; align-self: center;">
+                            <engine:Label text="Music Volume" class="EntryLabel" />
+                        </engine:VisualElement>
+                        <engine:VisualElement class="EntrySpacing" style="flex-grow: 1; align-self: center;" />
+                        <engine:VisualElement name="Value" class="EntryValueVE">
+                            <engine:Slider value="42" high-value="100" fill="true">
+                                <Bindings>
+                                    <engine:DataBinding property="value" data-source-path="MasterVolume" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" binding-mode="TwoWay" />
+                                </Bindings>
+                            </engine:Slider>
+                        </engine:VisualElement>
+                    </engine:VisualElement>
+                    <engine:VisualElement name="SFXVolume" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
+                        <engine:VisualElement name="Label" class="EntryLabelVE" style="flex-grow: 1; align-self: center;">
+                            <engine:Label text="SFX Volume" class="EntryLabel" />
+                        </engine:VisualElement>
+                        <engine:VisualElement class="EntrySpacing" style="flex-grow: 1; align-self: center;" />
+                        <engine:VisualElement name="Value" class="EntryValueVE">
+                            <engine:Slider value="42" high-value="100" fill="true" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options">
+                                <Bindings>
+                                    <engine:DataBinding property="value" data-source-path="SFXVolume" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" binding-mode="TwoWay" />
+                                </Bindings>
+                            </engine:Slider>
+                        </engine:VisualElement>
+                    </engine:VisualElement>
+                </engine:VisualElement>
+                <engine:VisualElement name="ControlsPanel" class="Panel" style="flex-grow: 1; display: flex;" />
+            </engine:VisualElement>
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>
