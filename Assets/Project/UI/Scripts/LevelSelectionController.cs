@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class LevelSelectionController : DocController
@@ -14,54 +15,56 @@ public class LevelSelectionController : DocController
     public override void ShowDoc(bool show)
     {
         base.ShowDoc(show);
-        LoadContent();
+        if (show)
+        {
+            LoadContent();
+        }
     }
 
     private void LoadContent()
     {
-        LevelGroupData groupData = UIController.Instance.LevelGroupData;
+        LevelDataWrapper[] levelDataWrappers = PersistenceManager.Instance.LevelDataWrappers.ToArray();
 
-        foreach (var levelData in groupData.Levels)
+        foreach (var levelDataWrapper in levelDataWrappers)
         {
             VisualElement level = new();
             UIController.Instance.LevelTemplate.CloneTree(level);
 
-            Button levelButton = level.Q<Button>("button");
+            Button levelButton = level.Q<Button>("Button");
 
-            levelButton.iconImage = levelData.Planet;
+            levelButton.iconImage = levelDataWrapper.Planet;
 
-            levelButton.clicked += () => { LoadLevel(levelData); };
+            levelButton.clicked += () => { LoadLevel(levelDataWrapper); };
 
             levelButton.RegisterCallback<PointerOverEvent>(evt =>
             {
                 levelButton.AddToClassList(UIController.Instance.ButtonSelectedStyleClass);
-                levelButton.iconImage = levelData.LevelScreen;
+                levelButton.iconImage = levelDataWrapper.LevelScreen;
             });
 
             levelButton.RegisterCallback<PointerOutEvent>(evt =>
             {
                 levelButton.RemoveFromClassList(UIController.Instance.ButtonSelectedStyleClass);
-                levelButton.iconImage = levelData.Planet;
+                levelButton.iconImage = levelDataWrapper.Planet;
             });
 
-            if (!levelData.IsEnded)
+            if (levelDataWrapper.IsLocked())
             {
                 levelButton.AddToClassList(UIController.Instance.GrayedOutButtonStyleClass);
                 levelButton.SetEnabled(false);
             }
 
-            if (levelData.comingSoon)
+            if (levelDataWrapper.comingSoon)
             {
                 levelButton.AddToClassList(UIController.Instance.ComingSoonStyleClass);
             }
             
-            scrollView.Add(levelButton);
+            scrollView.Add(level);
         }
     }
 
-    private void LoadLevel(LevelData level)
+    private void LoadLevel(LevelDataWrapper levelData)
     {
-        // Implement level loading logic here
-        Debug.Log("Level loaded");
+        SceneManager.LoadScene(levelData.SceneName);
     }
 }

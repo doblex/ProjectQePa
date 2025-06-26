@@ -27,7 +27,7 @@ public class MainMenuController : DocController
     private void OnPlayButton_Clicked()
     {
         ShowDoc(false);
-        //GOTO SELECTED LEVEL
+        UIController.Instance.ShowLevelSelection();
     }
     private void OnOptionsButton_Clicked()
     {

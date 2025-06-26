@@ -12,7 +12,6 @@ public class UIController : MonoBehaviour
 
     public static UIController Instance { get; private set; }
     public Options Options { get => options; }
-    public LevelGroupData LevelGroupData { get => levelGroupData; }
 
     public string ButtonSelectedStyleClass { get => buttonSelectedStyleClass; }
     public string ComingSoonStyleClass { get => comingSoonStyleClass; }
@@ -25,10 +24,10 @@ public class UIController : MonoBehaviour
     [SerializeField] MainMenuController mainMenu;
     [SerializeField] OptionsController option;
     [SerializeField] CreditsController credits;
+    [SerializeField] LevelSelectionController levelSelection;
 
     [Header("DataSources")]
     [SerializeField] Options options;
-    [SerializeField] LevelGroupData levelGroupData;
 
     [Header("Styles")]
     [SerializeField] string buttonSelectedStyleClass = "OptionButton-Selected";
@@ -71,6 +70,12 @@ public class UIController : MonoBehaviour
         mainMenu.ShowDoc(true);
         option.ShowDoc(false);
         credits.ShowDoc(false);
+        levelSelection.ShowDoc(false);
+    }
+
+    public void ShowLevelSelection() 
+    {
+        levelSelection.ShowDoc(true);
     }
 
     public void ShowOptions(FromDoc fromDoc)

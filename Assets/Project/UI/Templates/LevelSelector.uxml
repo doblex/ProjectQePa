@@ -1,6 +1,7 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Project/UI/Styles/MainStyle.uss?fileID=7433441132597879392&amp;guid=49d6e2cd4bd2ed346b124bf1b2b94597&amp;type=3#MainStyle" />
-    <engine:VisualElement name="VisualElement" class="scroll-view-element" style="margin-left: 20px; margin-right: 20px; width: 100px; height: 100%;">
-        <engine:Button />
+    <Style src="project://database/Assets/Project/UI/Styles/LevelSelect.uss?fileID=7433441132597879392&amp;guid=e36967bab8e52dc49a07052a3d4597f9&amp;type=3#LevelSelect" />
+    <engine:VisualElement name="VisualElement" class="scroll-view-element" style="margin-left: 20px; margin-right: 20px;">
+        <engine:Button name="Button" style="height: 100%; width: 100%; -unity-background-scale-mode: scale-to-fit;" />
     </engine:VisualElement>
 </engine:UXML>

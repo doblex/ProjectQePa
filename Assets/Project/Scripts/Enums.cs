@@ -1,3 +1,5 @@
+using System;
+
 public enum SelectionMode
 {
     click,
@@ -24,9 +26,10 @@ public enum AudioMode
     Unselect
 }
 
+[Serializable]
 public struct LevelData
 {
-    public string levelName;
+    [ReadOnly] public string levelName;
     public int checkpointIndex;
     public int playerLives;
     public int collectibleRecord;
