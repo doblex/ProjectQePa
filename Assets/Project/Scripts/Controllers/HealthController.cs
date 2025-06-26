@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace utilities.Controllers
 {
-    public class HealthController : MonoBehaviour
+    public class HealthController : MonoBehaviourWithAudio
     {
         public delegate void OnDeath();
         public delegate void OnDamage(float MaxHp, float currentHp);
@@ -26,9 +26,9 @@ namespace utilities.Controllers
         public int MaxHitPoints { get => maxHitPoints; }
 
 
-        private void Start()
+        private void Awake()
         {
-            currentHp = maxHitPoints;
+            //currentHp = maxHitPoints;
             onDamage?.Invoke(maxHitPoints, currentHp);
         }
 
@@ -54,7 +54,10 @@ namespace utilities.Controllers
                 }
 
                 onDeath?.Invoke();
+                OnUnselectAudio?.Invoke(audioChannels);
+                return;
             }
+            if(damage !=0) OnPlayAudio?.Invoke(audioChannels);
         }
 
         /// <summary>

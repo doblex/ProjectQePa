@@ -5,6 +5,8 @@ public class AudioObserver : MonoBehaviour
     [SerializeField] MonoBehaviourWithAudio observed;
     [SerializeField] string audioFile;
     [SerializeField] AudioMode audioMode;
+    [SerializeField] int audioChannelIndex = 0;
+    [SerializeField, Range(0, 1)] float soundVolume = 1;
 
     private AudioClip clip;
 
@@ -14,11 +16,14 @@ public class AudioObserver : MonoBehaviour
         switch (audioMode)
         {
             case AudioMode.Once:
-                observed.onPlayAudio += PlayOnce;
+                observed.OnPlayAudio += PlayOnce;
                 break;
             case AudioMode.Loop:
-                observed.onPlayAudio += PlayLoop;
-                observed.onStopAudio += StopLoop;
+                observed.OnPlayAudio += PlayLoop;
+                observed.OnStopAudio += StopLoop;
+                break;
+            case AudioMode.Unselect:
+                observed.OnUnselectAudio += PlayOnceOnUnselect;
                 break;
             default:
                 break;
@@ -26,21 +31,30 @@ public class AudioObserver : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void PlayOnce(AudioSource aS)
+    public void PlayOnce(AudioSource[] channels)
     {
-        aS.loop = false;
-        aS.PlayOneShot(clip);
+        channels[audioChannelIndex].volume = soundVolume;
+        channels[audioChannelIndex].loop = false;
+        channels[audioChannelIndex].PlayOneShot(clip);
     }
 
-    public void PlayLoop(AudioSource aS)
+    public void PlayLoop(AudioSource[] channels)
     {
-        aS.loop = true;
-        aS.clip = clip;
-        aS.Play();
+        channels[audioChannelIndex].volume = soundVolume;
+        channels[audioChannelIndex].loop = true;
+        channels[audioChannelIndex].clip = clip;
+        channels[audioChannelIndex].Play();
     }
 
-    public void StopLoop(AudioSource aS)
+    public void StopLoop(AudioSource[] channels)
     {
-        aS.Stop();
+        channels[audioChannelIndex].Stop();
+    }
+
+    public void PlayOnceOnUnselect(AudioSource[] channels)
+    {
+        channels[audioChannelIndex].volume = soundVolume;
+        channels[audioChannelIndex].loop = false;
+        channels[audioChannelIndex].PlayOneShot(clip);
     }
 }

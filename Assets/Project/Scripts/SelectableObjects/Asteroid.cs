@@ -10,7 +10,7 @@ public class Asteroid : MonoBehaviourWithAudio
         if (collision.collider.CompareTag("Snail"))
         {
             // If no gravitational pull is active, capture the snail and move it with the asteroid
-            onPlayAudio?.Invoke(aS);
+            OnPlayAudio?.Invoke(audioChannels);
             capturedGs = collision.collider.GetComponent<GravitySubject>();
             if(capturedGs.onGravityPulls == null || capturedGs.onGravityPulls.GetInvocationList().Length <= 0)
             {
@@ -35,6 +35,10 @@ public class Asteroid : MonoBehaviourWithAudio
                     Debug.Log("Detected gravity on: " + collision.collider.name);
                 }
             }
+            else if(capturedRb.transform.parent != null)
+            {
+                capturedRb.linearVelocity = Vector3.zero;
+            }
         }
     }
 
@@ -43,6 +47,7 @@ public class Asteroid : MonoBehaviourWithAudio
         if (collision.collider.CompareTag("Snail"))
         {
             // Reset values
+            capturedRb.linearVelocity = Vector3.zero;
             capturedGs = null;
             capturedRb = null;
             Debug.Log("Detached: " + collision.collider.name);

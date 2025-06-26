@@ -10,6 +10,7 @@ public class SelectableSplineObject : SelectableObject
 
     [Header("Spline Options")]
     [SerializeField] protected float movementSpeed = 5f;
+    [SerializeField] protected GameObject parent;
 
     Spline spline;
 
@@ -43,8 +44,17 @@ public class SelectableSplineObject : SelectableObject
         Vector3 worldUp = splineTransform.TransformDirection((Vector3)localUp);
 
         // Set the position and orientation
-        transform.position = worldPos;
-        transform.rotation = Quaternion.LookRotation(worldTangent, worldUp);
+
+        if (parent != null)
+        {
+            parent.transform.position = worldPos;
+            parent.transform.rotation = Quaternion.LookRotation(worldTangent, worldUp);
+        }
+        else
+        {
+            transform.position = worldPos;
+            transform.rotation = Quaternion.LookRotation(worldTangent, worldUp);
+        }
     }
 
     protected override void OnUpdateSelection()

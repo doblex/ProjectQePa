@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4368376240524581418}
   - component: {fileID: 6942235819979270881}
   - component: {fileID: 2070681378287249417}
+  - component: {fileID: -63664447784307919}
   m_Layer: 2
   m_Name: PlanetBig
   m_TagString: Untagged
@@ -33,6 +34,7 @@ Transform:
   m_Children:
   - {fileID: 4444500339483283005}
   - {fileID: 4072064293040761000}
+  - {fileID: 8323468361995089520}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6942235819979270881
@@ -50,7 +52,7 @@ MonoBehaviour:
   pullIntensity: 2
   pullRadius: 4
   pullActive: 0
-  G: 1
+  G: 2.5
 --- !u!136 &2070681378287249417
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -74,6 +76,18 @@ CapsuleCollider:
   m_Height: 20
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-63664447784307919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292147171984820441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f5566fc3d15e249b5649193376f0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5039492350953666985
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +103,7 @@ GameObject:
   - component: {fileID: 1245892734599199565}
   - component: {fileID: 6578847131641969329}
   - component: {fileID: 8791534599739952176}
+  - component: {fileID: 6572664448605622940}
   - component: {fileID: 3445526736606337384}
   m_Layer: 6
   m_Name: Mesh
@@ -223,6 +238,103 @@ SphereCollider:
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &8791534599739952176
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5039492350953666985}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &6572664448605622940
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -527,3 +639,70 @@ Transform:
   - {fileID: 4246236059097800134}
   m_Father: {fileID: 4368376240524581418}
   m_LocalEulerAnglesHint: {x: 33, y: 0, z: 0}
+--- !u!1 &7024791875481888975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8323468361995089520}
+  - component: {fileID: 3353038269135946756}
+  - component: {fileID: 177574731335229838}
+  m_Layer: 2
+  m_Name: AudioObservers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8323468361995089520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024791875481888975}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.47, y: 0, z: -1.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4368376240524581418}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3353038269135946756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024791875481888975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2524dcaacb77144eb675f583bbb6969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observed: {fileID: 1738408165018041453}
+  audioFile: attiv pianeta 1
+  audioMode: 0
+  audioChannelIndex: 0
+  soundVolume: 1
+--- !u!114 &177574731335229838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024791875481888975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2524dcaacb77144eb675f583bbb6969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observed: {fileID: 1738408165018041453}
+  audioFile: attiv pianeta 1 reverse
+  audioMode: 2
+  audioChannelIndex: 1
+  soundVolume: 1
