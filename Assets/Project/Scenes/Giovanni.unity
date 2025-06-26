@@ -789,6 +789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectedAmount: 0
+  collectibleTotal: 0
 --- !u!4 &1317819604
 Transform:
   m_ObjectHideFlags: 0
