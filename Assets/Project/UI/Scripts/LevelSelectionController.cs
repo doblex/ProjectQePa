@@ -66,5 +66,6 @@ public class LevelSelectionController : DocController
     private void LoadLevel(LevelDataWrapper levelData)
     {
         SceneManager.LoadScene(levelData.SceneName);
+        //LevelManager
     }
 }

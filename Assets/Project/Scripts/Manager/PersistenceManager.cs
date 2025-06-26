@@ -31,6 +31,11 @@ public class PersistenceManager : MonoBehaviour
         {
             string levelName = "level" + i;
             levelDataWrappers[i].level = new LevelData(levelName);
+
+            if (i == 0)
+            { 
+                levelDataWrappers[i].level.checkpointIndex = 0; // Unlock the first level
+            }
         }
     }
 
