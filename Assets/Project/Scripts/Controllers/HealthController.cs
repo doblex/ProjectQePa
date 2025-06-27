@@ -22,7 +22,7 @@ namespace utilities.Controllers
         /// sets the invincibility state of the health controller.
         /// </summary>
         public void SetInvicible(bool invincible) { this.invincible = invincible; }
-        public int CurrentHp { get => currentHp; }
+        public int CurrentHp { get => currentHp; set { currentHp = value; } } // add setter for reloading save
         public int MaxHitPoints { get => maxHitPoints; }
 
 

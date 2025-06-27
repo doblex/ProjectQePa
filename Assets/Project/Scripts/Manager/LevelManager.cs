@@ -48,6 +48,8 @@ public class LevelManager : MonoBehaviour
         LoadCheckPoints();
 
         currentSnail = Instantiate(SnailPrefab, Vector3.zero, Quaternion.identity);
+        currentSnail.GetComponent<HealthController>().CurrentHp = currentLevelDataWrapper.level.playerLives;
+        ScoreManager.Instance.SetScore(currentLevelDataWrapper.level.collectibleRecord);
 
         SetCheckPoint(currentLevelDataWrapper.level.checkpointIndex);
     }
@@ -105,7 +107,7 @@ public class LevelManager : MonoBehaviour
 
     public void SetCheckPoint(int checkPointIndex)
     {
-        checkPoints[currentCheckPointIndex].SpawnOnCheckPoint(currentSnail);
+        checkPoints[checkPointIndex].SpawnOnCheckPoint(currentSnail);
     }
 
     public Transform GetSpawnPoint()
@@ -115,7 +117,7 @@ public class LevelManager : MonoBehaviour
 
     public void EndLevel(bool levelFinished = true)
     {
-        SaveLevelData();
+        SaveLevelData(levelFinished);
 
         if (levelFinished)
         { 
@@ -128,13 +130,14 @@ public class LevelManager : MonoBehaviour
         UIController.Instance.ReturnToMenu();
     }
 
-    private void SaveLevelData()
+    private void SaveLevelData(bool levelFinished = false)
     {
+        // Bisogna passare le vite del giocatore, 
         int checkPointIndex = currentCheckPointIndex;
         int playerLives = currentSnail.GetComponent<HealthController>().CurrentHp;
-        int collectibleRecord = 0;
+        int collectibleRecord = ScoreManager.Instance.GetCollected;
 
-        PersistenceManager.Instance.UpdateDataForLevel(currentLevelDataWrapper.Index, checkPointIndex, playerLives, collectibleRecord);
+        PersistenceManager.Instance.UpdateDataForLevel(currentLevelDataWrapper.Index, checkPointIndex, playerLives, collectibleRecord, levelFinished);
     }
 
     private void OnCheckPointReached(int id, Transform newCameraPosition, bool changeCameraSize, float cameraSize)
@@ -150,6 +153,8 @@ public class LevelManager : MonoBehaviour
             currentCamera.GetComponent<Camera>().orthographicSize = defaultCameraSize;
         }
 
+        // Save checkpoint reached and records so far
+        SaveLevelData();
 
         if (checkPoints[currentCheckPointIndex].Type != CheckPointType.end)
         {
@@ -159,5 +164,21 @@ public class LevelManager : MonoBehaviour
         {
             EndLevel();
         }
+    }
+
+    // Reloads scene which restarts player at the last checkpoint reached and takes away a life
+    public void ResetToCheckPoint()
+    {
+        int checkPointIndex = currentCheckPointIndex;
+        int playerLives = currentSnail.GetComponent<HealthController>().CurrentHp - 1;
+        int collectibleRecord = currentLevelDataWrapper.level.collectibleRecord; // Reset to collectibles from previous checkpoint
+        bool levelFinished = false;
+
+        if(playerLives == 0) return; // Don't allow reset
+
+        PersistenceManager.Instance.UpdateDataForLevel(currentLevelDataWrapper.Index, checkPointIndex, playerLives, collectibleRecord, levelFinished);
+
+        //SceneManager.LoadScene(currentLevelDataWrapper.SceneName);
+        SceneManager.LoadScene("Giovanni"); // DEBUG
     }
 }

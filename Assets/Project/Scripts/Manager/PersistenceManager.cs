@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PersistenceManager : MonoBehaviour
 {
@@ -18,11 +19,17 @@ public class PersistenceManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
 
         InitData();
         LoadData();
+    }
+
+    private void Start()
+    {
+        // DEBUG, remove when a level selector is made
+        LevelManager.Instance.SetCurrentLevelDataWrapper(levelDataWrappers[0]);
     }
 
     public void InitData()
@@ -50,9 +57,11 @@ public class PersistenceManager : MonoBehaviour
         {
             LevelData levelData = levelDataWrappers[i].level;
             string levelName = "level" + i;
+            int isCompleted = levelData.isCompleted ? 1 : 0;
             PlayerPrefs.SetInt(levelName + "checkpointIndex", levelData.checkpointIndex);
-            PlayerPrefs.GetInt(levelName + "playerLives", levelData.playerLives);
-            PlayerPrefs.GetInt(levelName + "collectibleRecord", levelData.collectibleRecord);
+            PlayerPrefs.SetInt(levelName + "playerLives", levelData.playerLives);
+            PlayerPrefs.SetInt(levelName + "collectibleRecord", levelData.collectibleRecord);
+            PlayerPrefs.SetInt(levelName + "isCompleted", isCompleted);
         }
     }
 
@@ -69,10 +78,11 @@ public class PersistenceManager : MonoBehaviour
         UpdateDataForLevel(newIndex, 0);
     }
 
-    public void UpdateDataForLevel(int levelIndex, int checkpointIndex, int playerLives = 3, int collectibleRecord = 0)
+    public void UpdateDataForLevel(int levelIndex, int checkpointIndex, int playerLives = 3, int collectibleRecord = 0, bool isCompleted = false)
     {
         string levelName = levelDataWrappers[levelIndex].level.levelName;
-        levelDataWrappers[levelIndex].level = new LevelData(levelName, checkpointIndex, playerLives, collectibleRecord);
+        levelDataWrappers[levelIndex].level = new LevelData(levelName, checkpointIndex, playerLives, collectibleRecord, isCompleted);
+        SaveData();
     }
 
     public void LoadData()
@@ -86,8 +96,14 @@ public class PersistenceManager : MonoBehaviour
                 int checkpointIndex = PlayerPrefs.GetInt(levelName + "checkpointIndex");
                 int playerLives = PlayerPrefs.GetInt(levelName + "playerLives");
                 int collectibleRecord = PlayerPrefs.GetInt(levelName + "collectibleRecord");
-                levelDataWrappers[i].level = new LevelData(levelName, checkpointIndex, playerLives, collectibleRecord);
+                bool isCompleted = PlayerPrefs.GetInt(levelName + "isComplete") != 0 ? true : false;
+                levelDataWrappers[i].level = new LevelData(levelName, checkpointIndex, playerLives, collectibleRecord, isCompleted);
             }
         }
+    }
+
+    public void DeleteSave()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }

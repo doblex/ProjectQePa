@@ -33,6 +33,7 @@ public struct LevelData
     public int checkpointIndex;
     public int playerLives;
     public int collectibleRecord;
+    public bool isCompleted;
 
     // default constructor for empty levelData
     public LevelData(string _levelName)
@@ -41,6 +42,7 @@ public struct LevelData
         checkpointIndex = -1;
         playerLives = 3;
         collectibleRecord = 0;
+        isCompleted = false;
     }
 
     public LevelData(string _levelName, int _checkpointIndex)
@@ -49,14 +51,16 @@ public struct LevelData
         checkpointIndex = _checkpointIndex;
         playerLives = 3; // Default lives
         collectibleRecord = 0; // Default collectible record
+        isCompleted = false; // level not marked as complete by default
     }
 
     // Complete constructor
-    public LevelData(string _levelName, int _checkpointIndex, int _playerLives, int _collectibleRecord)
+    public LevelData(string _levelName, int _checkpointIndex, int _playerLives, int _collectibleRecord, bool _isCompleted)
     {
         levelName = _levelName;
         checkpointIndex = _checkpointIndex;
         playerLives = _playerLives;
         collectibleRecord = _collectibleRecord;
+        isCompleted = _isCompleted;
     }
 }
