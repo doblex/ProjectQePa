@@ -23,6 +23,8 @@ public class LevelSelectionController : DocController
 
     private void LoadContent()
     {
+        scrollView.Clear();
+
         LevelDataWrapper[] levelDataWrappers = PersistenceManager.Instance.LevelDataWrappers.ToArray();
 
         foreach (var levelDataWrapper in levelDataWrappers)
@@ -66,6 +68,11 @@ public class LevelSelectionController : DocController
     private void LoadLevel(LevelDataWrapper levelData)
     {
         UIController.Instance.HideLevelSelection();
+
+        if (levelData.level.isCompleted)
+        { 
+            levelData.level.checkpointIndex = 0; // Reset checkpoint index if level is completed
+        }
 
         currentLevel = levelData;
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;

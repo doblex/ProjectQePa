@@ -10,13 +10,14 @@
                     <engine:Button text="Video" name="Video" class="OptionButton" />
                     <engine:Button text="Audio" name="Audio" class="OptionButton" />
                     <engine:Button text="Controls" name="Controls" class="OptionButton" />
+                    <engine:Button text="Saves&#10;" name="Saves" class="OptionButton" />
                     <engine:Button text="Back" name="Back" class="OptionButton" />
                 </engine:VisualElement>
             </engine:VisualElement>
         </engine:VisualElement>
         <engine:VisualElement style="flex-grow: 1;">
             <engine:VisualElement style="flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; background-color: rgba(0, 0, 0, 0.19); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
-                <engine:VisualElement name="VideoPanel" class="Panel" style="flex-grow: 1; display: flex; align-self: stretch; justify-content: flex-start;">
+                <engine:VisualElement name="VideoPanel" class="Panel" style="flex-grow: 1; display: none; align-self: stretch; justify-content: flex-start;">
                     <engine:Label text="Video" class="PanelTitle" />
                     <engine:VisualElement name="Resolution" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
                         <engine:VisualElement name="Label" class="EntryLabelVE" style="flex-grow: 1; align-self: center;">
@@ -91,6 +92,12 @@
                 </engine:VisualElement>
                 <engine:VisualElement name="ControlsPanel" class="Panel" style="flex-grow: 1; display: none;">
                     <engine:Label text="Controls" class="PanelTitle" />
+                </engine:VisualElement>
+                <engine:VisualElement name="DangerZonePanel" class="Panel" style="flex-grow: 1; display: none; text-shadow: 2px 2px 5px rgb(0, 0, 0);">
+                    <engine:Label text="Danger Zone" class="PanelTitle" style="color: rgb(255, 0, 0);" />
+                    <engine:VisualElement name="DangerZone" style="flex-grow: 1; flex-direction: column; display: flex; align-self: stretch; align-items: stretch; justify-content: space-between;">
+                        <engine:Button text="DELETE SAVES" name="DeleteSaves" />
+                    </engine:VisualElement>
                 </engine:VisualElement>
             </engine:VisualElement>
         </engine:VisualElement>

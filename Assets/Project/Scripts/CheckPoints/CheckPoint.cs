@@ -40,7 +40,10 @@ public class CheckPoint : MonoBehaviour
         snail.transform.position = spawnpoint.position;
         GetComponent<Collider>().enabled = false;
 
-        flag.SetActive(true);
+        if (flag != null)
+        { 
+            flag.SetActive(true);
+        }
 
         //Reset the velocity of the snail
         snail.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;

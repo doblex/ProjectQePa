@@ -19,17 +19,11 @@ public class PersistenceManager : MonoBehaviour
         else
         {
             Instance = this;
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
 
         InitData();
         LoadData();
-    }
-
-    private void Start()
-    {
-        // DEBUG, remove when a level selector is made
-        LevelManager.Instance.SetCurrentLevelDataWrapper(levelDataWrappers[0]);
     }
 
     public void InitData()

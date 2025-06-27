@@ -16,6 +16,10 @@ public class OptionsController : DocController
     Button controlsButton;
     VisualElement controlsPanel;
 
+    Button dangerZoneButton;
+    VisualElement dangerZonePanel;
+    Button deleteSavesButton;
+
     Button backButton;
 
     private void Start()
@@ -43,9 +47,26 @@ public class OptionsController : DocController
 
         controlsPanel = Root.Q<VisualElement>("ControlsPanel");
 
+        dangerZonePanel = Root.Q<VisualElement>("DangerZonePanel");
+        dangerZoneButton = Root.Q<Button>("Saves");
+        dangerZoneButton.clicked += DangerZoneButton_clicked;
+
+        deleteSavesButton = Root.Q<Button>("DeleteSaves");
+        deleteSavesButton.clicked += () =>
+        {
+            if (EditorUtility.DisplayDialog("Delete Saves", "Are you sure you want to delete all saves?", "Yes", "No"))
+            {
+                PersistenceManager.Instance.DeleteSave();
+                PersistenceManager.Instance.LoadData();
+                Debug.Log("All saves deleted.");
+            }
+        };
+
         backButton = Root.Q<Button>("Back");
         backButton.clicked += OnBackButton_Clicked;
     }
+
+
 
     private void SetOptions() 
     {
@@ -106,10 +127,12 @@ public class OptionsController : DocController
         videoButton.RemoveFromClassList(UIController.Instance.ButtonSelectedStyleClass);
         audioButton.RemoveFromClassList(UIController.Instance.ButtonSelectedStyleClass);
         controlsButton.RemoveFromClassList(UIController.Instance.ButtonSelectedStyleClass);
+        dangerZoneButton.RemoveFromClassList(UIController.Instance.ButtonSelectedStyleClass);
 
         videoPanel.style.display = DisplayStyle.None;
         audioPanel.style.display = DisplayStyle.None;
         controlsPanel.style.display = DisplayStyle.None;
+        dangerZonePanel.style.display = DisplayStyle.None;
     }
 
     private void ShowPanel(Button button, VisualElement activePanel)
@@ -134,6 +157,11 @@ public class OptionsController : DocController
     {
         PopulatePanels();
         ShowPanel(controlsButton, controlsPanel);
+    }
+
+    private void DangerZoneButton_clicked()
+    {
+        ShowPanel(dangerZoneButton, dangerZonePanel);
     }
 
     private void OnBackButton_Clicked()

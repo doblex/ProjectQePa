@@ -203,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 353495442}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.522198, y: -1.3245984, z: -16.604937}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -227,6 +227,7 @@ MonoBehaviour:
       checkpointIndex: 0
       playerLives: 3
       collectibleRecord: 0
+      isCompleted: 0
     SceneName: Tutorial
     Planet: {fileID: 2800000, guid: ead50818341f53f4fbc3b868be551d0c, type: 3}
     LevelScreen: {fileID: 2800000, guid: fc510065ea8be484d9f76acf16648ff5, type: 3}
@@ -236,6 +237,7 @@ MonoBehaviour:
       checkpointIndex: 0
       playerLives: 3
       collectibleRecord: 0
+      isCompleted: 0
     SceneName: Tutorial
     Planet: {fileID: 2800000, guid: ead50818341f53f4fbc3b868be551d0c, type: 3}
     LevelScreen: {fileID: 2800000, guid: fc510065ea8be484d9f76acf16648ff5, type: 3}
@@ -583,7 +585,7 @@ Transform:
   m_GameObject: {fileID: 1269579146}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -668,6 +670,7 @@ MonoBehaviour:
       checkpointIndex: 0
       playerLives: 0
       collectibleRecord: 0
+      isCompleted: 0
     SceneName: 
     Planet: {fileID: 0}
     LevelScreen: {fileID: 0}

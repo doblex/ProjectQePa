@@ -121,6 +121,7 @@ public class LevelManager : MonoBehaviour
 
         if (levelFinished)
         { 
+            currentLevelDataWrapper.level.isCompleted = true;
             PersistenceManager.Instance.UnlockNextLevel(currentLevelDataWrapper.Index);
         }
 
@@ -178,7 +179,7 @@ public class LevelManager : MonoBehaviour
 
         PersistenceManager.Instance.UpdateDataForLevel(currentLevelDataWrapper.Index, checkPointIndex, playerLives, collectibleRecord, levelFinished);
 
-        //SceneManager.LoadScene(currentLevelDataWrapper.SceneName);
-        SceneManager.LoadScene("Giovanni"); // DEBUG
+        SceneManager.LoadScene(currentLevelDataWrapper.SceneName);
+        //SceneManager.LoadScene("Giovanni"); // DEBUG
     }
 }
