@@ -42,7 +42,15 @@ public struct LevelData
         playerLives = 3;
         collectibleRecord = 0;
     }
-    
+
+    public LevelData(string _levelName, int _checkpointIndex)
+    {
+        levelName = _levelName;
+        checkpointIndex = _checkpointIndex;
+        playerLives = 3; // Default lives
+        collectibleRecord = 0; // Default collectible record
+    }
+
     // Complete constructor
     public LevelData(string _levelName, int _checkpointIndex, int _playerLives, int _collectibleRecord)
     {

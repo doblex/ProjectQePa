@@ -15,9 +15,8 @@ public abstract class DocController : MonoBehaviour
         doc = GetComponent<UIDocument>();
         root = doc.rootVisualElement;
 
-        SetComponents();
-
-        DontDestroyOnLoad(gameObject);
+        if(root != null)
+            SetComponents();
     }
 
     protected abstract void SetComponents();

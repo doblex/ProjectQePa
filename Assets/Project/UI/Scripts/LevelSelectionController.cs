@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 public class LevelSelectionController : DocController
 {
     ScrollView scrollView;
-    
+    LevelDataWrapper currentLevel;
 
     protected override void SetComponents()
     {
@@ -65,7 +65,19 @@ public class LevelSelectionController : DocController
 
     private void LoadLevel(LevelDataWrapper levelData)
     {
+        UIController.Instance.HideLevelSelection();
+
+        currentLevel = levelData;
+        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         SceneManager.LoadScene(levelData.SceneName);
-        //LevelManager
+    }
+
+    private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        if (arg0.name != currentLevel.SceneName) return;
+
+        LevelManager.Instance.SetCurrentLevelDataWrapper(currentLevel);
+        SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
+
     }
 }

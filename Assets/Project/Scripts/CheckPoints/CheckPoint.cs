@@ -26,16 +26,26 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.CompareTag("Snail"))
         {
-            other.transform.position = spawnpoint.position;
-            GetComponent<Collider>().enabled = false;
-
-            flag.SetActive(true);
-
-            //Reset the velocity of the snail
-            other.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-
-            CheckPointReached?.Invoke(id, CamPosition, changeCameraSize, cameraSize);
+            ReachCheckPoint(other.gameObject);
         }
+    }
+
+    public void SpawnOnCheckPoint(GameObject snail)
+    {
+        ReachCheckPoint(snail);
+    }
+
+    private void ReachCheckPoint(GameObject snail)
+    {
+        snail.transform.position = spawnpoint.position;
+        GetComponent<Collider>().enabled = false;
+
+        flag.SetActive(true);
+
+        //Reset the velocity of the snail
+        snail.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+
+        CheckPointReached?.Invoke(id, CamPosition, changeCameraSize, cameraSize);
     }
 
     private void OnDrawGizmosSelected()
@@ -45,4 +55,6 @@ public class CheckPoint : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(CamPosition.position, 0.1f);
     }
+
+    
 }

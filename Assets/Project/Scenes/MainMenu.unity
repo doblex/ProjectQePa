@@ -170,7 +170,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 782641597}
+  - {fileID: 1245639797}
+  - {fileID: 676922160}
+  - {fileID: 983341544}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &353495442
@@ -221,7 +225,7 @@ MonoBehaviour:
   - level:
       levelName: 
       checkpointIndex: 0
-      playerLives: 0
+      playerLives: 3
       collectibleRecord: 0
     SceneName: Tutorial
     Planet: {fileID: 2800000, guid: ead50818341f53f4fbc3b868be551d0c, type: 3}
@@ -230,47 +234,12 @@ MonoBehaviour:
   - level:
       levelName: 
       checkpointIndex: 0
-      playerLives: 0
+      playerLives: 3
       collectibleRecord: 0
-    SceneName: abidhai
+    SceneName: Tutorial
     Planet: {fileID: 2800000, guid: ead50818341f53f4fbc3b868be551d0c, type: 3}
     LevelScreen: {fileID: 2800000, guid: fc510065ea8be484d9f76acf16648ff5, type: 3}
     comingSoon: 0
---- !u!1 &443365857
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 443365858}
-  m_Layer: 0
-  m_Name: Docs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &443365858
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443365857}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 782641597}
-  - {fileID: 1245639797}
-  - {fileID: 676922160}
-  - {fileID: 983341544}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676922158
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +290,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 443365858}
+  m_Father: {fileID: 264070599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &676922161
 MonoBehaviour:
@@ -385,7 +354,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 443365858}
+  m_Father: {fileID: 264070599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &782641598
 MonoBehaviour:
@@ -449,7 +418,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 443365858}
+  m_Father: {fileID: 264070599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &983341545
 MonoBehaviour:
@@ -513,7 +482,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 443365858}
+  m_Father: {fileID: 264070599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1245639798
 MonoBehaviour:
@@ -664,11 +633,69 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1757727476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1757727478}
+  - component: {fileID: 1757727477}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1757727477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757727476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825617116b6511d43bbfa863f221437f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevelDataWrapper:
+    level:
+      levelName: 
+      checkpointIndex: 0
+      playerLives: 0
+      collectibleRecord: 0
+    SceneName: 
+    Planet: {fileID: 0}
+    LevelScreen: {fileID: 0}
+    comingSoon: 0
+  checkPoints: []
+  currentCheckPointIndex: 0
+  defaultCameraSize: 10
+  SnailPrefab: {fileID: 149947274602401063, guid: 54306cc8f552c914b89a6049304394bd, type: 3}
+--- !u!4 &1757727478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757727476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1269579149}
-  - {fileID: 443365858}
   - {fileID: 264070599}
   - {fileID: 353495443}
+  - {fileID: 1757727478}

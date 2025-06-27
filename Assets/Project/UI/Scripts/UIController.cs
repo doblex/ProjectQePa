@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using static OptionsController;
 
@@ -78,6 +79,11 @@ public class UIController : MonoBehaviour
         levelSelection.ShowDoc(true);
     }
 
+    public void HideLevelSelection()
+    {
+        levelSelection.ShowDoc(false);
+    }
+
     public void ShowOptions(FromDoc fromDoc)
     {
         option.ShowDoc(true);
@@ -102,5 +108,13 @@ public class UIController : MonoBehaviour
                 // Assuming there's a PauseMenuController to show
                 break;
         }
+    }
+
+    public void ReturnToMenu()
+    {
+        //AT the click on exit button
+        Debug.Log("Ritorna al menù");
+        GoToMainMenu();
+        SceneManager.LoadScene("MainMenu");
     }
 }

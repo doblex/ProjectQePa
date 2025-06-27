@@ -18,6 +18,7 @@ public class PersistenceManager : MonoBehaviour
         else
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         InitData();
@@ -30,6 +31,9 @@ public class PersistenceManager : MonoBehaviour
         for (int i = 0; i < levelDataWrappers.Count; i++)
         {
             string levelName = "level" + i;
+
+            levelDataWrappers[i].Index = i;
+
             levelDataWrappers[i].level = new LevelData(levelName);
 
             if (i == 0)
@@ -52,7 +56,20 @@ public class PersistenceManager : MonoBehaviour
         }
     }
 
-    public void UpdateDataForLevel(int levelIndex, int checkpointIndex, int playerLives, int collectibleRecord)
+    public void UnlockNextLevel(int levelIndex)
+    {
+        int newIndex = levelIndex + 1;
+
+        if (newIndex >= levelDataWrappers.Count)
+        {
+            Debug.LogWarning("No more levels to unlock.");
+            return;
+        }
+
+        UpdateDataForLevel(newIndex, 0);
+    }
+
+    public void UpdateDataForLevel(int levelIndex, int checkpointIndex, int playerLives = 3, int collectibleRecord = 0)
     {
         string levelName = levelDataWrappers[levelIndex].level.levelName;
         levelDataWrappers[levelIndex].level = new LevelData(levelName, checkpointIndex, playerLives, collectibleRecord);
