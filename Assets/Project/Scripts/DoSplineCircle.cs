@@ -30,8 +30,6 @@ public class DoSplineCircle : MonoBehaviour
             BezierKnot splinePoint = new BezierKnot(point);
 
             spline.Add(splinePoint);
-
-            
         }
     }
 

@@ -32,7 +32,19 @@ public class SelectableSplineObject : SelectableObject
     private void MoveObject()
     {
         // Smoothly interpolate the current spline position
-        currentPosition = Mathf.Lerp(currentPosition, targetPosition, Time.deltaTime * movementSpeed);
+        if (spline.Closed)
+        {
+            float delta = Mathf.DeltaAngle(currentPosition * 360f, targetPosition * 360f) / 360f;
+            currentPosition += delta * Time.deltaTime * movementSpeed;
+
+            // Wrap currentPosition into 0–1 range
+            if (currentPosition < 0f) currentPosition += 1f;
+            else if (currentPosition > 1f) currentPosition -= 1f;
+        }
+        else
+        {
+            currentPosition = Mathf.MoveTowards(currentPosition, targetPosition, Time.deltaTime * movementSpeed);
+        }
 
         // Evaluate the spline in local space
         spline.Evaluate(currentPosition, out float3 localPos, out float3 localTangent, out float3 localUp);
