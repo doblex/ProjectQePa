@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] GameObject SnailPrefab;
 
-    GameObject currentSnail;
+    [ReadOnly][SerializeField] GameObject currentSnail;
     CameraController currentCamera;
 
     private void Awake()
@@ -83,7 +83,10 @@ public class LevelManager : MonoBehaviour
                 checkPoints[i].Type = CheckPointType.end;
             }
 
-            checkPoints[i].Flag.SetActive(false);
+            if (checkPoints[i].Flag != null)
+            { 
+                checkPoints[i].Flag.SetActive(false);
+            }
         }
 
         currentCheckPointIndex = 0;
