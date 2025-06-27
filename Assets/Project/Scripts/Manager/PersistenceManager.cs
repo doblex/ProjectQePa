@@ -99,5 +99,6 @@ public class PersistenceManager : MonoBehaviour
     public void DeleteSave()
     {
         PlayerPrefs.DeleteAll();
+        InitData();
     }
 }
