@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    public delegate void CheckPointReachedEventHandler(int id, Transform newCameraPosition,bool changeCameraSize, float cameraSize = 0);
+    public delegate void CheckPointReachedEventHandler(int id, Transform newCameraPosition,bool changeCameraSize, float cameraSize = 0, bool isSpawned = false);
 
     public event CheckPointReachedEventHandler CheckPointReached;
 
@@ -35,7 +35,7 @@ public class CheckPoint : MonoBehaviour
         ReachCheckPoint(snail);
     }
 
-    private void ReachCheckPoint(GameObject snail)
+    private void ReachCheckPoint(GameObject snail, bool isSpawned = false)
     {
         snail.transform.position = spawnpoint.position;
         GetComponent<Collider>().enabled = false;
@@ -48,7 +48,7 @@ public class CheckPoint : MonoBehaviour
         //Reset the velocity of the snail
         snail.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 
-        CheckPointReached?.Invoke(id, CamPosition, changeCameraSize, cameraSize);
+        CheckPointReached?.Invoke(id, CamPosition, changeCameraSize, cameraSize, isSpawned);
     }
 
     private void OnDrawGizmosSelected()

@@ -24,4 +24,9 @@ public class CameraController : MonoBehaviour
             transform.position = smoothedPosition;
         }
     }
+
+    public void SetCameraPosition(Vector3 pos)
+    { 
+        transform.position = pos;
+    }
 }

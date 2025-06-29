@@ -144,7 +144,7 @@ public class LevelManager : MonoBehaviour
         PersistenceManager.Instance.UpdateDataForLevel(currentLevelDataWrapper.Index, checkPointIndex, playerLives, collectibleRecord, levelFinished);
     }
 
-    private void OnCheckPointReached(int id, Transform newCameraPosition, bool changeCameraSize, float cameraSize)
+    private void OnCheckPointReached(int id, Transform newCameraPosition, bool changeCameraSize, float cameraSize, bool isSpawned)
     {
         currentCheckPointIndex = id;
 
@@ -162,7 +162,14 @@ public class LevelManager : MonoBehaviour
 
         if (checkPoints[currentCheckPointIndex].Type != CheckPointType.end)
         {
-            currentCamera.PanCamera(newCameraPosition);
+            if (isSpawned)
+            {
+                currentCamera.SetCameraPosition(newCameraPosition.position);
+            }
+            else
+            {
+                currentCamera.PanCamera(newCameraPosition);
+            }
         }
         else
         {
