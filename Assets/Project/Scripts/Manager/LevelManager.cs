@@ -49,8 +49,13 @@ public class LevelManager : MonoBehaviour
         LoadCheckPoints();
 
         currentSnail = Instantiate(SnailPrefab, Vector3.zero, Quaternion.identity);
-        currentSnail.GetComponent<HealthController>().CurrentHp = currentLevelDataWrapper.level.playerLives;
         ScoreManager.Instance.SetScore(currentLevelDataWrapper.level.collectibleRecord);
+
+        HealthController controller = currentSnail.GetComponent<HealthController>();
+        controller.CurrentHp = currentLevelDataWrapper.level.playerLives;
+        UIController.Instance.HUDSubHealth(controller);
+
+        controller.FireUpdate();
 
         SetCheckPoint(currentLevelDataWrapper.level.checkpointIndex);
     }
@@ -192,7 +197,7 @@ public class LevelManager : MonoBehaviour
         PersistenceManager.Instance.UpdateDataForLevel(currentLevelDataWrapper.Index, checkPointIndex, playerLives, collectibleRecord, levelFinished);
 
          
-
+        UIController.Instance.HUDUnsubHealth(currentSnail.GetComponent<HealthController>());
         UIController.Instance.ShowLoading(3);
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         SceneManager.LoadScene(currentLevelDataWrapper.SceneName);

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
-using static OptionsController;
+using utilities.Controllers;
 
 public class UIController : MonoBehaviour
 {
@@ -21,6 +21,8 @@ public class UIController : MonoBehaviour
     public VisualTreeAsset CommandTemplate { get => commandTemplate; }
     public VisualTreeAsset LevelTemplate { get => levelTemplate; }
     public string GrayedOutButtonStyleClass { get => grayedOutButtonStyleClass; }
+    public VisualTreeAsset HealthUnitTempleate { get => healthUnitTempleate; }
+    public bool IsPaused { get => isPaused; }
 
     [Header("Docs")]
     [SerializeField] MainMenuController mainMenu;
@@ -29,6 +31,7 @@ public class UIController : MonoBehaviour
     [SerializeField] LevelSelectionController levelSelection;
     [SerializeField] LoadingController loading;
     [SerializeField] HUDController hud;
+    [SerializeField] PauseController pause;
 
     [Header("DataSources")]
     [SerializeField] Options options;
@@ -41,9 +44,11 @@ public class UIController : MonoBehaviour
     [Header("Templates")]
     [SerializeField] VisualTreeAsset commandTemplate;
     [SerializeField] VisualTreeAsset levelTemplate;
-    [SerializeField] VisualTreeAsset healtUnitTempleate;
+    [SerializeField] VisualTreeAsset healthUnitTempleate;
 
     private FromDoc docToOptions;
+
+    [SerializeField] bool isPaused = false;
 
     private void Awake()
     {
@@ -78,6 +83,7 @@ public class UIController : MonoBehaviour
         levelSelection.ShowDoc(false);
         loading.ShowDoc(false);
         hud.ShowDoc(false);
+        pause.ShowDoc(false, false);                   
     }
 
     public void ShowLevelSelection()
@@ -111,7 +117,7 @@ public class UIController : MonoBehaviour
                 mainMenu.ShowDoc(true);
                 break;
             case FromDoc.PauseMenu:
-                // Assuming there's a PauseMenuController to show
+                pause.ShowDoc(true, false);
                 break;
         }
     }
@@ -145,6 +151,28 @@ public class UIController : MonoBehaviour
     public void HideHUD()
     {
         hud.ShowDoc(false);
+    }
+
+    public void HUDSubHealth(HealthController controller)
+    { 
+        hud.SubcribeToHealth(controller);
+    }
+
+    public void HUDUnsubHealth(HealthController controller)
+    {
+        hud.UnsubcribeToHealth(controller);
+    }
+
+    public void ShowPause(bool stopTime)
+    {
+        pause.ShowDoc(true, stopTime);
+        isPaused = true;
+    }
+
+    public void HidePause(bool stopTime)
+    {
+        pause.ShowDoc(false, stopTime);
+        isPaused = false;
     }
 
     public void ReturnToMenu()

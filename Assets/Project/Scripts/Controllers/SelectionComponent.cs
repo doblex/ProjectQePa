@@ -42,6 +42,8 @@ public class SelectionComponent : MonoBehaviourWithAudio
 
     private void Update()
     {
+        if (UIController.Instance.IsPaused) return;
+
         CheckForSelection();
         if (isSelected)
         { 

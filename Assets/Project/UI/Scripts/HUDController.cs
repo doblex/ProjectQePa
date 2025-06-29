@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 using utilities.Controllers;
@@ -51,7 +52,7 @@ public class HUDController : DocController
 
     private void Pause_clicked()
     {
-        throw new System.NotImplementedException();
+        UIController.Instance.ShowPause(true);
     }
 
     public void SubcribeToHealth(HealthController controller)
@@ -68,7 +69,13 @@ public class HUDController : DocController
     {
         healthContainer.Clear();
 
-        //Do something
+        VisualTreeAsset template = UIController.Instance.HealthUnitTempleate;
+
+        for (int i = 0; i < currentHp; i++)
+        {
+            VisualElement healthUnit = template.CloneTree();
+            healthContainer.Add(healthUnit);
+        }
     }
 
     private IEnumerator ResetFill()
@@ -106,9 +113,3 @@ public class HUDController : DocController
         LevelManager.Instance.ResetToCheckPoint(); // Your logic here
     }
 }
-
-
-
-
-
-

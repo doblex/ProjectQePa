@@ -73,6 +73,9 @@ public class LevelSelectionController : DocController
         if (levelData.level.isCompleted)
         { 
             levelData.level.checkpointIndex = 0; // Reset checkpoint index if level is completed
+            levelData.level.isCompleted = false;
+            levelData.level.collectibleRecord = 0; // Reset collectible record
+            levelData.level.playerLives = 3; // Reset player lives
         }
 
         currentLevel = levelData;

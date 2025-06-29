@@ -1,0 +1,3 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="VisualElement" style="flex-grow: 1; width: 100px; height: 100px; align-items: flex-start; -unity-background-scale-mode: scale-to-fit; background-image: url(&quot;project://database/Assets/Project/Graphics/PlaceHolders/Iggattini.png?fileID=2800000&amp;guid=fcca7679ddcb762429653eeab0b7ee36&amp;type=3#Iggattini&quot;); max-width: 100px; max-height: 100px;" />
+</engine:UXML>

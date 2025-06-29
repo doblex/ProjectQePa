@@ -32,6 +32,11 @@ namespace utilities.Controllers
             onDamage?.Invoke(maxHitPoints, currentHp);
         }
 
+        public void FireUpdate()
+        {
+            onDamage?.Invoke(maxHitPoints, currentHp);
+        }
+
         /// <summary>
         /// Applies damage to the health controller.
         /// it also fires the onDamage event and if the health reaches 0 it fires the onDeath event.
