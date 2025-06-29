@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using utilities.Controllers;
+using static Unity.Burst.Intrinsics.X86;
 
 public class LevelManager : MonoBehaviour
 {
@@ -111,6 +112,7 @@ public class LevelManager : MonoBehaviour
     public void SetCheckPoint(int checkPointIndex)
     {
         checkPoints[checkPointIndex].SpawnOnCheckPoint(currentSnail);
+        currentCheckPointIndex = checkPointIndex;
     }
 
     public Transform GetSpawnPoint()
@@ -189,7 +191,16 @@ public class LevelManager : MonoBehaviour
 
         PersistenceManager.Instance.UpdateDataForLevel(currentLevelDataWrapper.Index, checkPointIndex, playerLives, collectibleRecord, levelFinished);
 
+         
+
+        UIController.Instance.ShowLoading(3);
+        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         SceneManager.LoadScene(currentLevelDataWrapper.SceneName);
-        //SceneManager.LoadScene("Giovanni"); // DEBUG
+    }
+
+    private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
+        SetCurrentLevelDataWrapper(PersistenceManager.Instance.GetLevelDataWrapper(currentLevelDataWrapper.Index));
     }
 }

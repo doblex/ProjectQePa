@@ -58,6 +58,4 @@ public class CheckPoint : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(CamPosition.position, 0.1f);
     }
-
-    
 }

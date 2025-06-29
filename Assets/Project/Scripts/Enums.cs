@@ -26,6 +26,12 @@ public enum AudioMode
     Unselect
 }
 
+public enum DocFadeType
+{
+    FadeIn,
+    FadeOut,
+}
+
 [Serializable]
 public struct LevelData
 {

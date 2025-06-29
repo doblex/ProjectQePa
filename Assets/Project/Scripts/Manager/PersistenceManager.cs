@@ -72,6 +72,11 @@ public class PersistenceManager : MonoBehaviour
         UpdateDataForLevel(newIndex, 0);
     }
 
+    public LevelDataWrapper GetLevelDataWrapper(int index)
+    {
+        return levelDataWrappers[index];
+    }
+
     public void UpdateDataForLevel(int levelIndex, int checkpointIndex, int playerLives = 3, int collectibleRecord = 0, bool isCompleted = false)
     {
         string levelName = levelDataWrappers[levelIndex].level.levelName;

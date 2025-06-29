@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using static OptionsController;
@@ -26,6 +27,8 @@ public class UIController : MonoBehaviour
     [SerializeField] OptionsController option;
     [SerializeField] CreditsController credits;
     [SerializeField] LevelSelectionController levelSelection;
+    [SerializeField] LoadingController loading;
+    [SerializeField] HUDController hud;
 
     [Header("DataSources")]
     [SerializeField] Options options;
@@ -38,6 +41,7 @@ public class UIController : MonoBehaviour
     [Header("Templates")]
     [SerializeField] VisualTreeAsset commandTemplate;
     [SerializeField] VisualTreeAsset levelTemplate;
+    [SerializeField] VisualTreeAsset healtUnitTempleate;
 
     private FromDoc docToOptions;
 
@@ -72,9 +76,11 @@ public class UIController : MonoBehaviour
         option.ShowDoc(false);
         credits.ShowDoc(false);
         levelSelection.ShowDoc(false);
+        loading.ShowDoc(false);
+        hud.ShowDoc(false);
     }
 
-    public void ShowLevelSelection() 
+    public void ShowLevelSelection()
     {
         levelSelection.ShowDoc(true);
     }
@@ -95,7 +101,7 @@ public class UIController : MonoBehaviour
         credits.ShowDoc(true);
     }
 
-    public void HideOptions() 
+    public void HideOptions()
     {
         option.ShowDoc(false);
 
@@ -108,6 +114,37 @@ public class UIController : MonoBehaviour
                 // Assuming there's a PauseMenuController to show
                 break;
         }
+    }
+
+    public void ShowLoading()
+    { 
+        loading.ShowDoc(true);
+    }
+
+    public void HideLoading()
+    {
+        loading.ShowDoc(false);
+    }
+
+    public void ShowLoading(float deactivationDelay)
+    { 
+        loading.ShowDoc(true);
+        StartCoroutine(HideLoadingAfterDelay(deactivationDelay));
+    }
+
+    private IEnumerator HideLoadingAfterDelay(float deactivationDelay)
+    { 
+        yield return new WaitForSeconds(deactivationDelay);
+        loading.ShowDoc(false);
+    }
+
+    public void ShowHUD()
+    {
+        hud.ShowDoc(true);
+    }
+    public void HideHUD()
+    {
+        hud.ShowDoc(false);
     }
 
     public void ReturnToMenu()
