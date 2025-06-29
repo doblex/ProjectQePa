@@ -238,7 +238,7 @@ MonoBehaviour:
       playerLives: 3
       collectibleRecord: 0
       isCompleted: 0
-    SceneName: Tutorial
+    SceneName: Livello 1
     Planet: {fileID: 2800000, guid: ead50818341f53f4fbc3b868be551d0c, type: 3}
     LevelScreen: {fileID: 2800000, guid: fc510065ea8be484d9f76acf16648ff5, type: 3}
     comingSoon: 0
