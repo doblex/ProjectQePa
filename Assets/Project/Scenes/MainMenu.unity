@@ -744,7 +744,7 @@ MonoBehaviour:
     comingSoon: 0
   checkPoints: []
   currentCheckPointIndex: 0
-  defaultCameraSize: 10
+  defaultCameraSize: 5
   SnailPrefab: {fileID: 149947274602401063, guid: 54306cc8f552c914b89a6049304394bd, type: 3}
   currentSnail: {fileID: 0}
 --- !u!4 &1757727478
