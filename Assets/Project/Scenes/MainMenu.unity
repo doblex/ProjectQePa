@@ -308,7 +308,7 @@ MonoBehaviour:
       playerLives: 3
       collectibleRecord: 0
       isCompleted: 0
-    SceneName: Tutorial
+    SceneName: Livello 1
     Planet: {fileID: 2800000, guid: ead50818341f53f4fbc3b868be551d0c, type: 3}
     LevelScreen: {fileID: 2800000, guid: fc510065ea8be484d9f76acf16648ff5, type: 3}
     comingSoon: 0
@@ -818,7 +818,7 @@ MonoBehaviour:
     comingSoon: 0
   checkPoints: []
   currentCheckPointIndex: 0
-  defaultCameraSize: 10
+  defaultCameraSize: 5
   SnailPrefab: {fileID: 149947274602401063, guid: 54306cc8f552c914b89a6049304394bd, type: 3}
   currentSnail: {fileID: 0}
 --- !u!4 &1757727478
