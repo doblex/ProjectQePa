@@ -3,13 +3,21 @@
     -unity-text-align: middle-center;
 }
 
-.unity-button {
-    height: 100px;
-    font-size: 40px;
-}
-
 .text {
     font-size: 30px;
+}
+
+.title {
+    font-size: 200px;
+    -unity-text-align: middle-center;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 
 .OptionTitle {
@@ -34,16 +42,33 @@
     font-size: 25px;
 }
 
-.OptionButton {
-    width: 450px;
-    -unity-background-image-tint-color: rgba(255, 255, 255, 0);
+.unity-button {
+    height: 150px;
+    font-size: 40px;
+    background-image: url("project://database/Assets/Prova_bottone_chiarp.png?fileID=2800000&guid=dc2cb5ac3b80d4941ac92ec0b90f8135&type=3#Prova_bottone_chiarp");
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 350px;
     background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
-.OptionButton:hover {
-    background-color: rgb(0, 0, 0);
-    transition-property: background-color, color, scale;
-    transition-duration: 0.2s, 0.2s, 0.2s;
-    color: rgb(255, 255, 255);
+.unity-button:hover {
+    background-image: url("project://database/Assets/Prova_bottone_scuro.png?fileID=2800000&guid=9bb39b55d0e0107478e061a5c62b799a&type=3#Prova_bottone_scuro");
     scale: 1.1 1.1;
+    transition-property: scale;
+    transition-duration: 0.5s;
 }

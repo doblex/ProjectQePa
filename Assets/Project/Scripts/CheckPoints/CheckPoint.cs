@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
@@ -12,6 +13,7 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] bool changeCameraSize = false;
     [ShowIf("changeCameraSize", true)][SerializeField] float cameraSize = 5f;
 
+    [SerializeField] List<SelectionComponent> componentToDeactivate; 
     [SerializeField] Transform spawnpoint;
     [SerializeField] Transform CamPosition;
 
@@ -45,10 +47,20 @@ public class CheckPoint : MonoBehaviour
             flag.SetActive(true);
         }
 
+        DeactivateComponets();
+
         //Reset the velocity of the snail
         snail.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 
         CheckPointReached?.Invoke(id, CamPosition, changeCameraSize, cameraSize, isSpawned);
+    }
+
+    private void DeactivateComponets()
+    {
+        foreach (SelectionComponent component in componentToDeactivate)
+        {
+            component.CallSelectionDisable(false);
+        }
     }
 
     private void OnDrawGizmosSelected()

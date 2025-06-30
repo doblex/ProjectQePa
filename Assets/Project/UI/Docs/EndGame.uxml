@@ -4,9 +4,9 @@
     <engine:VisualElement style="flex-grow: 1;">
         <engine:VisualElement style="flex-grow: 1; align-self: center; width: 500px;">
             <engine:VisualElement style="flex-grow: 1; align-self: center; justify-content: center;">
-                <engine:Label text="Label" name="Title" class="Title" />
+                <engine:Label text="Label" name="Title" class="title OptionTitle" />
             </engine:VisualElement>
-            <engine:VisualElement style="flex-grow: 1; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); min-height: 100px;">
+            <engine:VisualElement name="VisualElement" style="flex-grow: 1; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); min-height: 100px; background-color: rgb(255, 255, 255);">
                 <engine:VisualElement style="flex-grow: 1; flex-direction: row; align-items: flex-start; align-self: center;">
                     <engine:Label text="Collectibles...." class="EndGameLabel" />
                     <engine:Label text="Label" name="Collectibles" class="EndGameLabel" />
@@ -14,7 +14,7 @@
             </engine:VisualElement>
             <engine:VisualElement style="flex-grow: 1; align-items: center; margin-top: 40px;">
                 <engine:Button text="Retry" name="Retry" class="EngameButton" />
-                <engine:VisualElement style="flex-grow: 1; flex-direction: row; align-self: center; align-items: stretch;">
+                <engine:VisualElement style="flex-grow: 1; flex-direction: row; align-self: center; align-items: stretch; justify-content: space-between; width: 750px;">
                     <engine:Button text="main Menu" name="MainMenu" class="EngameButton" />
                     <engine:Button text="Exit" name="Exit" class="EngameButton" />
                 </engine:VisualElement>

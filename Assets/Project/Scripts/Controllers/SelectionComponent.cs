@@ -145,11 +145,15 @@ public class SelectionComponent : MonoBehaviourWithAudio
         }
     }
 
-    public void CallSelectionDisable()
+    public void CallSelectionDisable(bool playAudio = true)
     {
         isSelected = false;
         OnSelectionChanged?.Invoke(isSelected);
-        OnStopAudio(audioChannels);
+
+        if (playAudio)
+        { 
+            OnStopAudio(audioChannels);
+        }
 
         if (usesSelectionShader)
         {

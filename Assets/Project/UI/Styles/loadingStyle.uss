@@ -1,3 +1,6 @@
 .unity-label {
     position: relative;
+    -unity-text-align: middle-center;
+    color: rgb(195, 143, 36);
+    text-shadow: 1px 1px 2px rgb(255, 117, 0);
 }

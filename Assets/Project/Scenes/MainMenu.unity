@@ -198,8 +198,7 @@ GameObject:
   - component: {fileID: 299917521}
   - component: {fileID: 299917523}
   - component: {fileID: 299917522}
-  - component: {fileID: 299917524}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,18 +252,6 @@ MonoBehaviour:
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
   m_WorldSpaceHeight: 1080
---- !u!114 &299917524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299917520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36f5ef7909891da499f5936480ee3334, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &353495442
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +456,7 @@ GameObject:
   - component: {fileID: 924209371}
   - component: {fileID: 924209373}
   - component: {fileID: 924209372}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EndGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,7 +918,7 @@ GameObject:
   - component: {fileID: 2142863995}
   - component: {fileID: 2142863996}
   - component: {fileID: 2142863997}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
