@@ -1,0 +1,7 @@
+.Reset {
+    width: 70%;
+}
+
+.PauseButton {
+    width: auto;
+}

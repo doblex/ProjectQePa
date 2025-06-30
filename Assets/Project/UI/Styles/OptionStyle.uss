@@ -1,0 +1,30 @@
+.OptionButton-Selected {
+    background-color: rgba(0, 0, 0, 0.43);
+}
+
+.EntryLabel {
+    font-size: 30px;
+    -unity-text-align: middle-center;
+}
+
+.OptionEntry {
+    max-height: 80px;
+}
+
+.EntrySpacing {
+}
+
+.EntryValueVE {
+    align-self: center;
+    width: 400px;
+    height: auto;
+    min-height: 50px;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.EntryLabelVE {
+}
+
+.PanelTitle {
+    font-size: 50px;
+}

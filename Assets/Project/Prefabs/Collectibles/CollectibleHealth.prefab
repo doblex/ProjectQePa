@@ -48,6 +48,7 @@ MonoBehaviour:
   audioFile: collezionabile 2
   audioMode: 0
   audioChannelIndex: 0
+  soundVolume: 1
 --- !u!1 &7752089122629453320
 GameObject:
   m_ObjectHideFlags: 0

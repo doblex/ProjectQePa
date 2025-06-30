@@ -270,3 +270,4 @@ MonoBehaviour:
   audioFile: collezionabile 2
   audioMode: 0
   audioChannelIndex: 0
+  soundVolume: 1

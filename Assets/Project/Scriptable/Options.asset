@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5909d5375832227498670053304f32ad, type: 3}
+  m_Name: Options
+  m_EditorClassIdentifier: 
+  Resolution:
+  - 640x480
+  - 800x600
+  - 1024x768
+  - 1280x720
+  - 1920x1080
+  SelectedResolutionIndex: 4
+  FPS:
+  - no cap
+  - 30
+  - 60
+  - 120
+  - 144
+  - 240
+  SelectedFPSIndex: 2
+  commands:
+  - {fileID: 11400000, guid: ad8d0d7f51a5b4c43bbdebf418cda6ce, type: 2}
+  Fullscreen: 1
+  MasterVolume: 1
+  SFXVolume: 1

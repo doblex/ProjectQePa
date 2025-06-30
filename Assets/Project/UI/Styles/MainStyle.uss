@@ -1,7 +1,49 @@
 .unity-text-element {
+    -unity-font-definition: url("project://database/Assets/Project/UI/Fonts/Naluka.otf?fileID=12800000&guid=6846e1e157ffc6a4a9064b7ee25a7d5b&type=3#Naluka");
+    -unity-text-align: middle-center;
 }
 
 .unity-button {
     height: 100px;
     font-size: 40px;
+}
+
+.text {
+    font-size: 30px;
+}
+
+.OptionTitle {
+    font-size: 80px;
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+}
+
+.Panel {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 60px;
+    margin-right: 60px;
+    margin-bottom: 60px;
+    margin-left: 60px;
+    max-width: none;
+    max-height: none;
+}
+
+.unity-base-popup-field__text {
+    font-size: 25px;
+}
+
+.OptionButton {
+    width: 450px;
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.OptionButton:hover {
+    background-color: rgb(0, 0, 0);
+    transition-property: background-color, color, scale;
+    transition-duration: 0.2s, 0.2s, 0.2s;
+    color: rgb(255, 255, 255);
+    scale: 1.1 1.1;
 }

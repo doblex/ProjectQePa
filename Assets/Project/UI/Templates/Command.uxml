@@ -1,0 +1,11 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Project/UI/Styles/OptionStyle.uss?fileID=7433441132597879392&amp;guid=adfa1b4da7a0c9e4597e2938fb0f4c51&amp;type=3#OptionStyle" />
+    <engine:VisualElement name="Command" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
+        <engine:VisualElement name="Label" class="EntryLabelVE" style="flex-grow: 1; align-self: center;">
+            <engine:Label binding-path="CommandName" class="EntryLabel" />
+        </engine:VisualElement>
+        <engine:VisualElement class="EntrySpacing" style="flex-grow: 1; align-self: center;" />
+        <engine:VisualElement name="Value" class="EntryValueVE">
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

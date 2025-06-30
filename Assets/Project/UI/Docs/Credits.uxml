@@ -1,0 +1,61 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Project/UI/Styles/MainStyle.uss?fileID=7433441132597879392&amp;guid=49d6e2cd4bd2ed346b124bf1b2b94597&amp;type=3#MainStyle" />
+    <Style src="project://database/Assets/Project/UI/Styles/CreditsStyle.uss?fileID=7433441132597879392&amp;guid=bae168571f714904e92cd585ac2863b2&amp;type=3#CreditsStyle" />
+    <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
+        <engine:VisualElement style="flex-grow: 1; width: auto; max-width: 35%;">
+            <engine:VisualElement style="flex-grow: 1;" />
+            <engine:Label text="Credits" name="DocTitle" class="OptionTitle" />
+            <engine:VisualElement style="flex-grow: 1; flex-direction: row; align-self: center;">
+                <engine:VisualElement style="flex-grow: 1; align-self: center;">
+                    <engine:Button text="Back" name="Back" class="OptionButton" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement style="flex-grow: 1;">
+            <engine:VisualElement style="flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; background-color: rgba(0, 0, 0, 0.19); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+                <engine:VisualElement name="VideoPanel" class="Panel" style="flex-grow: 1; display: flex; align-self: stretch; justify-content: flex-start;">
+                    <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
+                        <engine:VisualElement name="3D" class="CreditsTeamVE" style="flex-grow: 1;">
+                            <engine:Label text="3D Artists" class="TeamTitle" style="color: rgb(187, 56, 51);" />
+                            <engine:VisualElement style="flex-grow: 1;">
+                                <engine:Label text="Maddalena Pastore" class="Name" />
+                                <engine:Label text="Rebecca Masi" class="Name" />
+                            </engine:VisualElement>
+                        </engine:VisualElement>
+                        <engine:VisualElement style="flex-grow: 1;" />
+                        <engine:VisualElement name="Concept" class="CreditsTeamVE" style="flex-grow: 1;">
+                            <engine:Label text="Concept Artists" class="TeamTitle" style="color: rgb(78, 158, 97);" />
+                            <engine:VisualElement style="flex-grow: 1;">
+                                <engine:Label text="Alex Crimeni" class="Name" />
+                                <engine:Label text="Aurora De Francesco" class="Name" />
+                                <engine:Label text="Christian Dianin" class="Name" />
+                                <engine:Label text="Giulia Vanin" class="Name" />
+                                <engine:Label text="Zoe Alessandrini" class="Name" />
+                            </engine:VisualElement>
+                        </engine:VisualElement>
+                    </engine:VisualElement>
+                    <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
+                        <engine:VisualElement name="Design" class="CreditsTeamVE" style="flex-grow: 1;">
+                            <engine:Label text="Game Designers" class="TeamTitle" style="color: rgb(212, 145, 196);" />
+                            <engine:VisualElement style="flex-grow: 1;">
+                                <engine:Label text="Alessio Ambrosini" class="Name" />
+                                <engine:Label text="Anna Lombardo" class="Name" />
+                                <engine:Label text="Eleonora Ibba" class="Name" />
+                                <engine:Label text="Gabriele Sana" class="Name" />
+                                <engine:Label text="Giorgia Tombolini" class="Name" />
+                            </engine:VisualElement>
+                        </engine:VisualElement>
+                        <engine:VisualElement style="flex-grow: 1;" />
+                        <engine:VisualElement name="Concept" class="CreditsTeamVE" style="flex-grow: 1;">
+                            <engine:Label text="Game Programmers" class="TeamTitle" style="color: rgb(143, 98, 167);" />
+                            <engine:VisualElement style="flex-grow: 1;">
+                                <engine:Label text="Giovanni Faldani" class="Name" />
+                                <engine:Label text="Matteo Golfetto" class="Name" />
+                            </engine:VisualElement>
+                        </engine:VisualElement>
+                    </engine:VisualElement>
+                </engine:VisualElement>
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
