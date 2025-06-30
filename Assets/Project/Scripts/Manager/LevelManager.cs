@@ -183,6 +183,24 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void RestartLevel()
+    {
+        UIController.Instance.ShowLoading(3);
+        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+        SceneManager.LoadScene(currentLevelDataWrapper.SceneName);
+    }
+
+    public void ResetLevel()
+    {
+        int checkPointIndex = 0;
+        int playerLives = 3;
+        int collectibleRecord = 0; // Reset collectibles to 0
+        bool levelFinished = false;
+
+        PersistenceManager.Instance.UpdateDataForLevel(currentLevelDataWrapper.Index, checkPointIndex, playerLives, collectibleRecord, levelFinished);
+        UIController.Instance.UnsubHealth(currentSnail.GetComponent<HealthController>());
+    }
+
     // Reloads scene which restarts player at the last checkpoint reached and takes away a life
     public void ResetToCheckPoint()
     {
