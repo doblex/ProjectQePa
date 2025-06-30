@@ -32,6 +32,7 @@ public class UIController : MonoBehaviour
     [SerializeField] LoadingController loading;
     [SerializeField] HUDController hud;
     [SerializeField] PauseController pause;
+    [SerializeField] EndgameController endgame;
 
     [Header("DataSources")]
     [SerializeField] Options options;
@@ -83,7 +84,8 @@ public class UIController : MonoBehaviour
         levelSelection.ShowDoc(false);
         loading.ShowDoc(false);
         hud.ShowDoc(false);
-        pause.ShowDoc(false, false);                   
+        pause.ShowDoc(false, false);
+        endgame.ShowDoc(false);
     }
 
     public void ShowLevelSelection()
@@ -153,14 +155,16 @@ public class UIController : MonoBehaviour
         hud.ShowDoc(false);
     }
 
-    public void HUDSubHealth(HealthController controller)
+    public void SubHealth(HealthController controller)
     { 
         hud.SubcribeToHealth(controller);
+        endgame.SubcribeToHealth(controller);
     }
 
-    public void HUDUnsubHealth(HealthController controller)
+    public void UnsubHealth(HealthController controller)
     {
         hud.UnsubcribeToHealth(controller);
+        endgame.UnsubcribeToHealth(controller);
     }
 
     public void ShowPause(bool stopTime)
@@ -173,6 +177,16 @@ public class UIController : MonoBehaviour
     {
         pause.ShowDoc(false, stopTime);
         isPaused = false;
+    }
+
+    public void ShowEndgame(EndgameType win)
+    {
+        endgame.ShowDoc(true, win);
+    }
+
+    public void HideEndgame()
+    {
+        endgame.ShowDoc(false);
     }
 
     public void ReturnToMenu()

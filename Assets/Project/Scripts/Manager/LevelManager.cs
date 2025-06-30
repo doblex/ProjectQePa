@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
 
         HealthController controller = currentSnail.GetComponent<HealthController>();
         controller.CurrentHp = currentLevelDataWrapper.level.playerLives;
-        UIController.Instance.HUDSubHealth(controller);
+        UIController.Instance.SubHealth(controller);
 
         controller.FireUpdate();
 
@@ -137,13 +137,12 @@ public class LevelManager : MonoBehaviour
 
         PersistenceManager.Instance.SaveData();
 
-        //END LEVEL Graphics
-        UIController.Instance.ReturnToMenu();
+        UIController.Instance.ShowEndgame(EndgameType.Win);
+        UIController.Instance.UnsubHealth(currentSnail.GetComponent<HealthController>());
     }
 
     private void SaveLevelData(bool levelFinished = false)
     {
-        // Bisogna passare le vite del giocatore, 
         int checkPointIndex = currentCheckPointIndex;
         int playerLives = currentSnail.GetComponent<HealthController>().CurrentHp;
         int collectibleRecord = ScoreManager.Instance.GetCollected;
@@ -197,7 +196,7 @@ public class LevelManager : MonoBehaviour
         PersistenceManager.Instance.UpdateDataForLevel(currentLevelDataWrapper.Index, checkPointIndex, playerLives, collectibleRecord, levelFinished);
 
          
-        UIController.Instance.HUDUnsubHealth(currentSnail.GetComponent<HealthController>());
+        UIController.Instance.UnsubHealth(currentSnail.GetComponent<HealthController>());
         UIController.Instance.ShowLoading(3);
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         SceneManager.LoadScene(currentLevelDataWrapper.SceneName);

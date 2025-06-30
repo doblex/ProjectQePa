@@ -1,0 +1,24 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Project/UI/Styles/MainStyle.uss?fileID=7433441132597879392&amp;guid=49d6e2cd4bd2ed346b124bf1b2b94597&amp;type=3#MainStyle" />
+    <Style src="project://database/Assets/Project/UI/Styles/EndGameStyle.uss?fileID=7433441132597879392&amp;guid=82c9347603e34354f87f5311c3c9ec80&amp;type=3#EndGameStyle" />
+    <engine:VisualElement style="flex-grow: 1;">
+        <engine:VisualElement style="flex-grow: 1; align-self: center; width: 500px;">
+            <engine:VisualElement style="flex-grow: 1; align-self: center; justify-content: center;">
+                <engine:Label text="Label" name="Title" class="Title" />
+            </engine:VisualElement>
+            <engine:VisualElement style="flex-grow: 1; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); min-height: 100px;">
+                <engine:VisualElement style="flex-grow: 1; flex-direction: row; align-items: flex-start; align-self: center;">
+                    <engine:Label text="Collectibles...." class="EndGameLabel" />
+                    <engine:Label text="Label" name="Collectibles" class="EndGameLabel" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:VisualElement style="flex-grow: 1; align-items: center; margin-top: 40px;">
+                <engine:Button text="Retry" name="Retry" class="EngameButton" />
+                <engine:VisualElement style="flex-grow: 1; flex-direction: row; align-self: center; align-items: stretch;">
+                    <engine:Button text="main Menu" name="MainMenu" class="EngameButton" />
+                    <engine:Button text="Exit" name="Exit" class="EngameButton" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

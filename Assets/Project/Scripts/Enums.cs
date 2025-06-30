@@ -32,6 +32,12 @@ public enum DocFadeType
     FadeOut,
 }
 
+public enum EndgameType
+{
+    Win,
+    Lose,
+}
+
 [Serializable]
 public struct LevelData
 {
