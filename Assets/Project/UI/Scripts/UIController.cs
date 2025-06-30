@@ -23,6 +23,7 @@ public class UIController : MonoBehaviour
     public string GrayedOutButtonStyleClass { get => grayedOutButtonStyleClass; }
     public VisualTreeAsset HealthUnitTempleate { get => healthUnitTempleate; }
     public bool IsPaused { get => isPaused; }
+    public HUDController Hud { get => hud; }
 
     [Header("Docs")]
     [SerializeField] MainMenuController mainMenu;

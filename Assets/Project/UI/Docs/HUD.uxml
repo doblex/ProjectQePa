@@ -5,7 +5,7 @@
     <engine:VisualElement name="HealtContainer" style="flex-grow: 1; height: 100px; background-color: rgba(0, 0, 0, 0.24); width: 500px; position: absolute; left: 0; flex-direction: row;">
         <engine:Instance template="Health" name="Health" />
     </engine:VisualElement>
-    <engine:VisualElement style="flex-grow: 1; flex-direction: row; width: 0; right: 500px; position: absolute;">
+    <engine:VisualElement style="flex-grow: 1; flex-direction: row; width: auto; right: 0; position: absolute;">
         <engine:Button text="Pause" name="Pause" class="PauseButton" style="width: 150px;" />
         <engine:Button text="Reset" name="Reset" double-click-selects-word="false" triple-click-selects-line="false" display-tooltip-when-elided="false" class="Reset" style="width: 300px; overflow: hidden;">
             <engine:VisualElement name="ResetFiller" style="flex-grow: 1; width: 0; background-color: rgba(0, 0, 0, 0.39);" />
