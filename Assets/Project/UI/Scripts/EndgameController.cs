@@ -71,11 +71,13 @@ public class EndgameController : DocController
     private void OnDeath()
     { 
         ShowDoc(true, EndgameType.Lose);
+        LevelManager.Instance.ResetLevel();
     }
 
     private void OnRetryButton_Clicked()
     {
         //Rincomincia da capo (?)
+        LevelManager.Instance.RestartLevel();
         Time.timeScale = 1f; // Resume the game
     }
 

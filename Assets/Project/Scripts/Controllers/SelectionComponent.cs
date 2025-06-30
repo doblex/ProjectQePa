@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using UnityEditor.Sprites;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 public class SelectionComponent : MonoBehaviourWithAudio
@@ -51,8 +54,36 @@ public class SelectionComponent : MonoBehaviourWithAudio
         }
     }
 
+    private bool IsPointerOverUI(Vector2 screenPosition)
+    {
+        screenPosition.y = Screen.height - screenPosition.y;
+
+        var panel = UIController.Instance.Hud.Root.panel;
+        if (panel == null) return false;
+
+        List<VisualElement> picked = new List<VisualElement>();
+
+        panel.PickAll(screenPosition, picked);
+
+        foreach (var element in picked)
+        {
+            if (element.visible && element.pickingMode == PickingMode.Position &&
+                    element.resolvedStyle.display != DisplayStyle.None)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private void CheckForSelection()
     {
+        if (IsPointerOverUI(Input.mousePosition)) 
+        {
+            return;
+        }
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
