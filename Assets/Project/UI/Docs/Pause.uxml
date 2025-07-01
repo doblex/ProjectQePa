@@ -1,8 +1,8 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Project/UI/Styles/MainStyle.uss?fileID=7433441132597879392&amp;guid=49d6e2cd4bd2ed346b124bf1b2b94597&amp;type=3#MainStyle" />
     <Style src="project://database/Assets/Project/UI/Styles/Pause.uss?fileID=7433441132597879392&amp;guid=386305c96e58d8a448b96fcba0232a14&amp;type=3#Pause" />
-    <engine:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.39);">
-        <engine:VisualElement style="flex-grow: 1; align-self: center; flex-direction: row; width: 400px;">
+    <engine:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Project/Graphics/UI/BackGrounds/Sfondo%20Pausa.jpg?fileID=2800000&amp;guid=c6ca12725f7104a4aa388cca5716ad22&amp;type=3#Sfondo Pausa&quot;);">
+        <engine:VisualElement style="flex-grow: 1; align-self: center; flex-direction: row; width: 400px; justify-content: space-around;">
             <engine:VisualElement style="flex-grow: 1; align-self: center; height: auto;">
                 <engine:Button text="Main Menu" name="ReturnToMenu" class="PauseButton" />
                 <engine:Button text="Options" name="Options" class="PauseButton" />

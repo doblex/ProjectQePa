@@ -69,11 +69,22 @@ public class HUDController : DocController
     {
         healthContainer.Clear();
 
-        VisualTreeAsset template = UIController.Instance.HealthUnitTempleate;
+        VisualTreeAsset template;
+        VisualElement healthUnit;
 
-        for (int i = 0; i < currentHp; i++)
+        for (int i = 0; i < MaxHp; i++)
         {
-            VisualElement healthUnit = template.CloneTree();
+            if (i < currentHp)
+            {
+                template = UIController.Instance.HealthUnitTempleate;
+                healthUnit = template.CloneTree();
+            }
+            else
+            {
+                template = UIController.Instance.EmptyhealthUnitTempleate;
+                healthUnit = template.CloneTree();
+            }
+
             healthContainer.Add(healthUnit);
         }
     }

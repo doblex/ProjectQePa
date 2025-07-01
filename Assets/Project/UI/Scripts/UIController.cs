@@ -24,6 +24,7 @@ public class UIController : MonoBehaviour
     public VisualTreeAsset LevelTemplate { get => levelTemplate; }
     public string GrayedOutButtonStyleClass { get => grayedOutButtonStyleClass; }
     public VisualTreeAsset HealthUnitTempleate { get => healthUnitTempleate; }
+    public VisualTreeAsset EmptyhealthUnitTempleate { get => emptyhealthUnitTempleate; }
     public bool IsPaused { get => isPaused; }
     public HUDController Hud { get => hud; }
 
@@ -50,6 +51,7 @@ public class UIController : MonoBehaviour
     [SerializeField] VisualTreeAsset commandTemplate;
     [SerializeField] VisualTreeAsset levelTemplate;
     [SerializeField] VisualTreeAsset healthUnitTempleate;
+    [SerializeField] VisualTreeAsset emptyhealthUnitTempleate;
 
     private FromDoc docToOptions;
 

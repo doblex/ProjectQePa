@@ -98,5 +98,9 @@ public class LevelSelectionController : DocController
                 UIController.Instance.ShowHUD();
             });
         }
+        else
+        {
+            UIController.Instance.ShowHUD();
+        }
     }
 }

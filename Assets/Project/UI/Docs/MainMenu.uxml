@@ -1,15 +1,15 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Project/UI/Styles/MainStyle.uss?fileID=7433441132597879392&amp;guid=49d6e2cd4bd2ed346b124bf1b2b94597&amp;type=3#MainStyle" />
-    <engine:VisualElement style="flex-grow: 1; align-self: flex-start;">
-        <engine:VisualElement style="flex-grow: 1; align-self: center; justify-content: center;">
-            <engine:Label text="Lost in Snail" class="title" />
-        </engine:VisualElement>
-        <engine:VisualElement style="flex-grow: 1; width: 600px; flex-direction: row;">
-            <engine:VisualElement style="flex-grow: 1; height: 700px; align-self: center; justify-content: center; display: flex; margin-left: 0; align-items: center;">
-                <engine:Button text="Play" name="Play" style="width: 450px; font-size: 65px; height: 200px;" />
-                <engine:Button text="Options" name="Options" style="height: 150px;" />
-                <engine:Button text="Credits" name="Credits" style="height: 150px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
-                <engine:Button text="Exit" name="Exit" enable-rich-text="true" style="height: 150px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+    <engine:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Project/Graphics/UI/BackGrounds/Main%20menu%20art.jpg?fileID=2800000&amp;guid=076cfaba3225bd045aa4188c1bcf6987&amp;type=3#Main menu art&quot;);">
+        <engine:VisualElement style="flex-grow: 1; align-self: flex-start;">
+            <engine:VisualElement style="flex-grow: 1; align-self: center; justify-content: center; background-image: url(&quot;project://database/Assets/Project/Graphics/UI/Logo%20_LOST%20IN%20SNAIL_.png?fileID=2800000&amp;guid=8326267eacd18aa4cbe4be419ad8fdd7&amp;type=3#Logo _LOST IN SNAIL_&quot;); -unity-background-scale-mode: scale-to-fit; width: 650px; height: 400px; padding-top: 0; margin-top: 19px;" />
+            <engine:VisualElement name="VisualElement" style="flex-grow: 1; width: 600px; flex-direction: row; align-self: flex-start; align-items: stretch;">
+                <engine:VisualElement style="flex-grow: 1; height: 650px; align-self: stretch; justify-content: flex-end; display: flex; margin-left: 0; align-items: center; flex-direction: column;">
+                    <engine:Button name="Play" text="PLAY" style="width: 450px; font-size: 65px; height: 200px; -unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/Project/UI/Fonts/Naluka.otf?fileID=12800000&amp;guid=6846e1e157ffc6a4a9064b7ee25a7d5b&amp;type=3#Naluka&quot;); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+                    <engine:Button text="OPTIONS" name="Options" style="height: 150px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+                    <engine:Button text="CREDITS" name="Credits" style="height: 150px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+                    <engine:Button text="EXIT" name="Exit" enable-rich-text="true" style="height: 150px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+                </engine:VisualElement>
             </engine:VisualElement>
         </engine:VisualElement>
     </engine:VisualElement>

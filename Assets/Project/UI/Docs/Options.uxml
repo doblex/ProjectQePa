@@ -1,24 +1,24 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Project/UI/Styles/MainStyle.uss?fileID=7433441132597879392&amp;guid=49d6e2cd4bd2ed346b124bf1b2b94597&amp;type=3#MainStyle" />
     <Style src="project://database/Assets/Project/UI/Styles/OptionStyle.uss?fileID=7433441132597879392&amp;guid=adfa1b4da7a0c9e4597e2938fb0f4c51&amp;type=3#OptionStyle" />
-    <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
+    <engine:VisualElement style="flex-grow: 1; flex-direction: row; background-image: url(&quot;project://database/Assets/Project/Graphics/UI/BackGrounds/Sfondo%20Setting.jpg?fileID=2800000&amp;guid=af04a3774e863934d84c6410e96e99c2&amp;type=3#Sfondo Setting&quot;);">
         <engine:VisualElement style="flex-grow: 1; width: auto; max-width: 35%;">
             <engine:VisualElement style="flex-grow: 1;" />
-            <engine:Label text="Opzioni" name="DocTitle" class="OptionTitle" />
+            <engine:Label text="OPTIONS" name="DocTitle" class="OptionTitle" />
             <engine:VisualElement style="flex-grow: 1; flex-direction: row; align-self: center;">
                 <engine:VisualElement style="flex-grow: 1; align-self: center;">
-                    <engine:Button text="Video" name="Video" class="OptionButton" />
-                    <engine:Button text="Audio" name="Audio" class="OptionButton" />
-                    <engine:Button text="Controls" name="Controls" class="OptionButton" />
-                    <engine:Button text="Saves&#10;" name="Saves" class="OptionButton" />
-                    <engine:Button text="Back" name="Back" class="OptionButton" />
+                    <engine:Button text="VIDEO" name="Video" class="OptionButton" />
+                    <engine:Button text="AUDIO" name="Audio" class="OptionButton" />
+                    <engine:Button text="CONTROLS" name="Controls" class="OptionButton" />
+                    <engine:Button text="SAVES" name="Saves" class="OptionButton" />
+                    <engine:Button text="BACK" name="Back" class="OptionButton" />
                 </engine:VisualElement>
             </engine:VisualElement>
         </engine:VisualElement>
-        <engine:VisualElement style="flex-grow: 1;">
-            <engine:VisualElement style="flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; background-color: rgba(0, 0, 0, 0.19); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+        <engine:VisualElement style="flex-grow: 1; width: 70%;">
+            <engine:VisualElement style="flex-grow: 1; padding-top: 150px; padding-right: 150px; padding-bottom: 150px; padding-left: 150px; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; background-image: url(&quot;project://database/Assets/Project/Graphics/UI/Frames/Cornice%20Impostazioni.png?fileID=2800000&amp;guid=8ec09ab2537ce3a4c8e5da856cfef522&amp;type=3#Cornice Impostazioni&quot;); width: 1250px;">
                 <engine:VisualElement name="VideoPanel" class="Panel" style="flex-grow: 1; display: none; align-self: stretch; justify-content: flex-start;">
-                    <engine:Label text="Video" class="PanelTitle" />
+                    <engine:Label text="VIDEO" class="PanelTitle" />
                     <engine:VisualElement name="Resolution" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
                         <engine:VisualElement name="Label" class="EntryLabelVE" style="flex-grow: 1; align-self: center;">
                             <engine:Label text="Resolution" class="EntryLabel" />
@@ -62,7 +62,7 @@
                     </engine:VisualElement>
                 </engine:VisualElement>
                 <engine:VisualElement name="AudioPanel" class="Panel" style="flex-grow: 1; display: none; align-items: stretch; flex-direction: column;">
-                    <engine:Label text="Audio" class="PanelTitle" />
+                    <engine:Label text="AUDIO" class="PanelTitle" />
                     <engine:VisualElement name="MusicVolume" class="OptionEntry" style="flex-grow: 1; flex-direction: row; display: flex;">
                         <engine:VisualElement name="Label" class="EntryLabelVE" style="flex-grow: 1; align-self: center;">
                             <engine:Label text="Music Volume" class="EntryLabel" />
@@ -91,12 +91,12 @@
                     </engine:VisualElement>
                 </engine:VisualElement>
                 <engine:VisualElement name="ControlsPanel" class="Panel" style="flex-grow: 1; display: none;">
-                    <engine:Label text="Controls" class="PanelTitle" />
+                    <engine:Label text="CONTROLS" class="PanelTitle" />
                 </engine:VisualElement>
                 <engine:VisualElement name="DangerZonePanel" class="Panel" style="flex-grow: 1; display: none; text-shadow: 2px 2px 5px rgb(0, 0, 0); overflow: visible;">
-                    <engine:Label text="Danger Zone" class="PanelTitle" style="color: rgb(255, 0, 0);" />
+                    <engine:Label text="DANGER ZONE" class="PanelTitle" style="color: rgb(149, 0, 0); text-shadow: 3px 3px 5px rgb(214, 107, 80);" />
                     <engine:VisualElement name="DangerZone" style="flex-grow: 1; flex-direction: column; display: flex; align-items: center; justify-content: space-between; width: auto;">
-                        <engine:Button text="DELETE SAVES" name="DeleteSaves" />
+                        <engine:Button text="DELETE SAVES" name="DeleteSaves" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
                     </engine:VisualElement>
                 </engine:VisualElement>
             </engine:VisualElement>

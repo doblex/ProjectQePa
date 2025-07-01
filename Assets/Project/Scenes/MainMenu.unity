@@ -164,6 +164,7 @@ MonoBehaviour:
   commandTemplate: {fileID: 9197481963319205126, guid: 0883302c853399e45a21f9f759e232cf, type: 3}
   levelTemplate: {fileID: 9197481963319205126, guid: c3b7d70ebfe36df418693940dbc3a223, type: 3}
   healthUnitTempleate: {fileID: 9197481963319205126, guid: 8da95cecc397a42458d3afc9dd037566, type: 3}
+  emptyhealthUnitTempleate: {fileID: 9197481963319205126, guid: 289906e9d69309d48b10360574c303bb, type: 3}
 --- !u!4 &264070599
 Transform:
   m_ObjectHideFlags: 0
@@ -493,8 +494,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def252066aab1cc45ac29fa494830cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winText: (S)nailed it!
-  loseText: Escar-Gone
+  winImage: {fileID: 0}
+  winTitleImage: {fileID: 0}
+  loseImage: {fileID: 2800000, guid: 464abe04a17a25a43a76f5006c57a76e, type: 3}
+  loseTitleImage: {fileID: 2800000, guid: c656187042768534e90f4bd611cb35f8, type: 3}
 --- !u!114 &924209373
 MonoBehaviour:
   m_ObjectHideFlags: 0

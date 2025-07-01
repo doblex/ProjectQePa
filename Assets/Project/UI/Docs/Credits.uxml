@@ -1,29 +1,31 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Project/UI/Styles/MainStyle.uss?fileID=7433441132597879392&amp;guid=49d6e2cd4bd2ed346b124bf1b2b94597&amp;type=3#MainStyle" />
     <Style src="project://database/Assets/Project/UI/Styles/CreditsStyle.uss?fileID=7433441132597879392&amp;guid=bae168571f714904e92cd585ac2863b2&amp;type=3#CreditsStyle" />
-    <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
+    <engine:VisualElement style="flex-grow: 1; flex-direction: row; background-image: url(&quot;project://database/Assets/Project/Graphics/UI/BackGrounds/Sfondo%20Credits.jpg?fileID=2800000&amp;guid=3c21b2481778a3a468565f5bfc7ccf11&amp;type=3#Sfondo Credits&quot;);">
         <engine:VisualElement style="flex-grow: 1; width: auto; max-width: 35%;">
             <engine:VisualElement style="flex-grow: 1;" />
-            <engine:Label text="Credits" name="DocTitle" class="OptionTitle" />
+            <engine:Label text="CREDITS" name="DocTitle" class="OptionTitle" style="-unity-text-align: middle-center; text-shadow: 2px 2px 5px rgb(255, 255, 255);" />
             <engine:VisualElement style="flex-grow: 1; flex-direction: row; align-self: center;">
                 <engine:VisualElement style="flex-grow: 1; align-self: center;">
-                    <engine:Button text="Back" name="Back" class="OptionButton" />
+                    <engine:Button text="BACK" name="Back" class="OptionButton" style="border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
                 </engine:VisualElement>
             </engine:VisualElement>
         </engine:VisualElement>
         <engine:VisualElement style="flex-grow: 1;">
-            <engine:VisualElement style="flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; background-color: rgba(0, 0, 0, 0.19); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
-                <engine:VisualElement name="VideoPanel" class="Panel" style="flex-grow: 1; display: flex; align-self: stretch; justify-content: flex-start;">
+            <engine:VisualElement style="flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px;">
+                <engine:VisualElement name="VideoPanel" style="flex-grow: 1; display: flex; align-self: stretch; justify-content: flex-start; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;">
                     <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
-                        <engine:VisualElement name="3D" class="CreditsTeamVE" style="flex-grow: 1;">
-                            <engine:Label text="3D Artists" class="TeamTitle" style="color: rgb(187, 56, 51);" />
+                        <engine:VisualElement name="3D" class="CreditsTeamVE" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Project/Graphics/UI/Frames/Credits/Cornice%20crediti%2001.png?fileID=2800000&amp;guid=218e6303a7c1efc42a329fe2f454025d&amp;type=3#Cornice crediti 01&quot;);">
+                            <engine:VisualElement style="flex-grow: 1;" />
+                            <engine:Label text="3D Artists" class="TeamTitle" style="color: rgb(78, 158, 97);" />
                             <engine:VisualElement style="flex-grow: 1;">
                                 <engine:Label text="Maddalena Pastore" class="Name" />
                                 <engine:Label text="Rebecca Masi" class="Name" />
                             </engine:VisualElement>
                         </engine:VisualElement>
                         <engine:VisualElement style="flex-grow: 1;" />
-                        <engine:VisualElement name="Concept" class="CreditsTeamVE" style="flex-grow: 1;">
+                        <engine:VisualElement name="Concept" class="CreditsTeamVE" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Project/Graphics/UI/Frames/Credits/Cornice%20crediti%2002.png?fileID=2800000&amp;guid=2b618279dd0e4744d8b3aef374e9e9d0&amp;type=3#Cornice crediti 02&quot;);">
+                            <engine:VisualElement style="flex-grow: 1;" />
                             <engine:Label text="Concept Artists" class="TeamTitle" style="color: rgb(78, 158, 97);" />
                             <engine:VisualElement style="flex-grow: 1;">
                                 <engine:Label text="Alex Crimeni" class="Name" />
@@ -35,8 +37,9 @@
                         </engine:VisualElement>
                     </engine:VisualElement>
                     <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
-                        <engine:VisualElement name="Design" class="CreditsTeamVE" style="flex-grow: 1;">
-                            <engine:Label text="Game Designers" class="TeamTitle" style="color: rgb(212, 145, 196);" />
+                        <engine:VisualElement name="Design" class="CreditsTeamVE" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Project/Graphics/UI/Frames/Credits/Cornice%20crediti%2003.png?fileID=2800000&amp;guid=c8702776e0d0e2b4784f048ff50a49ca&amp;type=3#Cornice crediti 03&quot;);">
+                            <engine:VisualElement style="flex-grow: 1;" />
+                            <engine:Label text="Game Designers" class="TeamTitle" style="color: rgb(78, 158, 97);" />
                             <engine:VisualElement style="flex-grow: 1;">
                                 <engine:Label text="Alessio Ambrosini" class="Name" />
                                 <engine:Label text="Anna Lombardo" class="Name" />
@@ -46,8 +49,9 @@
                             </engine:VisualElement>
                         </engine:VisualElement>
                         <engine:VisualElement style="flex-grow: 1;" />
-                        <engine:VisualElement name="Concept" class="CreditsTeamVE" style="flex-grow: 1;">
-                            <engine:Label text="Game Programmers" class="TeamTitle" style="color: rgb(143, 98, 167);" />
+                        <engine:VisualElement name="Concept" class="CreditsTeamVE" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Project/Graphics/UI/Frames/Credits/Cornice%20crediti%2004.png?fileID=2800000&amp;guid=73da6cd30e9dd4e468b4d2cdb59765ba&amp;type=3#Cornice crediti 04&quot;);">
+                            <engine:VisualElement style="flex-grow: 1;" />
+                            <engine:Label text="Game Programmers" class="TeamTitle" style="color: rgb(78, 158, 97);" />
                             <engine:VisualElement style="flex-grow: 1;">
                                 <engine:Label text="Giovanni Faldani" class="Name" />
                                 <engine:Label text="Matteo Golfetto" class="Name" />

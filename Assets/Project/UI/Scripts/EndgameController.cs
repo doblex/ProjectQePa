@@ -5,10 +5,12 @@ using utilities.Controllers;
 
 public class EndgameController : DocController
 {
-    [SerializeField] string winText;
-    [SerializeField] string loseText;
-
-    Label title;
+    [Header("Win")]
+    [SerializeField] Texture2D winImage;
+    [SerializeField] Texture2D winTitleImage;
+    [Header("Lose")]
+    [SerializeField] Texture2D loseImage;
+    [SerializeField] Texture2D loseTitleImage;
 
     Label collectibles;
 
@@ -16,11 +18,15 @@ public class EndgameController : DocController
     Button mainMenu;
     Button exit;
 
+    VisualElement backGroundImage;
+    VisualElement titleImage;
+
     protected override void SetComponents()
     {
-        title = Root.Q<Label>("Title");
-
         collectibles = Root.Q<Label>("Collectibles");
+
+        backGroundImage = Root.Q<VisualElement>("Background");
+        titleImage = Root.Q<VisualElement>("Title");
 
         retry = Root.Q<Button>("Retry");
         retry.clicked += OnRetryButton_Clicked;
@@ -42,12 +48,14 @@ public class EndgameController : DocController
             switch (endgame)
             {
                 case EndgameType.Win:
-                    title.text = winText;
+                    backGroundImage.style.backgroundImage = winImage;
+                    titleImage.style.backgroundImage = winTitleImage;
                     retry.style.display = DisplayStyle.None;
 
                     break;
                 case EndgameType.Lose:
-                    title.text = loseText;
+                    backGroundImage.style.backgroundImage = loseImage;
+                    titleImage.style.backgroundImage = loseTitleImage;
                     retry.style.display = DisplayStyle.Flex;
                     break;
             }
