@@ -24,14 +24,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2535900457894778270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2840153, y: 0, z: 0, w: 0.95881975}
+  m_LocalRotation: {x: 0.72537434, y: 0, z: 0, w: 0.6883546}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4246236059097800134}
   m_Father: {fileID: 4368376240524581418}
-  m_LocalEulerAnglesHint: {x: 33, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 93, y: 0, z: 0}
 --- !u!1 &3292147171984820441
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3292147171984820441}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.1482459, y: -0, z: -0, w: 0.9889506}
   m_LocalPosition: {x: 0, y: 2.340952, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -68,7 +68,7 @@ Transform:
   - {fileID: 4072064293040761000}
   - {fileID: 4377974268028509908}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.051, y: 0, z: 0}
 --- !u!114 &6942235819979270881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 14.56, y: 14.56, z: 14.56}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2581825798278239119}
@@ -166,7 +166,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039492350953666985}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4084238146724190296, guid: 990dd65e37e2a264f8f2c75b6118ffe1, type: 3}
 --- !u!23 &3597011897638295573
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b78656513df15b4f8b016d816fc1a9d, type: 2}
+  - {fileID: 2100000, guid: d3b754e56211d01438e266686562c4c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -267,7 +267,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.08
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &8791534599739952176
 AudioSource:

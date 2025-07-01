@@ -24,14 +24,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3032206424680084634}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2840153, y: 0, z: 0, w: 0.95881975}
+  m_LocalRotation: {x: 0.5075384, y: 0, z: 0, w: 0.8616291}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4246236059097800134}
   m_Father: {fileID: 4368376240524581418}
-  m_LocalEulerAnglesHint: {x: 33, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 61, y: 0, z: 0}
 --- !u!1 &3292147171984820441
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,13 +152,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039492350953666985}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.20165585, y: -0.89702004, z: -0.2617357, w: -0.29357177}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 112.63, y: 112.63, z: 112.63}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6126486592576257754}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -159.442, y: -42.473022, z: -146.59799}
 --- !u!33 &419677993692608139
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039492350953666985}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -9097894624182624980, guid: 1520a91743a87f942895e31899171f99, type: 3}
 --- !u!23 &3597011897638295573
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d439b9e582acf7c4cbdee3877fa5d340, type: 2}
+  - {fileID: 2100000, guid: 09dee338ae102824c8ba7ef6399c7555, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -267,7 +267,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.01
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &8791534599739952176
 AudioSource:
