@@ -45,7 +45,7 @@
 .unity-button {
     height: 150px;
     font-size: 40px;
-    background-image: url("project://database/Assets/Prova_bottone_chiarp.png?fileID=2800000&guid=dc2cb5ac3b80d4941ac92ec0b90f8135&type=3#Prova_bottone_chiarp");
+    background-image: url("project://database/Assets/Project/Graphics/UI/Buttons/bottone%20chiaro.png?fileID=2800000&guid=a02f79d6b512a2245bd305fc5f763241&type=3#bottone chiaro");
     margin-top: 0;
     margin-right: 0;
     margin-bottom: 0;
@@ -64,13 +64,16 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 .unity-button:hover {
-    background-image: url("project://database/Assets/Prova_bottone_scuro.png?fileID=2800000&guid=9bb39b55d0e0107478e061a5c62b799a&type=3#Prova_bottone_scuro");
+    background-image: url("project://database/Assets/Project/Graphics/UI/Buttons/bottone%20scuro.png?fileID=2800000&guid=922efc44e1c23ce4abeb89071e3f6d5a&type=3#bottone scuro");
     scale: 1.1 1.1;
     transition-property: scale;
     transition-duration: 0.5s;
+    -unity-background-scale-mode: scale-to-fit;
+    color: rgb(255, 255, 255);
 }
 
 .SkipCutsceneButton:hover {
@@ -79,4 +82,22 @@
 
 .SkipCutsceneButton {
     -unity-background-image-tint-color: rgba(255, 255, 255, 0.27);
+}
+
+.roundButton {
+    background-image: url("project://database/Assets/Project/Graphics/UI/Buttons/tondo.png?fileID=2800000&guid=11cc481b981567a48be81104d3aee3d7&type=3#tondo");
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.roundButton:hover {
+    background-image: url("project://database/Assets/Project/Graphics/UI/Buttons/tondo%20scuro%20.png?fileID=2800000&guid=ccf6ff3f6c2181e4e96072ed05a5445d&type=3#tondo scuro ");
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.PauseVE {
+    background-image: url("project://database/Assets/Project/Graphics/UI/Buttons/Simbolo_pausa.png?fileID=2800000&guid=182c887d0ec52404aa5984b232535228&type=3#Simbolo_pausa");
+}
+
+.PauseVE:hover {
+    background-image: url("project://database/Assets/Project/Graphics/UI/Buttons/simbolo_pausa_bianco.png?fileID=2800000&guid=9095769e83866ee4eb67d4c1e1014cbc&type=3#simbolo_pausa_bianco");
 }
