@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using UnityEngine.Video;
 using utilities.Controllers;
 
 public class UIController : MonoBehaviour
@@ -34,6 +36,7 @@ public class UIController : MonoBehaviour
     [SerializeField] HUDController hud;
     [SerializeField] PauseController pause;
     [SerializeField] EndgameController endgame;
+    [SerializeField] VideoComicController videoComic;
 
     [Header("DataSources")]
     [SerializeField] Options options;
@@ -50,7 +53,7 @@ public class UIController : MonoBehaviour
 
     private FromDoc docToOptions;
 
-    [SerializeField] bool isPaused = false;
+    bool isPaused = false;
 
     private void Awake()
     {
@@ -87,6 +90,7 @@ public class UIController : MonoBehaviour
         hud.ShowDoc(false);
         pause.ShowDoc(false, false);
         endgame.ShowDoc(false);
+        videoComic.ShowDoc(false);
     }
 
     public void ShowLevelSelection()
@@ -188,6 +192,11 @@ public class UIController : MonoBehaviour
     public void HideEndgame()
     {
         endgame.ShowDoc(false);
+    }
+
+    public void ShowVideo(VideoClip videoClip, Action action)
+    {
+        videoComic.Show(videoClip, action);
     }
 
     public void ReturnToMenu()

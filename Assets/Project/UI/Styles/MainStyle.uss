@@ -72,3 +72,11 @@
     transition-property: scale;
     transition-duration: 0.5s;
 }
+
+.SkipCutsceneButton:hover {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.SkipCutsceneButton {
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0.27);
+}

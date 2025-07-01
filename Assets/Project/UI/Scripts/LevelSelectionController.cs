@@ -67,7 +67,7 @@ public class LevelSelectionController : DocController
 
     private void LoadLevel(LevelDataWrapper levelData)
     {
-        UIController.Instance.ShowLoading(5);
+        UIController.Instance.ShowLoading();
         UIController.Instance.HideLevelSelection();
 
         if (levelData.level.isCompleted)
@@ -87,10 +87,16 @@ public class LevelSelectionController : DocController
     {
         if (arg0.name != currentLevel.SceneName) return;
 
-        LevelManager.Instance.SetCurrentLevelDataWrapper(currentLevel);
         SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
+        LevelManager.Instance.SetCurrentLevelDataWrapper(currentLevel);
+        UIController.Instance.HideLoading();
 
-        UIController.Instance.ShowHUD();
-
+        if (currentLevel.CutScene != null)
+        {
+            UIController.Instance.ShowVideo(currentLevel.CutScene, () =>
+            {
+                UIController.Instance.ShowHUD();
+            });
+        }
     }
 }

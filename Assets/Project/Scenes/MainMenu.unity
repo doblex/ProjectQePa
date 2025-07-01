@@ -156,6 +156,7 @@ MonoBehaviour:
   hud: {fileID: 299917522}
   pause: {fileID: 2142863997}
   endgame: {fileID: 924209372}
+  videoComic: {fileID: 1568985824}
   options: {fileID: 11400000, guid: 902ec35998889954ab995e68f7786267, type: 2}
   buttonSelectedStyleClass: OptionButton-Selected
   comingSoonStyleClass: ComingSoon
@@ -163,7 +164,6 @@ MonoBehaviour:
   commandTemplate: {fileID: 9197481963319205126, guid: 0883302c853399e45a21f9f759e232cf, type: 3}
   levelTemplate: {fileID: 9197481963319205126, guid: c3b7d70ebfe36df418693940dbc3a223, type: 3}
   healthUnitTempleate: {fileID: 9197481963319205126, guid: 8da95cecc397a42458d3afc9dd037566, type: 3}
-  isPaused: 0
 --- !u!4 &264070599
 Transform:
   m_ObjectHideFlags: 0
@@ -185,6 +185,7 @@ Transform:
   - {fileID: 299917521}
   - {fileID: 2142863995}
   - {fileID: 924209371}
+  - {fileID: 1568985823}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &299917520
@@ -307,6 +308,7 @@ MonoBehaviour:
     Planet: {fileID: 2800000, guid: ead50818341f53f4fbc3b868be551d0c, type: 3}
     LevelScreen: {fileID: 2800000, guid: fc510065ea8be484d9f76acf16648ff5, type: 3}
     comingSoon: 0
+    CutScene: {fileID: 0}
   - level:
       levelName: 
       checkpointIndex: 0
@@ -317,6 +319,7 @@ MonoBehaviour:
     Planet: {fileID: 2800000, guid: ead50818341f53f4fbc3b868be551d0c, type: 3}
     LevelScreen: {fileID: 2800000, guid: fc510065ea8be484d9f76acf16648ff5, type: 3}
     comingSoon: 0
+    CutScene: {fileID: 0}
 --- !u!1 &676922158
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +779,108 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1568985821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1568985823}
+  - component: {fileID: 1568985825}
+  - component: {fileID: 1568985824}
+  - component: {fileID: 1568985822}
+  m_Layer: 0
+  m_Name: VideoComic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!328 &1568985822
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568985821}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 0}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 1269579148}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 1
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 0
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!4 &1568985823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568985821}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 264070599}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1568985824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568985821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804acb1e9e0e52244b9edadb0cc38679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 1568985822}
+--- !u!114 &1568985825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568985821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: f8bcb4f050f639c46be2d59797479b14, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 76774a61b1f7454438d997e742720b22, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
 --- !u!1 &1671810707
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +992,7 @@ MonoBehaviour:
     Planet: {fileID: 0}
     LevelScreen: {fileID: 0}
     comingSoon: 0
+    CutScene: {fileID: 0}
   checkPoints: []
   currentCheckPointIndex: 0
   defaultCameraSize: 5

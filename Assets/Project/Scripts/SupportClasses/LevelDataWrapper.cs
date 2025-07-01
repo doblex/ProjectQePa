@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Video;
 
 [Serializable]
 public class LevelDataWrapper
@@ -10,6 +11,7 @@ public class LevelDataWrapper
     public Texture2D Planet;
     public Texture2D LevelScreen;
     public bool comingSoon = false;
+    public VideoClip CutScene;
 
     public int Index { get => index; set => index = value; }
 
@@ -21,6 +23,7 @@ public class LevelDataWrapper
         Planet = null;
         LevelScreen = null;
         comingSoon = false;
+        CutScene = null;
     }
 
     public bool IsLocked() { return level.checkpointIndex == -1; }
