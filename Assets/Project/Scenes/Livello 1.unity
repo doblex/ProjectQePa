@@ -838,7 +838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280507740335069622, guid: 696fb0ff0a3d8d44fa8e20ed0cab4668, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7768482361321900320, guid: 696fb0ff0a3d8d44fa8e20ed0cab4668, type: 3}
       propertyPath: cameraSize
