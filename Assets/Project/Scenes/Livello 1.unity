@@ -4176,6 +4176,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteroidInMotion
       objectReference: {fileID: 0}
+    - target: {fileID: 3955600662490553898, guid: b1daff534b105bc4fb03907130a7ada4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955600662490553898, guid: b1daff534b105bc4fb03907130a7ada4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955600662490553898, guid: b1daff534b105bc4fb03907130a7ada4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955600662490553898, guid: b1daff534b105bc4fb03907130a7ada4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955600662490553898, guid: b1daff534b105bc4fb03907130a7ada4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 4106374033326114859, guid: b1daff534b105bc4fb03907130a7ada4, type: 3}
       propertyPath: m_Splines.Array.data[0].m_MetaData.Array.data[2].Mode
       value: 0
