@@ -19,3 +19,16 @@
     transition-property: scale;
     transition-duration: 0.5s;
 }
+
+.title {
+    font-size: 200px;
+    -unity-text-align: middle-center;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}

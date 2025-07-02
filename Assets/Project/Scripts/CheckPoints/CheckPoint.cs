@@ -35,6 +35,7 @@ public class CheckPoint : MonoBehaviour
     public void SpawnOnCheckPoint(GameObject snail)
     {
         ReachCheckPoint(snail);
+        //snail.GetComponent<CameraBorderCheck>().Active = true;
     }
 
     private void ReachCheckPoint(GameObject snail, bool isSpawned = false)

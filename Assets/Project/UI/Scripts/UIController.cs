@@ -18,7 +18,6 @@ public class UIController : MonoBehaviour
     public Options Options { get => options; }
 
     public string ButtonSelectedStyleClass { get => buttonSelectedStyleClass; }
-    public string ComingSoonStyleClass { get => comingSoonStyleClass; }
 
     public VisualTreeAsset CommandTemplate { get => commandTemplate; }
     public VisualTreeAsset LevelTemplate { get => levelTemplate; }
@@ -44,7 +43,6 @@ public class UIController : MonoBehaviour
 
     [Header("Styles")]
     [SerializeField] string buttonSelectedStyleClass = "OptionButton-Selected";
-    [SerializeField] string comingSoonStyleClass = "ComingSoon";
     [SerializeField] string grayedOutButtonStyleClass = "GrayedOut";
 
     [Header("Templates")]

@@ -17,6 +17,11 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
+        MoveCamera();
+    }
+
+    private void MoveCamera()
+    {
         if (canMove && target != null)
         {
             Vector3 desiredPosition = target.position;

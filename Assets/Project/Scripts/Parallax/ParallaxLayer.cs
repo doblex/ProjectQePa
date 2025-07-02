@@ -12,7 +12,7 @@ public class ParallaxLayer : MonoBehaviour
 
     private void Update()
     {
-        Vector3 position = Camera.main.transform.position;
+        Vector3 position = GameObject.FindWithTag("Snail").transform.position  /*Camera.main.transform.position*/;
         float distanceX = position.x * amountOfParallax;
         float distanceZ = position.z * amountOfParallax;
 

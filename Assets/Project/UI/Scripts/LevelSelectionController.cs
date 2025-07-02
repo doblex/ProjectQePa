@@ -40,6 +40,7 @@ public class LevelSelectionController : DocController
 
             levelButton.RegisterCallback<PointerOverEvent>(evt =>
             {
+                if (levelDataWrapper.comingSoon) return;
                 levelButton.AddToClassList(UIController.Instance.ButtonSelectedStyleClass);
                 levelButton.iconImage = levelDataWrapper.LevelScreen;
             });
@@ -58,7 +59,7 @@ public class LevelSelectionController : DocController
 
             if (levelDataWrapper.comingSoon)
             {
-                levelButton.AddToClassList(UIController.Instance.ComingSoonStyleClass);
+                levelButton.SetEnabled(false);
             }
             
             scrollView.Add(level);

@@ -85,6 +85,7 @@ public class EndgameController : DocController
     private void OnRetryButton_Clicked()
     {
         //Rincomincia da capo (?)
+        ShowDoc(false); // Hide the endgame UI
         LevelManager.Instance.RestartLevel();
         Time.timeScale = 1f; // Resume the game
     }

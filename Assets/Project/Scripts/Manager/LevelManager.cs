@@ -202,14 +202,26 @@ public class LevelManager : MonoBehaviour
     }
 
     // Reloads scene which restarts player at the last checkpoint reached and takes away a life
-    public void ResetToCheckPoint()
+    public void ResetToCheckPoint(bool reset = true)
     {
         int checkPointIndex = currentCheckPointIndex;
         int playerLives = currentSnail.GetComponent<HealthController>().CurrentHp - 1;
         int collectibleRecord = currentLevelDataWrapper.level.collectibleRecord; // Reset to collectibles from previous checkpoint
         bool levelFinished = false;
 
-        if(playerLives == 0) return; // Don't allow reset
+        if (playerLives == 0)
+        {
+            if (reset)
+            {
+                return; // Don't allow reset
+            }
+            else
+            {
+                currentSnail.GetComponent<HealthController>().DoDamage(1);
+                return;
+            }
+
+        } 
 
         PersistenceManager.Instance.UpdateDataForLevel(currentLevelDataWrapper.Index, checkPointIndex, playerLives, collectibleRecord, levelFinished);
 
