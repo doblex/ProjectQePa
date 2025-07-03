@@ -308,7 +308,7 @@ MonoBehaviour:
     Planet: {fileID: 2800000, guid: 6a3c26d959aa88d4183bee42b1983d9c, type: 3}
     LevelScreen: {fileID: 2800000, guid: fc510065ea8be484d9f76acf16648ff5, type: 3}
     comingSoon: 0
-    CutScene: {fileID: 0}
+    CutScene: {fileID: 32900000, guid: 57227ba6470494041a568e85150f9bd1, type: 3}
   - level:
       levelName: 
       checkpointIndex: 0
