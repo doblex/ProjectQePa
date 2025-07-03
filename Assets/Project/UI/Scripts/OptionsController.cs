@@ -1,11 +1,15 @@
 ﻿using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 using static Options;
 
 public class OptionsController : DocController
 {
+    [SerializeField] AudioMixer audioMixer;
+
     Button videoButton;
     VisualElement videoPanel;
 
@@ -75,6 +79,9 @@ public class OptionsController : DocController
 
         Screen.SetResolution(width, height, options.Fullscreen, refreshRate);
         Debug.Log($"Set resolution to {width}x{height} with fullscreen mode {options.Fullscreen} and target FPS {refreshRate}.");
+
+        audioMixer.SetFloat("SFXVolume", Mathf.Log10(options.SFXVolume/ 100 ) * 20);
+        audioMixer.SetFloat("MusicVolume", Mathf.Log10(options.MasterVolume / 100) * 20);
     }
 
     private void GetResolution(Options options, out int width, out int height, out RefreshRate refreshRate)
