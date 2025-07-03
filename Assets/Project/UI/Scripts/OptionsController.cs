@@ -1,10 +1,6 @@
-﻿using UnityEditor;
-using UnityEditor.UIElements;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Rendering;
 using UnityEngine.UIElements;
-using static Options;
 
 public class OptionsController : DocController
 {
@@ -57,12 +53,9 @@ public class OptionsController : DocController
         deleteSavesButton = Root.Q<Button>("DeleteSaves");
         deleteSavesButton.clicked += () =>
         {
-            if (EditorUtility.DisplayDialog("Delete Saves", "Are you sure you want to delete all saves?", "Yes", "No"))
-            {
-                PersistenceManager.Instance.DeleteSave();
-                PersistenceManager.Instance.LoadData();
-                Debug.Log("All saves deleted.");
-            }
+            PersistenceManager.Instance.DeleteSave();
+            PersistenceManager.Instance.LoadData();
+            Debug.Log("All saves deleted.");
         };
 
         backButton = Root.Q<Button>("Back");
@@ -118,10 +111,7 @@ public class OptionsController : DocController
 
             UIController.Instance.CommandTemplate.CloneTree(commandVE);
 
-            SerializedObject serializedCmd = new SerializedObject(cmd); // cmd is a ScriptableObject
-
-            // Bind the visual element to the serialized object
-            commandVE.Bind(serializedCmd);
+            commandVE.Q<Label>("Label").text = cmd.CommandName;
             commandVE.Q<VisualElement>("Value").style.backgroundImage = cmd.Icon;
 
             controlsPanel.Add(commandVE);
