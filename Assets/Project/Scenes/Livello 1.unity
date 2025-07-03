@@ -846,7 +846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7768482361321900320, guid: 696fb0ff0a3d8d44fa8e20ed0cab4668, type: 3}
       propertyPath: changeCameraSize
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8844427785937496356, guid: 696fb0ff0a3d8d44fa8e20ed0cab4668, type: 3}
       propertyPath: m_Name
@@ -7843,17 +7843,25 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -26788602, guid: c262dd7221c493a4ba96d141f885c6f2, type: 3}
+    - target: {fileID: 464777840844092877, guid: b896cdff85f1bc84a8a4dc91dc7e0e60, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3981220366597198386, guid: b896cdff85f1bc84a8a4dc91dc7e0e60, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1610099428, guid: f49bf3ca14245b641b075b28fa116eb9, type: 3}
+    - target: {fileID: 3981220366597198386, guid: b896cdff85f1bc84a8a4dc91dc7e0e60, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5257965603115652408, guid: b896cdff85f1bc84a8a4dc91dc7e0e60, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5257965603115652408, guid: b896cdff85f1bc84a8a4dc91dc7e0e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -9.53
       objectReference: {fileID: 0}
     - target: {fileID: 5257965603115652408, guid: b896cdff85f1bc84a8a4dc91dc7e0e60, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7891,6 +7899,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1969042202, guid: 06788f424e8a3244592d201efd5af7cc, type: 3}
+    - target: {fileID: 7329878247348921544, guid: b896cdff85f1bc84a8a4dc91dc7e0e60, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8074895521231446545, guid: b896cdff85f1bc84a8a4dc91dc7e0e60, type: 3}
       propertyPath: m_Name
       value: ParallaxBackground
@@ -7899,6 +7911,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1583716500, guid: b93ea2fcce13a054b98d0310cce9ffa3, type: 3}
+    - target: {fileID: 8145137533925451670, guid: b896cdff85f1bc84a8a4dc91dc7e0e60, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11561,7 +11577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782737348650181035, guid: a50e996821c85954c9bb0a5904b90b28, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4.5299997
       objectReference: {fileID: 0}
     - target: {fileID: 3782737348650181035, guid: a50e996821c85954c9bb0a5904b90b28, type: 3}
       propertyPath: m_LocalPosition.z
