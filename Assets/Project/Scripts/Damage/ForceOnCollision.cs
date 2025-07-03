@@ -3,7 +3,7 @@
 public class ForceOnCollision : MonoBehaviourWithAudio
 {
     // Reflects the snail when a colision happens
-    [SerializeField] private float strenght = 1;
+    [SerializeField] private float strength = 1;
     private void OnCollisionEnter(Collision collision)
     {
         // reflect the snail
@@ -12,7 +12,7 @@ public class ForceOnCollision : MonoBehaviourWithAudio
             Rigidbody rb = collision.collider.GetComponent<Rigidbody>();
             Vector3 normal = collision.GetContact(0).normal;
 
-            rb.AddForce(-normal * strenght, ForceMode.Impulse);
+            rb.AddForce(-normal * strength, ForceMode.Impulse);
 
             OnPlayAudio?.Invoke(audioChannels);
         }

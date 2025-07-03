@@ -6,7 +6,7 @@ public class DamageAndReflectOnCollision : MonoBehaviourWithAudio
     // Damages the snail and reflects its direction when a colision happens
 
     [SerializeField] private int damage = 1;
-    [SerializeField] private float reflectStrenght = 1;
+    [SerializeField] private float reflectStrength = 1;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -16,7 +16,7 @@ public class DamageAndReflectOnCollision : MonoBehaviourWithAudio
             HealthController hc = collision.collider.GetComponent<HealthController>();
             Rigidbody rb = collision.collider.GetComponent<Rigidbody>();
             hc.DoDamage(damage);
-            rb.linearVelocity = reflectStrenght * Vector3.Reflect(rb.linearVelocity, collision.GetContact(0).normal);
+            rb.linearVelocity = reflectStrength * Vector3.Reflect(rb.linearVelocity, collision.GetContact(0).normal);
             OnPlayAudio?.Invoke(audioChannels);
         }
     }
