@@ -69,7 +69,7 @@
                         </engine:VisualElement>
                         <engine:VisualElement class="EntrySpacing" style="flex-grow: 1; align-self: center;" />
                         <engine:VisualElement name="Value" class="EntryValueVE">
-                            <engine:Slider value="42" high-value="100" fill="true">
+                            <engine:Slider value="42" high-value="100" fill="true" low-value="1E-05">
                                 <Bindings>
                                     <engine:DataBinding property="value" data-source-path="MasterVolume" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" binding-mode="TwoWay" />
                                 </Bindings>
@@ -82,7 +82,7 @@
                         </engine:VisualElement>
                         <engine:VisualElement class="EntrySpacing" style="flex-grow: 1; align-self: center;" />
                         <engine:VisualElement name="Value" class="EntryValueVE">
-                            <engine:Slider value="42" high-value="100" fill="true" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options">
+                            <engine:Slider value="42" high-value="100" fill="true" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" low-value="1E-05">
                                 <Bindings>
                                     <engine:DataBinding property="value" data-source-path="SFXVolume" data-source="project://database/Assets/Project/Scriptable/Options.asset?fileID=11400000&amp;guid=902ec35998889954ab995e68f7786267&amp;type=2#Options" binding-mode="TwoWay" />
                                 </Bindings>
