@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  reflectStrength: 1
+  reflectStrength: 3
 --- !u!82 &9140127326777403726
 AudioSource:
   m_ObjectHideFlags: 0
