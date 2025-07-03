@@ -60,7 +60,7 @@ public class EndgameController : DocController
                     break;
             }
 
-            Time.timeScale = 0f; // Pause the game
+            //Time.timeScale = 0f; // Pause the game
         }
 
         collectibles.text = $" {ScoreManager.Instance.GetCollected} / {ScoreManager.Instance.GetTotalCollectibles}" ;
