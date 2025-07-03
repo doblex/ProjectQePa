@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHealing: 1
   healingAmount: 1
+  mesh: {fileID: 3884128921608216416}
 --- !u!135 &7531336222470486079
 SphereCollider:
   m_ObjectHideFlags: 0

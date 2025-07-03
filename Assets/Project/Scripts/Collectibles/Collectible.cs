@@ -6,6 +6,8 @@ public class Collectible : MonoBehaviourWithAudio
     [SerializeField] bool isHealing;
     [SerializeField, ShowIf("isHealing", true)] private int healingAmount;
 
+    [SerializeField] GameObject mesh;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Snail"))
@@ -17,7 +19,10 @@ public class Collectible : MonoBehaviourWithAudio
             }
             OnPlayAudio?.Invoke(audioChannels);
             ScoreManager.Instance.RegisterCollected();
-            GetComponent<MeshRenderer>().enabled = false;
+            
+            if(mesh != null)
+                mesh.SetActive(false);
+
             GetComponent<Collider>().enabled = false;
         }
     }
