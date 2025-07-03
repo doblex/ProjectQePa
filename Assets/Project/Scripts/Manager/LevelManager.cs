@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using utilities.Controllers;
-using static Unity.Burst.Intrinsics.X86;
 
 public class LevelManager : MonoBehaviour
 {
