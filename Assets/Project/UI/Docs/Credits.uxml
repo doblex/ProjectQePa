@@ -56,6 +56,10 @@
                                 <engine:Label text="Giovanni Faldani" class="Name" />
                                 <engine:Label text="Matteo Golfetto" class="Name" />
                             </engine:VisualElement>
+                            <engine:Label text="Sound Designers" class="TeamTitle" style="color: rgb(78, 158, 97); display: none;" />
+                            <engine:VisualElement name="VisualElement" style="flex-grow: 1; display: none;">
+                                <engine:Label text="Edoardo Sana" class="Name" />
+                            </engine:VisualElement>
                         </engine:VisualElement>
                     </engine:VisualElement>
                 </engine:VisualElement>
