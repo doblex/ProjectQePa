@@ -3725,6 +3725,10 @@ PrefabInstance:
       propertyPath: reflectStrenght
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8122564599283929774, guid: 62a7396e9024b2c4cbff9116558de122, type: 3}
+      propertyPath: reflectStrength
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8454895866707978703, guid: 62a7396e9024b2c4cbff9116558de122, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.87
