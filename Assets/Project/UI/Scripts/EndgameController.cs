@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using utilities.Controllers;
 
@@ -21,6 +22,8 @@ public class EndgameController : DocController
     VisualElement backGroundImage;
     VisualElement titleImage;
 
+    int levelCol;
+
     protected override void SetComponents()
     {
         collectibles = Root.Q<Label>("Collectibles");
@@ -37,6 +40,15 @@ public class EndgameController : DocController
         exit = Root.Q<Button>("Exit");
         exit.clicked += OnExitButton_Clicked;
 
+        SceneManager.sceneLoaded += GetLevelCollectibles;
+    }
+
+    public void GetLevelCollectibles(Scene arg0, LoadSceneMode arg1)
+    {
+        if(FindAnyObjectByType<ScoreManager>() != null)
+        {
+            levelCol = ScoreManager.Instance.GetTotalCollectibles;
+        }
     }
 
     public void ShowDoc(bool show, EndgameType endgame)

@@ -15,11 +15,12 @@ public class ScoreManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(this.gameObject);
+        collectibleTotal = FindObjectsByType<Collectible>(FindObjectsSortMode.None).Length;
     }
 
     private void Start()
     {
-        collectibleTotal = FindObjectsByType<Collectible>(FindObjectsSortMode.None).Length;
+
     }
 
     public void RegisterCollected()
