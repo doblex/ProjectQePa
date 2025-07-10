@@ -121,6 +121,6 @@ public class HUDController : DocController
 
     private void TriggerResetAction()
     {
-        LevelManager.Instance.ResetToCheckPoint(); // Your logic here
+        LevelManager.Instance.ResetToCheckPoint(false); // Your logic here
     }
 }
